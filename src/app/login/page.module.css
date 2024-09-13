@@ -1,0 +1,101 @@
+@keyframes intro-right {
+    from {
+        opacity: 0;
+        transform: translateX(100%);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes intro-left {
+    from {
+        opacity: 0;
+        transform: translateX(-100%);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.main {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 50px;
+    flex-direction: row;
+}
+
+.leftDiv {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: start;
+    animation: intro-left 1s;
+}
+.leftDiv h1 {
+    margin: 0 0 50px 0;
+    font-size: 50px ;
+}
+
+.leftDiv form {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.formInputDiv {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.leftDiv form input {
+    border-radius: 10px;
+    padding: 10px 20px;
+    width: 400px;
+    height: 30px;
+    outline: none;
+    border: 2px solid black;
+    transition: all .3s ease;
+}
+
+.leftDiv form p {
+    font-size: 20px;
+    margin: 0;
+}
+.leftDiv form input:hover {
+    background-color: #e1e1e1;
+}
+.leftDiv form input:focus {
+    transform: scale(1.05);
+}
+
+.leftDiv form button {
+    margin-top: 50px;
+    padding: 10px 20px;
+    font-size: 20px;
+    background-color: #000000;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    color: white;
+    transition: all .3s ease;
+    box-shadow: 0 0 0  black;
+    height: 50px;
+}
+
+
+.leftDiv form button:hover {
+    background-color: #000000;
+    box-shadow: 0 0 30px black;
+    transform: scale(1.05);
+}
+
+.main img {
+    animation: intro-right 1s;
+    border-radius: 50px;
+}

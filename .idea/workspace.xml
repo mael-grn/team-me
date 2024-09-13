@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="7d6cb5a9-8bd4-4902-a802-cbf98e19e7e6" name="Changes" comment="Changement racine du projet et page de connexion / creation de compte">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="JavaScript File" />
+        <option value="CSS File" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="test-with-next" />
+      </map>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;mael-grn&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/TeamMe-Now/Client-App.git&quot;,
+    &quot;accountId&quot;: &quot;f3434394-40e5-46a8-8091-0fe6cc508cb2&quot;
+  }
+}</component>
+  <component name="ProjectColorInfo">{
+  &quot;customColor&quot;: &quot;&quot;,
+  &quot;associatedIndex&quot;: 5
+}</component>
+  <component name="ProjectId" id="2lq7lFQZvY7pBNRSGy6j5qHHK4Y" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "main",
+    "ignore.virus.scanning.warn.message": "true",
+    "last_opened_file_path": "C:/Users/maelg/Dev/TeamMe/team-me",
+    "list.type.of.created.stylesheet": "CSS",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "ts.external.directory.path": "C:\\Users\\maelg\\AppData\\Local\\Programs\\WebStorm\\plugins\\javascript-plugin\\jsLanguageServicesImpl\\external",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\maelg\Dev\TeamMe\Client-App\team-me\src\app" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\maelg\Dev\TeamMe\Client-App\team-me\public" />
+      <recent name="C:\Users\maelg\Dev\TeamMe\Client-App\team-me\src\app\assets" />
+    </key>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-js-predefined-1d06a55b98c1-0b3e54e931b4-JavaScript-WS-241.18034.50" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="7d6cb5a9-8bd4-4902-a802-cbf98e19e7e6" name="Changes" comment="" />
+      <created>1725895903050</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1725895903050</updated>
+      <workItem from="1725895904373" duration="3131000" />
+      <workItem from="1725902295182" duration="781000" />
+      <workItem from="1725911699710" duration="43000" />
+      <workItem from="1725920243965" duration="5024000" />
+      <workItem from="1725934891602" duration="230000" />
+      <workItem from="1726010068440" duration="12000" />
+      <workItem from="1726063103252" duration="90000" />
+      <workItem from="1726063968626" duration="314000" />
+      <workItem from="1726064408089" duration="87000" />
+      <workItem from="1726065311958" duration="6000" />
+      <workItem from="1726094919771" duration="525000" />
+      <workItem from="1726096369900" duration="755000" />
+      <workItem from="1726103606924" duration="1113000" />
+      <workItem from="1726172708872" duration="5000" />
+      <workItem from="1726173635467" duration="231000" />
+      <workItem from="1726174270623" duration="770000" />
+      <workItem from="1726175194617" duration="7873000" />
+      <workItem from="1726200289941" duration="1000" />
+      <workItem from="1726200363606" duration="321000" />
+    </task>
+    <task id="LOCAL-00001" summary="ajout gitignore">
+      <option name="closed" value="true" />
+      <created>1725896025223</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1725896025223</updated>
+    </task>
+    <task id="LOCAL-00002" summary="creation du projet">
+      <option name="closed" value="true" />
+      <created>1725896758318</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1725896758318</updated>
+    </task>
+    <task id="LOCAL-00003" summary="test reparation push">
+      <option name="closed" value="true" />
+      <created>1725898395684</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1725898395684</updated>
+    </task>
+    <task id="LOCAL-00004" summary="ajout de la base de la page d'accueil et de connexion">
+      <option name="closed" value="true" />
+      <created>1725924929989</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1725924929989</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Changement racine du projet et page de connexion / creation de compte">
+      <option name="closed" value="true" />
+      <created>1726200557486</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1726200557486</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+    <MESSAGE value="ajout gitignore" />
+    <MESSAGE value="creation du projet" />
+    <MESSAGE value="test reparation push" />
+    <MESSAGE value="ajout de la base de la page d'accueil et de connexion" />
+    <MESSAGE value="Changement racine du projet et page de connexion / creation de compte" />
+    <option name="LAST_COMMIT_MESSAGE" value="Changement racine du projet et page de connexion / creation de compte" />
+  </component>
+</project>
