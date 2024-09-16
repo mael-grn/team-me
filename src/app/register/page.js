@@ -1,13 +1,16 @@
 "use client";
 
-import { useState } from 'react';
+import {useEffect, useState, useRef} from 'react';
 import Image from "next/image";
 import styles from "./page.module.css";
 import StorageManager from "@/app/tools/storageManager";
 import QueryManager from "@/app/tools/QueryManager";
 import Popup from "@/app/components/popup";
-import lottie from "lottie-web";
-import { defineElement } from "@lordicon/element";
+import { Player } from '@lordicon/react';
+
+const ICON = require('/public/icons/loader-white.json');
+
+
 export default function Page() {
     const [name, setName] = useState('');
     const [surname, setSurName] = useState('');
@@ -18,7 +21,13 @@ export default function Page() {
     const [message, setMessage] = useState('');
     const [isLoading, setIsLoading] = useState(false);
 
-    defineElement(lottie.loadAnimation);
+    const playerRef = useRef(null);
+
+    useEffect(() => {
+        if (playerRef.current) {
+            playerRef.current.playFromBeginning();
+        }
+    }, [])
 
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -98,21 +107,14 @@ export default function Page() {
                             required
                         />
                     </div>
-                    <button type="submit">
-                        {
-                            isLoading ?
-                                <lord-icon
-                                    src="https://cdn.lordicon.com/ktsahwvc.json"
-                                    trigger="loop"
-                                    state="loop"
-                                    colors="primary:#ffffff"
-                                /> : "Connexion"
-                        }
+                    <button type="submit" className={isLoading && styles.loading}>
+                        <Player
+                            ref={playerRef}
+                            icon={ICON}
+                            onComplete={() => playerRef.current?.playFromBeginning()}
+                        />
+                        <p>Connexion</p>
                     </button>
-                    <lord-icon src="https://cdn.lordicon.com/ktsahwvc.json"
-                               trigger="loop"
-                               state="loop-transparency"
-                               colors="primary:#ffffff"></lord-icon>
                 </form>
             </div>
             <Image

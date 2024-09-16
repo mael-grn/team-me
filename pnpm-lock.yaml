@@ -11,6 +11,9 @@ importers:
       '@lordicon/element':
         specifier: ^1.10.0
         version: 1.10.0
+      '@lordicon/react':
+        specifier: ^1.10.0
+        version: 1.10.0(lottie-web@5.12.2)(react@18.3.1)
       lottie-web:
         specifier: ^5.12.2
         version: 5.12.2
@@ -31,6 +34,21 @@ packages:
 
   '@lordicon/helpers@1.10.0':
     resolution: {integrity: sha512-8Qx193ENhyHrNhSyB0YD75NWbIJt0XjqNdQqJGDX+/nf1bjf2Tw/8krmGcwE6kFoP8ApB6hhvVyZR2zaPMlu+g==}
+
+  '@lordicon/react@1.10.0':
+    resolution: {integrity: sha512-5lAqGWsR5juNnHOKlHFesw0rdawivFi2tbX/+d6aUfFyobVw5HCzsP2Oom3oDBjIlbOW9SsMViIL/Fj4BXwuog==}
+    peerDependencies:
+      lottie-react-native: '*'
+      lottie-web: '*'
+      react: '*'
+      react-native: '*'
+    peerDependenciesMeta:
+      lottie-react-native:
+        optional: true
+      lottie-web:
+        optional: true
+      react-native:
+        optional: true
 
   '@next/env@14.2.8':
     resolution: {integrity: sha512-L44a+ynqkolyNBnYfF8VoCiSrjSZWgEHYKkKLGcs/a80qh7AkfVUD/MduVPgdsWZ31tgROR+yJRA0PZjSVBXWQ==}
@@ -191,6 +209,13 @@ snapshots:
       '@lordicon/helpers': 1.10.0
 
   '@lordicon/helpers@1.10.0': {}
+
+  '@lordicon/react@1.10.0(lottie-web@5.12.2)(react@18.3.1)':
+    dependencies:
+      '@lordicon/helpers': 1.10.0
+      react: 18.3.1
+    optionalDependencies:
+      lottie-web: 5.12.2
 
   '@next/env@14.2.8': {}
 

@@ -90,6 +90,36 @@
     transition: all .3s ease;
     box-shadow: 0 0 0  black;
     height: 50px;
+    position: relative;
+}
+
+.leftDiv form button div {
+    position: absolute;
+    height: 30px;
+    top: 10px;
+    width: 30px;
+    transition: all .3s ease;
+    transform: scale(0);
+    left: calc(50% - 15px);
+}
+
+.leftDiv form .loading div {
+    transform: scale(1);
+}
+
+.leftDiv form .loading p {
+    transform: scale(0);
+}
+
+.leftDiv form button p {
+    height: 30px;
+    position: absolute;
+    top: 13px;
+    margin: 0;
+    width: 100px;
+    text-align: center;
+    left: calc(50% - 50px);
+    transition: all .3s ease;
 }
 
 
