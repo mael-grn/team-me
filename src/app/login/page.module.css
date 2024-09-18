@@ -168,7 +168,11 @@
         transition: all .3s ease;
     }
 
-    .leftDiv form button {
-        margin: 30 0;
+    .leftDiv form button:active {
+        transform: scale(.6);
+    }
+
+    .leftDiv form button:hover {
+        box-shadow: none;
     }
 }

@@ -143,3 +143,65 @@
 .bgClosing {
     animation: outro-bg 0.5s;
 }
+
+@media only screen and (max-width: 800px) {
+    @keyframes from-bottom {
+        from {
+            transform: translateY(100%);
+        } to {
+            transform: translateY(0);
+        }
+    }
+
+    @keyframes to-bottom {
+        from {
+            transform: translateY(0);
+        } to {
+            transform: translateY(100%);
+        }
+    }
+    .popup {
+        align-items: end;
+    }
+    .popupContent {
+        animation: from-bottom .7s ease;
+        z-index: 200;
+        position: relative;
+        display: flex;
+        gap: 20px;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        max-width: 100%;
+        width: 100%;
+        max-height: 50%;
+        height: 50%;
+        background-color: white;
+        border-radius: 20px 20px 0 0;
+        padding: 20px 20px 90px 20px;
+        overflow-y: auto;
+    }
+
+    .popupContent button {
+        animation: none;
+        padding: 10px 20px;
+        height: 50px;
+        width: calc(100% - 40px);
+        margin-top: 0;
+        position: absolute;
+        bottom: 20px;
+        left: 20px;
+    }
+
+    .popupContent h2 {
+        animation: none;
+    }
+
+    .popupContent p {
+        animation: none;
+    }
+
+    .popupContentClosing {
+        animation: to-bottom 0.7s ease;
+    }
+}
