@@ -128,7 +128,7 @@
             transform: scale(1.5);
         }
         to {
-            opacity: .85;
+            opacity: .3;
             filter: blur(5px);
             transform: scale(1);
         }
@@ -138,6 +138,7 @@
         width: 150px;
         text-align: center;
         left: calc(50% - 75px);
+        color: white;
     }
 
     .heroDiv {
@@ -148,9 +149,10 @@
     }
 
     .heroLeft h1 {
-        font-size: 35px;
+        font-size: 40px;
         text-align: center;
         margin: 0;
+        color: white;
     }
 
     .heroLeft {
@@ -172,7 +174,7 @@
         width: 100%;
         height: 100%;
         transition: all .3s ease;
-        background-color: white;
+        background-color: black;
 
     }
 
@@ -185,7 +187,7 @@
         height: 140%;
         border-radius: 0;
         filter: blur(5px);
-        opacity: .85;
+        opacity: .3;
         transition: all .3s ease;
         animation: bg-intro 1s;
     }
@@ -206,9 +208,10 @@
     }
 
     .heroLeft p {
-        font-size: 20px;
+        font-size: 30px;
         padding: 0 35px;
         text-align: center;
         margin: 0;
+        color: white;
     }
 }
