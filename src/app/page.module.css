@@ -149,8 +149,8 @@
     }
 
     .heroLeft h1 {
-        font-size: 40px;
-        text-align: center;
+        font-size: 30px;
+        text-align: start;
         margin: 0;
         color: white;
     }
@@ -160,6 +160,7 @@
         z-index: 50;
         height: 100%;
         display: flex;
+        overflow: hidden;
         flex-direction: column;
         justify-content: space-around;
         gap: 15px;
@@ -208,9 +209,9 @@
     }
 
     .heroLeft p {
-        font-size: 30px;
-        padding: 0 35px;
-        text-align: center;
+        font-size: 22px;
+        padding: 0;
+        text-align: start;
         margin: 0;
         color: white;
     }

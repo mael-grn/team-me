@@ -11,7 +11,7 @@ export default function Home() {
             <p className={styles.appname}>Team Me</p>
             <div className={styles.heroDiv}>
                 <div className={styles.heroLeft}>
-                    <h1>Découvrez une nouvelle manière de gérer vos équipes</h1>
+                    <h1>DECOUVREZ UNE NOUVELLE MANIERE DE GERER VOS EQUIPES</h1>
                     <p>Etes-vous prêt pour embarquer dans une toute nouvelle manière de manager vos équipes sportives
                         ?</p>
                     <div className={styles.buttonsDiv}>
