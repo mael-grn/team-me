@@ -4,11 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7d6cb5a9-8bd4-4902-a802-cbf98e19e7e6" name="Changes" comment="correction de bug de build">
-      <change afterPath="$PROJECT_DIR$/public/assets/running.jpg" afterDir="false" />
+    <list default="true" id="7d6cb5a9-8bd4-4902-a802-cbf98e19e7e6" name="Changes" comment="amelioration responsive page accueil">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/login/page.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/login/page.module.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/page.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/page.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/page.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/page.module.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -122,7 +119,7 @@
       <workItem from="1726523837339" duration="2250000" />
       <workItem from="1726529718765" duration="640000" />
       <workItem from="1726614476034" duration="1543000" />
-      <workItem from="1726618001216" duration="3373000" />
+      <workItem from="1726618001216" duration="4538000" />
     </task>
     <task id="LOCAL-00001" summary="ajout gitignore">
       <option name="closed" value="true" />
@@ -172,7 +169,15 @@
       <option name="project" value="LOCAL" />
       <updated>1726525940426</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="amelioration responsive page accueil">
+      <option name="closed" value="true" />
+      <created>1726621645740</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1726621645740</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -186,6 +191,7 @@
     <MESSAGE value="ajout de la base de la page d'accueil et de connexion" />
     <MESSAGE value="Changement racine du projet et page de connexion / creation de compte" />
     <MESSAGE value="correction de bug de build" />
-    <option name="LAST_COMMIT_MESSAGE" value="correction de bug de build" />
+    <MESSAGE value="amelioration responsive page accueil" />
+    <option name="LAST_COMMIT_MESSAGE" value="amelioration responsive page accueil" />
   </component>
 </project>
