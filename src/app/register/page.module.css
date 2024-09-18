@@ -133,3 +133,59 @@
     animation: intro-right 1s;
     border-radius: 50px;
 }
+@media only screen and (max-width: 800px) {
+    .main img {
+        display: none;
+    }
+
+    .leftDiv {
+        width: calc(100% - 40px);
+        height: calc(100% - 40px);
+        overflow: hidden;
+        gap: 30px;
+        padding: 20px;
+    }
+    .leftDiv h1 {
+        margin: 30px 0 0 0;
+        font-size: 40px;
+        width: 100%;
+        text-align: center;
+        height: 60px;
+    }
+
+    .leftDiv form {
+        display: flex;
+        flex-direction: column;
+        justify-content: start;
+        gap: 30px;
+        width: 100%;
+        max-height: 100%;
+        height: 100%;
+        overflow-y: auto;
+    }
+
+    .leftDiv form input {
+        border-radius: 10px;
+        padding: 10px 20px;
+        width: calc(100% - 44px);
+        height: 30px;
+        outline: none;
+        border: 2px solid black;
+        transition: all .3s ease;
+    }
+
+    .leftDiv form button:active {
+        transform: scale(.6);
+    }
+
+    .leftDiv form button {
+        margin-top: 0;
+        height: 50px;
+        min-height: 50px;
+        max-height: 50px;
+    }
+
+    .leftDiv form button:hover {
+        box-shadow: none;
+    }
+}
