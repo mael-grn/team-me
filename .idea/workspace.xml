@@ -4,16 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7d6cb5a9-8bd4-4902-a802-cbf98e19e7e6" name="Changes" comment="Changement racine du projet et page de connexion / creation de compte">
-      <change afterPath="$PROJECT_DIR$/public/icons/loader-black.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/icons/loader-white.json" afterDir="false" />
+    <list default="true" id="7d6cb5a9-8bd4-4902-a802-cbf98e19e7e6" name="Changes" comment="correction de bug de build">
+      <change afterPath="$PROJECT_DIR$/public/assets/running.jpg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pnpm-lock.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/pnpm-lock.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/login/page.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/login/page.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/login/page.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/login/page.module.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/register/page.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/register/page.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/register/page.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/register/page.module.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/page.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/page.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/page.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/page.module.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -66,7 +62,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "main",
     "ignore.virus.scanning.warn.message": "true",
-    "last_opened_file_path": "C:/Users/maelg/Dev/TeamMe/team-me/public/icons",
+    "last_opened_file_path": "C:/Users/maelg/Dev/TeamMe/team-me/public/assets",
     "list.type.of.created.stylesheet": "CSS",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
@@ -79,6 +75,7 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\maelg\Dev\TeamMe\team-me\public\assets" />
       <recent name="C:\Users\maelg\Dev\TeamMe\team-me\public\icons" />
       <recent name="C:\Users\maelg\Dev\TeamMe\Client-App\team-me\src\app" />
     </key>
@@ -122,7 +119,10 @@
       <workItem from="1726200289941" duration="1000" />
       <workItem from="1726200363606" duration="2682000" />
       <workItem from="1726356224356" duration="679000" />
-      <workItem from="1726523837339" duration="1847000" />
+      <workItem from="1726523837339" duration="2250000" />
+      <workItem from="1726529718765" duration="640000" />
+      <workItem from="1726614476034" duration="1543000" />
+      <workItem from="1726618001216" duration="3373000" />
     </task>
     <task id="LOCAL-00001" summary="ajout gitignore">
       <option name="closed" value="true" />
@@ -164,7 +164,15 @@
       <option name="project" value="LOCAL" />
       <updated>1726200557486</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="correction de bug de build">
+      <option name="closed" value="true" />
+      <created>1726525940426</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1726525940426</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -177,6 +185,7 @@
     <MESSAGE value="test reparation push" />
     <MESSAGE value="ajout de la base de la page d'accueil et de connexion" />
     <MESSAGE value="Changement racine du projet et page de connexion / creation de compte" />
-    <option name="LAST_COMMIT_MESSAGE" value="Changement racine du projet et page de connexion / creation de compte" />
+    <MESSAGE value="correction de bug de build" />
+    <option name="LAST_COMMIT_MESSAGE" value="correction de bug de build" />
   </component>
 </project>

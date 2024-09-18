@@ -19,23 +19,14 @@ export default function Home() {
                         <Link href={"/login"} className={styles.loginBtn}>Connexion</Link>
                     </div>
                 </div>
-                <div>
+                <div className={styles.heroRight}>
                     <Image
-                        src="/assets/placeholder.svg"
+                        src="/assets/running.jpg"
                         alt="Hero"
                         width={500}
                         height={500}
                     />
                 </div>
-            </div>
-            <div>
-                <h2>Apprenez a gerer votre équipe sous une nouvelle dimmension</h2>
-                <Image
-                    src="/assets/placeholder.svg"
-                    alt="Hero"
-                    width={500}
-                    height={500}
-                />
             </div>
         </main>
     </div>
