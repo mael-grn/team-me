@@ -4,9 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7d6cb5a9-8bd4-4902-a802-cbf98e19e7e6" name="Changes" comment="amelioration responsive page popup">
+    <list default="true" id="7d6cb5a9-8bd4-4902-a802-cbf98e19e7e6" name="Changes" comment="amelioration responsive page register">
+      <change afterPath="$PROJECT_DIR$/src/app/seed/route.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/register/page.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/register/page.module.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pnpm-lock.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/pnpm-lock.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/page.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/page.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/page.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/page.module.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -16,8 +20,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="JavaScript File" />
         <option value="CSS File" />
+        <option value="JavaScript File" />
       </list>
     </option>
   </component>
@@ -84,7 +88,7 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-js-predefined-1d06a55b98c1-0b3e54e931b4-JavaScript-WS-241.18034.50" />
+        <option value="bundled-js-predefined-d6986cc7102b-5c90d61e3bab-JavaScript-WS-242.22855.79" />
       </set>
     </attachedChunks>
   </component>
@@ -120,7 +124,10 @@
       <workItem from="1726529718765" duration="640000" />
       <workItem from="1726614476034" duration="1543000" />
       <workItem from="1726618001216" duration="5116000" />
-      <workItem from="1726699829679" duration="3267000" />
+      <workItem from="1726699829679" duration="3628000" />
+      <workItem from="1726778956524" duration="61000" />
+      <workItem from="1726779033858" duration="1411000" />
+      <workItem from="1726874192217" duration="1242000" />
     </task>
     <task id="LOCAL-00001" summary="ajout gitignore">
       <option name="closed" value="true" />
@@ -218,7 +225,15 @@
       <option name="project" value="LOCAL" />
       <updated>1726702739605</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="amelioration responsive page register">
+      <option name="closed" value="true" />
+      <created>1726703173104</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1726703173104</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -235,6 +250,7 @@
     <MESSAGE value="amelioration responsive page accueil" />
     <MESSAGE value="amelioration responsive page login" />
     <MESSAGE value="amelioration responsive page popup" />
-    <option name="LAST_COMMIT_MESSAGE" value="amelioration responsive page popup" />
+    <MESSAGE value="amelioration responsive page register" />
+    <option name="LAST_COMMIT_MESSAGE" value="amelioration responsive page register" />
   </component>
 </project>
