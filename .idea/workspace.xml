@@ -4,12 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7d6cb5a9-8bd4-4902-a802-cbf98e19e7e6" name="Changes" comment="amelioration responsive page register">
-      <change afterPath="$PROJECT_DIR$/src/app/seed/route.js" afterDir="false" />
+    <list default="true" id="7d6cb5a9-8bd4-4902-a802-cbf98e19e7e6" name="Changes" comment="amelioration responsive homepage">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pnpm-lock.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/pnpm-lock.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/page.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/page.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/components/popup.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/components/popup.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/components/popup.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/components/popup.module.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/page.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/page.module.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -127,7 +125,9 @@
       <workItem from="1726699829679" duration="3628000" />
       <workItem from="1726778956524" duration="61000" />
       <workItem from="1726779033858" duration="1411000" />
-      <workItem from="1726874192217" duration="1242000" />
+      <workItem from="1726874192217" duration="1321000" />
+      <workItem from="1727103800419" duration="12000" />
+      <workItem from="1727126132238" duration="634000" />
     </task>
     <task id="LOCAL-00001" summary="ajout gitignore">
       <option name="closed" value="true" />
@@ -233,7 +233,15 @@
       <option name="project" value="LOCAL" />
       <updated>1726703173104</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="amelioration responsive homepage">
+      <option name="closed" value="true" />
+      <created>1726875500085</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1726875500085</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -251,6 +259,7 @@
     <MESSAGE value="amelioration responsive page login" />
     <MESSAGE value="amelioration responsive page popup" />
     <MESSAGE value="amelioration responsive page register" />
-    <option name="LAST_COMMIT_MESSAGE" value="amelioration responsive page register" />
+    <MESSAGE value="amelioration responsive homepage" />
+    <option name="LAST_COMMIT_MESSAGE" value="amelioration responsive homepage" />
   </component>
 </project>

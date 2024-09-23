@@ -147,22 +147,23 @@
 @media only screen and (max-width: 800px) {
     @keyframes from-bottom {
         from {
-            transform: translateY(100%);
+            transform: translateY(100%) scale(0);
         } to {
-            transform: translateY(0);
+            transform: translateY(0) scale(1);
         }
     }
 
     @keyframes to-bottom {
         from {
-            transform: translateY(0);
+            transform: translateY(0) scale(1);
         } to {
-            transform: translateY(100%);
+            transform: translateY(100%) scale(0);
         }
     }
     .popup {
         align-items: end;
     }
+
     .popupContent {
         animation: from-bottom .7s ease;
         z-index: 200;
@@ -193,6 +194,15 @@
         left: 20px;
     }
 
+    .popupContent button:hover {
+        transform: none;
+        box-shadow: none;
+    }
+
+    .popupContent button:active {
+        transform: scale(0.5);
+    }
+
     .popupContent h2 {
         animation: none;
     }
@@ -204,4 +214,6 @@
     .popupContentClosing {
         animation: to-bottom 0.7s ease;
     }
+
+
 }

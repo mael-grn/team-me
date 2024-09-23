@@ -1,12 +1,10 @@
 import styles from "./popup.module.css";
-import {useState} from "react";
+import {useEffect, useState} from "react";
 
 
 export default function Popup({title, text, close}) {
 
     const [isClosing, setIsClosing] = useState(false);
-
-
 
     const handleClose = () => {
         setIsClosing(true);
