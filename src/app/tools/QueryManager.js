@@ -1,28 +1,22 @@
 import ServerResponse, {ErrorTypes} from "@/app/model/ServerResponse";
+import { sql } from '@vercel/postgres';
 
 export default class QueryManager {
 
-    static async query(url, method, body) {
-        //const token = StorageManager.getToken() ?? "";
-        try{
-            const res = await fetch(url, {
-                method: method,
-                headers: {
-                    'Content-Type': 'application/json',
-                    'Authorization': `Bearer ${"token"}`
-                },
-                body: JSON.stringify(body)
-            });
-            return await res;
-        } catch (e) {
-            return {error: true, status: 404};
-        }
-    }
-
     static async Login(email, password) {
 
-        const data = await this.query('http://localhost:3001/login', 'POST', { email, password });
 
+            const { rows, fields } =
+                await sql`SELECT * FROM USERS WHERE mail = ${email} AND mdp = ${password};`;
+
+            if (rows.length === 0) {
+                return new ServerResponse(false, ErrorTypes.NOUSER, null);
+            } else {
+                return new ServerResponse(true, null, rows[0]);
+            }
+
+
+        /*
         if (data.status !== 200) {
             switch (data.status) {
                 case 401:
@@ -38,6 +32,8 @@ export default class QueryManager {
         } else {
             return new ServerResponse(true, null, data);
         }
+
+         */
     }
 
     static async Register(name, surname, email, password) {

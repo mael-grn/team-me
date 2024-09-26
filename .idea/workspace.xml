@@ -4,11 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7d6cb5a9-8bd4-4902-a802-cbf98e19e7e6" name="Changes" comment="amelioration responsive homepage">
+    <list default="true" id="7d6cb5a9-8bd4-4902-a802-cbf98e19e7e6" name="Changes" comment="petites améliorations ui">
+      <change afterPath="$PROJECT_DIR$/.env.development" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.env.production" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/components/popup.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/components/popup.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/components/popup.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/components/popup.module.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/model/ServerResponse.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/model/ServerResponse.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/page.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/page.module.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/tools/QueryManager.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/tools/QueryManager.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -55,30 +57,33 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/maelg/Dev/TeamMe/team-me/public/assets&quot;,
-    &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;ts.external.directory.path&quot;: &quot;C:\\Users\\maelg\\AppData\\Local\\Programs\\WebStorm\\plugins\\javascript-plugin\\jsLanguageServicesImpl\\external&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "main",
+    "ignore.virus.scanning.warn.message": "true",
+    "last_opened_file_path": "C:/Users/maelg/Dev/TeamMe/team-me",
+    "list.type.of.created.stylesheet": "CSS",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "ts.external.directory.path": "C:\\Users\\maelg\\AppData\\Local\\Programs\\WebStorm\\plugins\\javascript-plugin\\jsLanguageServicesImpl\\external",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\maelg\Dev\TeamMe\team-me" />
       <recent name="C:\Users\maelg\Dev\TeamMe\team-me\public\assets" />
       <recent name="C:\Users\maelg\Dev\TeamMe\team-me\public\icons" />
       <recent name="C:\Users\maelg\Dev\TeamMe\Client-App\team-me\src\app" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\maelg\Dev\TeamMe\team-me" />
+      <recent name="C:\Users\maelg\Dev\TeamMe\team-me\src" />
       <recent name="C:\Users\maelg\Dev\TeamMe\Client-App\team-me\public" />
       <recent name="C:\Users\maelg\Dev\TeamMe\Client-App\team-me\src\app\assets" />
     </key>
@@ -127,7 +132,9 @@
       <workItem from="1726779033858" duration="1411000" />
       <workItem from="1726874192217" duration="1321000" />
       <workItem from="1727103800419" duration="12000" />
-      <workItem from="1727126132238" duration="634000" />
+      <workItem from="1727126132238" duration="696000" />
+      <workItem from="1727143850581" duration="71000" />
+      <workItem from="1727381898612" duration="2368000" />
     </task>
     <task id="LOCAL-00001" summary="ajout gitignore">
       <option name="closed" value="true" />
@@ -241,7 +248,15 @@
       <option name="project" value="LOCAL" />
       <updated>1726875500085</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="petites améliorations ui">
+      <option name="closed" value="true" />
+      <created>1727126823396</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1727126823396</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -260,6 +275,7 @@
     <MESSAGE value="amelioration responsive page popup" />
     <MESSAGE value="amelioration responsive page register" />
     <MESSAGE value="amelioration responsive homepage" />
-    <option name="LAST_COMMIT_MESSAGE" value="amelioration responsive homepage" />
+    <MESSAGE value="petites améliorations ui" />
+    <option name="LAST_COMMIT_MESSAGE" value="petites améliorations ui" />
   </component>
 </project>

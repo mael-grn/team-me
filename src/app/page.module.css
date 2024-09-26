@@ -190,6 +190,7 @@
         animation: from-bottom 1s ease;
     }
 
+
     .heroRight {
         position: absolute;
         z-index: -1;

@@ -1,10 +1,7 @@
 export const ErrorTypes = {
-    DEFAULT: 'An error occurred. Please try again later',
-    NOUSER: 'This user does not exist. Try again with a different email or password',
-    ALREADYEXISTS: 'This user already exists. Try again with a different email',
-    CONNECTION: 'An error occurred while trying to connect to the server. Please try again later',
-    NOAUTH: 'You are not authorized to access this resource',
-    SERVER: 'An error occurred on the server. Please try again later'
+    DEFAULT: 'Une erreur est survenue. Merci de réessayer plus tard.',
+    NOUSER: 'Cet utilisateur n\'existe pas, merci de vérifier vos identifiants.',
+    SERVER: 'Une erreur est survenue du coté de notre serveur. Nous travaillons actuellement pour résoudre le problème le plus vite possible.',
 }
 
 export default class ServerResponse {
