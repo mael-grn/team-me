@@ -15,6 +15,8 @@ const ICON = require('/public/icons/loader-white.json');
 export default function Page() {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
+    const [title, setTitle] = useState('');
+
     const [message, setMessage] = useState('');
     const [isLoading, setIsLoading] = useState(false);
 
@@ -33,11 +35,9 @@ export default function Page() {
         QueryManager.Login(email, password).then((res) => {
             setIsLoading(false);
             if (res.success) {
-                //StorageManager.setToken(res.data.token);
-                //StorageManager.setUser(new User("toto", email));
-                //window.location.href = '/dashboard';
-                setMessage("SUCCESS");
+                window.location.href = '/dashboard';
             } else {
+                setTitle('Erreur');
                 setMessage(res.errorType);
             }
         });
@@ -46,7 +46,7 @@ export default function Page() {
 
     return (
         <main className={styles.main}>
-            {message && message !== "" && <Popup title="Erreur" text={message} close={() => setMessage(null)} />}
+            {message && message !== "" && <Popup title={title} text={message} close={() => {setMessage(null); setTitle(null)}} />}
             <div className={styles.leftDiv}>
                 <h1>Connexion</h1>
                 <form onSubmit={handleSubmit}>

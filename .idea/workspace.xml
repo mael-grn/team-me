@@ -4,18 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7d6cb5a9-8bd4-4902-a802-cbf98e19e7e6" name="Changes" comment="maj utilisation api">
-      <change afterPath="$PROJECT_DIR$/auth.config.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/middleware.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/api/register/route.js" afterDir="false" />
+    <list default="true" id="7d6cb5a9-8bd4-4902-a802-cbf98e19e7e6" name="Changes" comment="maj securite users">
+      <change afterPath="$PROJECT_DIR$/src/app/dashboard/page.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pnpm-lock.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/pnpm-lock.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/api/login/route.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/api/login/route.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/model/ServerResponse.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/model/ServerResponse.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/page.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/page.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/page.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/page.module.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/tools/QueryManager.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/tools/QueryManager.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/login/page.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/login/page.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/register/page.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/register/page.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -144,7 +137,7 @@
       <workItem from="1727386233306" duration="138000" />
       <workItem from="1727391740546" duration="25000" />
       <workItem from="1727392228322" duration="1362000" />
-      <workItem from="1727395302332" duration="8801000" />
+      <workItem from="1727395302332" duration="9882000" />
     </task>
     <task id="LOCAL-00001" summary="ajout gitignore">
       <option name="closed" value="true" />
@@ -282,7 +275,15 @@
       <option name="project" value="LOCAL" />
       <updated>1727445366967</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="maj securite users">
+      <option name="closed" value="true" />
+      <created>1727463903839</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1727463903839</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -304,6 +305,7 @@
     <MESSAGE value="petites améliorations ui" />
     <MESSAGE value="supression du seed" />
     <MESSAGE value="maj utilisation api" />
-    <option name="LAST_COMMIT_MESSAGE" value="maj utilisation api" />
+    <MESSAGE value="maj securite users" />
+    <option name="LAST_COMMIT_MESSAGE" value="maj securite users" />
   </component>
 </project>

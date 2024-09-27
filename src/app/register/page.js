@@ -17,7 +17,7 @@ export default function Page() {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [passwordRepeat, setPasswordRepeat] = useState('');
-
+    const [title, setTitle] = useState('');
     const [message, setMessage] = useState('');
     const [isLoading, setIsLoading] = useState(false);
 
@@ -31,15 +31,20 @@ export default function Page() {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
+
+        if (password !== passwordRepeat) {
+            setTitle('Erreur')
+            setMessage("Les mots de passe ne correspondent pas");
+            return;
+        }
+
         setIsLoading(true);
         QueryManager.Register(name, surname, email, password).then((res) => {
             setIsLoading(false);
             if (res.success) {
-                //StorageManager.setToken(res.data.token);
-                //StorageManager.setUser(new User("toto", email));
-                //window.location.href = '/dashboard';
-                setMessage("SUCCESS");
+                window.location.href = '/dashboard';
             } else {
+                setTitle('Erreur');
                 setMessage(res.errorType);
             }
         });
@@ -48,7 +53,7 @@ export default function Page() {
 
     return (
         <main className={styles.main}>
-            {message && message !== "" && <Popup title="Erreur" text={message} close={() => setMessage(null)} />}
+            {message && message !== "" && <Popup title={title} text={message} close={() => {setMessage(null); setTitle(null)}} />}
             <div className={styles.leftDiv}>
                 <h1>Inscription</h1>
                 <form onSubmit={handleSubmit}>
@@ -113,7 +118,7 @@ export default function Page() {
                             icon={ICON}
                             onComplete={() => playerRef.current?.playFromBeginning()}
                         />
-                        <p>Connexion</p>
+                        <p>Créer mon compte</p>
                     </button>
                 </form>
             </div>
