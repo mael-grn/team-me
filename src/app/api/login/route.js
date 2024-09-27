@@ -1,4 +1,5 @@
 import { sql } from '@vercel/postgres';
+import bcrypt from 'bcrypt';
 
 export async function POST(req, res) {
         try {
@@ -10,7 +11,7 @@ export async function POST(req, res) {
 
             // Requête SQL pour vérifier les identifiants
             const { rows } = await sql`
-                SELECT * FROM USERS WHERE mail = ${email} AND mdp = ${password};
+                SELECT * FROM USERS WHERE email = ${email};
             `;
 
             // Vérification de l'existence de l'utilisateur
@@ -20,7 +21,19 @@ export async function POST(req, res) {
                     headers: { 'Content-Type': 'application/json' },
                 });
             } else {
-                return new Response(JSON.stringify({ message: 'user id are correct', data: rows[0] }), {
+
+                const user = rows[0];
+
+                // Comparaison du mot de passe avec le haché en base de données
+                const passwordMatch = await bcrypt.compare(password, user.password);
+                if (!passwordMatch) {
+                    return new Response(JSON.stringify({ message: 'Invalid password' }), {
+                        status: 401,
+                        headers: { 'Content-Type': 'application/json' },
+                    });
+                }
+
+                return new Response(JSON.stringify({ message: 'user credentials are correct', data: user }), {
                     status: 200,
                     headers: { 'Content-Type': 'application/json' },
                 });

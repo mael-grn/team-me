@@ -48,12 +48,12 @@
 }
 
 .heroRight {
-    width: 40%;
+    width: 50%;
 }
 
 .heroLeft {
     animation: intro-smoothzoom 1s;
-    width: 60%;
+    width: 50%;
 }
 
 .heroLeft h1 {
@@ -181,7 +181,8 @@
         flex-direction: column;
         justify-content: end;
         gap: 40px;
-        backdrop-filter: blur(30px) brightness(170%);
+        backdrop-filter: blur(30px);
+        background-color: rgba(255, 255, 255, 0.18);
         position: absolute;
         bottom: 0;
         left: 0;

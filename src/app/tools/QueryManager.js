@@ -21,4 +21,24 @@ export default class QueryManager {
         }
 
     }
+
+    static async Register(name, surname, email, password) {
+
+        const res = await fetch('/api/register', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({ surname, name, email, password }),
+        });
+
+        if (res.status === 200) {
+            return new ServerResponse(true, null, null);
+        } else if (res.status === 400) {
+            return new ServerResponse(false, ErrorTypes.ALREADYUSER, null);
+        } else {
+            return new ServerResponse(false, ErrorTypes.SERVER, null);
+        }
+
+    }
 }
