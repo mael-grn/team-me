@@ -7,6 +7,8 @@ import StorageManager from "@/app/tools/storageManager";
 import QueryManager from "@/app/tools/QueryManager";
 import Popup from "@/app/components/popup";
 import { Player } from '@lordicon/react';
+import { sql } from '@vercel/postgres';
+
 
 const ICON = require('/public/icons/loader-white.json');
 
@@ -27,6 +29,7 @@ export default function Page() {
     const handleSubmit = async (e) => {
         e.preventDefault();
         setIsLoading(true);
+
         QueryManager.Login(email, password).then((res) => {
             setIsLoading(false);
             if (res.success) {

@@ -12,6 +12,7 @@
     "@lordicon/element": "^1.10.0",
     "@lordicon/react": "^1.10.0",
     "@vercel/postgres": "^0.10.0",
+    "dotenv": "^16.4.5",
     "lottie-web": "^5.12.2",
     "next": "14.2.8",
     "react": "^18",
