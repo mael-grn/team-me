@@ -20,7 +20,6 @@ export default function Popup({title, text, close}) {
                 <h2>{title}</h2>
                 <p>{text}</p>
                 <button onClick={handleClose}>Fermer</button>
-
             </div>
         </div>
     )

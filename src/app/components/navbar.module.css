@@ -1,0 +1,63 @@
+@keyframes nav-intro {
+    from {
+        transform: translate(200%, -200%) scale(0);
+    }
+    to {
+        transform: translate(0, 0) scale(1);
+    }
+}
+
+@keyframes profil-intro {
+    0% {
+        transform: scale(0);
+    }
+    70% {
+    transform: scale(2);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+@keyframes text-intro {
+    from {
+        transform: translateX(-200%);
+    }
+    to {
+        transform: translateX(0);
+    }
+}
+
+.nav {
+    animation: nav-intro 0.6s ease;
+    width: fit-content;
+    max-width: 50%;
+    height: 40px;
+    position: fixed;
+    z-index: 1000;
+    top: 25px;
+    right: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    background-color: white;
+    overflow: hidden;
+    border-radius: 50px;
+}
+
+.profil {
+    animation: profil-intro 0.8s ease;
+    width: 40px;
+    height: 40px;
+    border-radius: 50px;
+    background-color: black;
+    display: block;
+}
+
+.nav p, .nav a {
+    animation: text-intro 0.8s ease;
+    margin: 15px;
+    color: black;
+    text-decoration: none;
+}

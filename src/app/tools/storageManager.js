@@ -13,7 +13,7 @@ export default class StorageManager {
     }
 
     static getUser() {
-        return localStorage.getItem("user") ? null : JSON.parse(localStorage.getItem("user"));
+        return localStorage.getItem("user") ? JSON.parse(localStorage.getItem("user")) : null;
     }
 
     static setUser(user) {
