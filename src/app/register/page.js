@@ -55,7 +55,8 @@ export default function Page() {
         <main className={styles.main}>
             {message && message !== "" && <Popup title={title} text={message} close={() => {setMessage(null); setTitle(null)}} />}
             <div className={styles.leftDiv}>
-                <h1>Inscription</h1>
+                <h1>Prêt ? Partez !</h1>
+                <p>Créez votre compte, et commencez immédatement à utiliser le plein potentiel de Team Me.</p>
                 <form onSubmit={handleSubmit}>
                     <div className={styles.formInputDiv}>
                         <label htmlFor="name">Prénom</label>
@@ -123,7 +124,7 @@ export default function Page() {
                 </form>
             </div>
             <Image
-                src="/assets/placeholder.svg"
+                src="/assets/begin.svg"
                 alt="Hero"
                 width={500}
                 height={500}

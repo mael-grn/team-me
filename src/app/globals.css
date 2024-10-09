@@ -1,5 +1,19 @@
+:root {
+    --primary-color: #4a634b;
+    --secondary-color: #78b197;
+    --primary-color-light: #BAF2BB;
+    --secondary-color-light: #BAF2D8;
+    --background-color: #e4f3ec;
+    --blue: #BAD7F2;
+    --red: #F2BAC9;
+    --yellow: #F2E2BA;
+    --text-color: black;
+    --color-hover: #dddddd;
+}
+
 body {
     margin: 0;
+    background-color: var(--background-color);
 }
 
 html {

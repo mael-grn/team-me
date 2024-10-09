@@ -83,7 +83,7 @@ export default function Page() {
                 </form>
             </div>
             <Image
-                src="/assets/placeholder.svg"
+                src="/assets/login.svg"
                 alt="Hero"
                 width={500}
                 height={500}

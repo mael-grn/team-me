@@ -59,7 +59,7 @@
     width: 400px;
     height: 30px;
     outline: none;
-    border: 2px solid black;
+    border: 2px solid var(--text-color);
     transition: all .3s ease;
 }
 
@@ -68,7 +68,7 @@
     margin: 0;
 }
 .leftDiv form input:hover {
-    background-color: #e1e1e1;
+    background-color: var(--color-hover);
 }
 .leftDiv form input:focus {
     transform: scale(1.05);
@@ -78,7 +78,7 @@
     margin-top: 50px;
     padding: 10px 20px;
     font-size: 20px;
-    background-color: #000000;
+    background-color: var(--primary-color);
     border: none;
     border-radius: 10px;
     cursor: pointer;
@@ -91,7 +91,7 @@
 
 .leftDiv form button div {
     position: absolute;
-    height: 30px;
+    height: fit-content;
     top: 10px;
     width: 30px;
     transition: all .3s ease;
@@ -119,8 +119,8 @@
 }
 
 .leftDiv form button:hover {
-    background-color: #000000;
-    box-shadow: 0 0 30px black;
+    background-color: var(--secondary-color);
+    box-shadow: 0 0 30px var(--secondary-color);
     transform: scale(1.05);
 }
 
