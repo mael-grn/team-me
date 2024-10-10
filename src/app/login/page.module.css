@@ -1,18 +1,7 @@
 @keyframes intro-right {
     from {
         opacity: 0;
-        transform: translateX(100%);
-    }
-    to {
-        opacity: 1;
-        transform: translateX(0);
-    }
-}
-
-@keyframes intro-left {
-    from {
-        opacity: 0;
-        transform: translateX(-100%);
+        transform: translateX(200%);
     }
     to {
         opacity: 1;
@@ -21,6 +10,8 @@
 }
 
 .main {
+    animation: intro-right 1s ease;
+
     height: 100vh;
     display: flex;
     align-items: center;
@@ -34,7 +25,6 @@
     flex-direction: column;
     align-items: start;
     justify-content: start;
-    animation: intro-left 1s;
 }
 .leftDiv h1 {
     margin: 0 0 50px 0;
@@ -125,7 +115,6 @@
 }
 
 .main img {
-    animation: intro-right 1s;
     border-radius: 50px;
 }
 
