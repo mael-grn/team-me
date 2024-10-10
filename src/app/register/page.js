@@ -7,11 +7,12 @@ import StorageManager from "@/app/tools/storageManager";
 import QueryManager from "@/app/tools/QueryManager";
 import Popup from "@/app/components/popup";
 import { Player } from '@lordicon/react';
-
+import {useRouter} from "next/navigation";
 const ICON = require('/public/icons/loader-white.json');
 
 
 export default function Page() {
+    const router = useRouter();
     const [name, setName] = useState('');
     const [surname, setSurName] = useState('');
     const [email, setEmail] = useState('');
@@ -31,7 +32,7 @@ export default function Page() {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-
+        router.back();
         if (password !== passwordRepeat) {
             setTitle('Erreur')
             setMessage("Les mots de passe ne correspondent pas");

@@ -1,7 +1,7 @@
 @keyframes intro-right {
     from {
         opacity: 0;
-        transform: translateX(200%);
+        transform: translateX(100%);
     }
     to {
         opacity: 1;
@@ -11,31 +11,43 @@
 
 .main {
     animation: intro-right 1s ease;
-
-    height: 100vh;
     display: flex;
-    align-items: center;
+    align-items: start;
     justify-content: center;
     gap: 50px;
     flex-direction: row;
+    padding-top: 5%;
 }
 
 .leftDiv {
     display: flex;
+    max-width: 500px;
+    width: 70%;
     flex-direction: column;
     align-items: start;
     justify-content: start;
+
 }
 .leftDiv h1 {
-    margin: 0 0 50px 0;
     font-size: 50px ;
+    margin: 0 0 30px 0;
+}
+
+.leftDiv p {
+    font-size: 20px;
+    margin: 0 0 30px 0;
+
 }
 
 .leftDiv form {
     display: flex;
     flex-direction: column;
     gap: 30px;
+    width: calc(100% - 40px);
+    padding: 20px;
+
 }
+
 
 .formInputDiv {
     display: flex;
@@ -46,7 +58,8 @@
 .leftDiv form input {
     border-radius: 10px;
     padding: 10px 20px;
-    width: 400px;
+    min-width: 200px;
+    width: calc(100% - 44px);
     height: 30px;
     outline: none;
     border: 2px solid var(--text-color);
@@ -65,7 +78,6 @@
 }
 
 .leftDiv form button {
-    margin-top: 50px;
     padding: 10px 20px;
     font-size: 20px;
     background-color: var(--primary-color);
@@ -102,9 +114,9 @@
     position: absolute;
     top: 13px;
     margin: 0;
-    width: 100px;
+    width: 200px;
     text-align: center;
-    left: calc(50% - 50px);
+    left: calc(50% - 100px);
     transition: all .3s ease;
 }
 
@@ -116,11 +128,20 @@
 
 .main img {
     border-radius: 50px;
+    width: 35%;
 }
 
 @media only screen and (max-width: 800px) {
+    .main {
+        flex-direction: column-reverse;
+        align-items: center;
+        justify-content: start;
+        gap: 0;
+    }
+
     .main img {
-        display: none;
+        width: 70%;
+        height: fit-content;
     }
 
     .leftDiv {
@@ -145,12 +166,15 @@
         gap: 30px;
         height: 100%;
         width: 100%;
+        max-height: 70%;
+        padding: 20px 0;
     }
 
     .leftDiv form input {
         border-radius: 10px;
         padding: 10px 20px;
         width: calc(100% - 44px);
+        min-width: calc(100% - 44px);
         height: 30px;
         outline: none;
         border: 2px solid black;

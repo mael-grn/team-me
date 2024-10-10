@@ -1,7 +1,7 @@
 @keyframes intro-right {
     from {
         opacity: 0;
-        transform: translateX(200%);
+        transform: translateX(100%);
     }
     to {
         opacity: 1;
@@ -11,12 +11,12 @@
 
 .main {
     animation: intro-right 1s ease;
-    height: 100vh;
     display: flex;
-    align-items: center;
+    align-items: start;
     justify-content: center;
     gap: 50px;
     flex-direction: row;
+    padding-top: 5%;
 }
 
 .leftDiv {
@@ -45,9 +45,9 @@
     gap: 30px;
     width: calc(100% - 40px);
     padding: 20px;
-    max-height: 50vh;
-    overflow-x: auto;
+
 }
+
 
 .formInputDiv {
     display: flex;
@@ -78,7 +78,6 @@
 }
 
 .leftDiv form button {
-    margin-top: 50px;
     padding: 10px 20px;
     font-size: 20px;
     background-color: var(--primary-color);
@@ -115,9 +114,9 @@
     position: absolute;
     top: 13px;
     margin: 0;
-    width: 100px;
+    width: 200px;
     text-align: center;
-    left: calc(50% - 50px);
+    left: calc(50% - 100px);
     transition: all .3s ease;
 }
 
@@ -133,8 +132,16 @@
 }
 
 @media only screen and (max-width: 800px) {
+    .main {
+        flex-direction: column-reverse;
+        align-items: center;
+        justify-content: start;
+        gap: 0;
+    }
+
     .main img {
-        display: none;
+        width: 70%;
+        height: fit-content;
     }
 
     .leftDiv {

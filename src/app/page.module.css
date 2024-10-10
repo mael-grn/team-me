@@ -1,9 +1,11 @@
 @keyframes forward {
     from {
         transform: translateX(0);
+        opacity: 1;
     }
      to {
-         transform: translateX(-200%);
+         transform: translateX(-100%);
+         opacity: 0;
      }
 }
 
@@ -25,12 +27,17 @@
 @keyframes bg-intro {
     0% {
         opacity: 0;
+        transform: scale(0.8) translateY(-30%);
     }
-    70% {
+    50% {
         opacity: 0;
+        transform: scale(0.8) translateY(-30%);
+
     }
     100% {
         opacity: 1;
+        transform: scale(1) translateY(0);
+
     }
 }
 
@@ -41,19 +48,28 @@
 .heroDiv {
     animation: bg-intro 1.3s ease;
     display: flex;
+    flex-direction: row-reverse;
     justify-content: space-around;
     align-items: center;
     height: calc(100vh);
 }
 
 .heroDiv img {
-    width: 40%;
+    width: 45%;
     transition: all .3s ease;
 }
 
 .heroLeft {
     width: 40%;
     transition: all .5s ease;
+}
+
+.heroLeft h1 {
+    font-size: 50px;
+}
+
+.heroLeft p {
+    font-size: 25px;
 }
 
 .buttonsDiv {
@@ -147,11 +163,11 @@
     }
 
     .heroLeft h1 {
-        font-size: 50px;
+        font-size: 40px;
     }
 
     .heroLeft p {
-        font-size: 25px;
+        font-size: 20px;
     }
 
     .buttonsDiv a {
@@ -160,7 +176,8 @@
 
     .buttonsDiv {
         flex-direction: column;
-        height: 150px;
+        height: 130px;
+        gap: 15px;
     }
 
     .buttonsDiv a:hover {

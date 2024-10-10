@@ -4,7 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7d6cb5a9-8bd4-4902-a802-cbf98e19e7e6" name="Changes" comment="maj styles" />
+    <list default="true" id="7d6cb5a9-8bd4-4902-a802-cbf98e19e7e6" name="Changes" comment="resolution bug">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/login/page.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/login/page.module.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/page.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/page.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/page.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/page.module.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/register/page.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/register/page.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/register/page.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/register/page.module.css" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -139,6 +146,8 @@
       <workItem from="1727712565040" duration="143000" />
       <workItem from="1728428113059" duration="5580000" />
       <workItem from="1728495410922" duration="8728000" />
+      <workItem from="1728527624023" duration="267000" />
+      <workItem from="1728576611113" duration="2517000" />
     </task>
     <task id="LOCAL-00001" summary="ajout gitignore">
       <option name="closed" value="true" />
@@ -324,7 +333,15 @@
       <option name="project" value="LOCAL" />
       <updated>1728527488581</updated>
     </task>
-    <option name="localTasksCounter" value="24" />
+    <task id="LOCAL-00024" summary="resolution bug">
+      <option name="closed" value="true" />
+      <created>1728527879647</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1728527879647</updated>
+    </task>
+    <option name="localTasksCounter" value="25" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -351,6 +368,7 @@
     <MESSAGE value="amelioration page accueil" />
     <MESSAGE value="maj dashboard" />
     <MESSAGE value="maj styles" />
-    <option name="LAST_COMMIT_MESSAGE" value="maj styles" />
+    <MESSAGE value="resolution bug" />
+    <option name="LAST_COMMIT_MESSAGE" value="resolution bug" />
   </component>
 </project>

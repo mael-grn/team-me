@@ -34,7 +34,7 @@ export default function Home() {
         setAnimateForward(true);
         setTimeout(() => {
             router.push(link);
-        }, 900);
+        }, 300);
     }
   return (
     <div className={animateForward && styles.forward}>
