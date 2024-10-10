@@ -6,9 +6,11 @@ import Link from 'next/link';
 import StorageManager from './tools/storageManager';
 import * as motion from "framer-motion/client"
 import {useEffect, useState} from "react";
-import {router} from "next/client";
+import { useRouter } from 'next/navigation'
 
 export default function Home() {
+    const router = useRouter()
+
     const [scrolled, setScrolled] = useState(false);
     const [animateForward, setAnimateForward] = useState(false);
     useEffect(() => {
@@ -31,7 +33,7 @@ export default function Home() {
     const handleLink = (link) => {
         setAnimateForward(true);
         setTimeout(() => {
-            window.location.href = link;
+            router.push(link);
         }, 900);
     }
   return (
