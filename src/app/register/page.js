@@ -3,11 +3,10 @@
 import {useEffect, useState, useRef} from 'react';
 import Image from "next/image";
 import styles from "./page.module.css";
-import StorageManager from "@/app/tools/storageManager";
-import QueryManager from "@/app/tools/QueryManager";
 import Popup from "@/app/components/popup";
 import { Player } from '@lordicon/react';
 import {useRouter} from "next/navigation";
+import {register} from "@/app/utils/queryUtils";
 const ICON = require('/public/icons/loader-white.json');
 
 
@@ -40,7 +39,7 @@ export default function Page() {
         }
 
         setIsLoading(true);
-        QueryManager.Register(name, surname, email, password).then((res) => {
+        register(name, surname, email, password).then((res) => {
             setIsLoading(false);
             if (res.success) {
                 window.location.href = '/dashboard';

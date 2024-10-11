@@ -3,7 +3,6 @@
 import Image from "next/image";
 import styles from "./page.module.css";
 import Link from 'next/link';
-import StorageManager from './tools/storageManager';
 import * as motion from "framer-motion/client"
 import {useEffect, useState} from "react";
 import { useRouter } from 'next/navigation'

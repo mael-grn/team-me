@@ -1,16 +1,17 @@
 "use client";
 
 import {useEffect, useState} from "react";
-import StorageManager from "@/app/tools/storageManager";
 import styles from "@/app/components/navbar.module.css";
 import Link from "next/link";
+import User from "@/app/model/user";
 
 export default function Navbar() {
     const [user, setUser] = useState(null);
 
     useEffect(() => {
-        console.log(StorageManager.getUser())
-        setUser(StorageManager.getUser());
+        User.recoverData().then(user => {
+            setUser(user);
+        });
     }, []);
 
     return (

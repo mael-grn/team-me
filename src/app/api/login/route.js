@@ -5,7 +5,7 @@ export async function POST(req, res) {
         try {
             // extraction des données de la requête
             if (!req.body) {
-                return res.status(400).json({ message: "wrong data with the query. expected email and password" });
+                return res.status(400).json({ message: "wrong cookies with the query. expected email and password" });
             }
             const { email, password } = await req.json();
 

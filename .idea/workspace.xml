@@ -5,12 +5,21 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7d6cb5a9-8bd4-4902-a802-cbf98e19e7e6" name="Changes" comment="resolution bug">
+      <change afterPath="$PROJECT_DIR$/src/app/model/user.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/utils/cookiesUtils.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/login/page.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/login/page.module.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/auth.config.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/middleware.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/api/login/route.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/api/login/route.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/components/navbar.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/components/navbar.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/login/page.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/login/page.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/model/ServerResponse.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/model/serverResponse.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/model/User.js" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/page.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/page.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/page.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/page.module.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/register/page.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/register/page.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/register/page.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/register/page.module.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/tools/QueryManager.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/utils/queryUtils.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/tools/storageManager.js" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -20,8 +29,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="JavaScript File" />
         <option value="CSS File" />
+        <option value="JavaScript File" />
       </list>
     </option>
   </component>
@@ -45,6 +54,9 @@
     &quot;accountId&quot;: &quot;f3434394-40e5-46a8-8091-0fe6cc508cb2&quot;
   }
 }</component>
+  <component name="PackageJsonUpdateNotifier">
+    <dismissed value="$PROJECT_DIR$/package.json" />
+  </component>
   <component name="ProjectColorInfo">{
   &quot;customColor&quot;: &quot;&quot;,
   &quot;associatedIndex&quot;: 5
@@ -82,11 +94,11 @@
       <recent name="C:\Users\maelg\Dev\TeamMe\Client-App\team-me\src\app" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\maelg\Dev\TeamMe\team-me\src\app\model" />
       <recent name="C:\Users\maelg\Dev\TeamMe\team-me\public\assets" />
       <recent name="C:\Users\maelg\Dev\TeamMe\team-me\src\app\dashboard" />
       <recent name="C:\Users\maelg\Dev\TeamMe\team-me\src\app\components" />
       <recent name="C:\Users\maelg\Dev\TeamMe\team-me\src\app\api\login" />
-      <recent name="C:\Users\maelg\Dev\TeamMe\team-me\src\app" />
     </key>
   </component>
   <component name="SharedIndexes">
@@ -148,6 +160,7 @@
       <workItem from="1728495410922" duration="8728000" />
       <workItem from="1728527624023" duration="267000" />
       <workItem from="1728576611113" duration="2517000" />
+      <workItem from="1728661615362" duration="3918000" />
     </task>
     <task id="LOCAL-00001" summary="ajout gitignore">
       <option name="closed" value="true" />
