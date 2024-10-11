@@ -22,7 +22,14 @@ export const getItem = async (key) => {
 }
 
 export const getSecuredItem = async (key) => {
-    return cookies().get(key).value
+    return new Promise((resolve, reject) => {
+        const cookie = cookies().get(key);
+        if (cookie) {
+            resolve(cookie.value);
+        } else {
+            reject(new Error('Cookie not found'));
+        }
+    });
 }
 
 export const removeItem = async (key) => {

@@ -6,6 +6,7 @@ import Link from 'next/link';
 import * as motion from "framer-motion/client"
 import {useEffect, useState} from "react";
 import { useRouter } from 'next/navigation'
+import {loginToken} from "@/app/utils/queryUtils";
 
 export default function Home() {
     const router = useRouter()
@@ -13,6 +14,13 @@ export default function Home() {
     const [scrolled, setScrolled] = useState(false);
     const [animateForward, setAnimateForward] = useState(false);
     useEffect(() => {
+
+        loginToken().then((res) => {
+            if (res.success) {
+                router.push("/dashboard");
+            }
+        });
+
         const handleScroll = () => {
             if (window.scrollY > 50) {
                 setScrolled(true);

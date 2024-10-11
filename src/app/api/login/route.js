@@ -1,5 +1,6 @@
 import { sql } from '@vercel/postgres';
 import bcrypt from 'bcrypt';
+import jwt from 'jsonwebtoken';
 
 export async function POST(req, res) {
         try {
@@ -33,7 +34,9 @@ export async function POST(req, res) {
                     });
                 }
 
-                return new Response(JSON.stringify({ message: 'user credentials are correct', data: user }), {
+                const secretKey = process.env.AUTH_SECRET;
+                const token = jwt.sign({ email: user.email }, secretKey, { expiresIn: '1h' });
+                return new Response(JSON.stringify({ message: 'user credentials are correct', data: user, token: token }), {
                     status: 200,
                     headers: { 'Content-Type': 'application/json' },
                 });
