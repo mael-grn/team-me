@@ -6,12 +6,15 @@ import styles from "./page.module.css";
 import Popup from "@/app/components/popup";
 import { Player } from '@lordicon/react';
 import { sql } from '@vercel/postgres';
-import {login} from "@/app/utils/queryUtils";
+import {login, logout} from "@/app/utils/queryUtils";
+import User from "@/app/model/user";
+import {useRouter} from "next/navigation";
 
 
 const ICON = require('/public/icons/loader-white.json');
 
 export default function Page() {
+    const router = useRouter();
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [title, setTitle] = useState('');
@@ -22,6 +25,11 @@ export default function Page() {
     const playerRef = useRef(null);
 
     useEffect(() => {
+
+        User.recoverData().then((res) => {
+            if (res) router.push("/dashboard");
+        });
+
         if (playerRef.current) {
             playerRef.current.playFromBeginning();
         }

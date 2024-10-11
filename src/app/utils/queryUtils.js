@@ -1,6 +1,6 @@
 import ServerResponse, {ErrorTypes} from "@/app/model/serverResponse";
 import User from "@/app/model/user";
-import {getSecuredItem, setSecuredItem} from "@/app/utils/cookiesUtils";
+import {getSecuredItem, removeItem, setSecuredItem} from "@/app/utils/cookiesUtils";
 
 /**
  * Recover user data from the database.
@@ -9,6 +9,12 @@ import {getSecuredItem, setSecuredItem} from "@/app/utils/cookiesUtils";
  * @param password
  * @returns {Promise<ServerResponse>} With data containing the user object
  */
+
+export const logout = async () => {
+    await removeItem('token');
+    await removeItem('user');
+}
+
 export const login = async (email, password) => {
 
     const res = await fetch('/api/login', {
@@ -27,7 +33,7 @@ export const login = async (email, password) => {
         await setSecuredItem('token', data.token);
         return new ServerResponse(true, null, user);
 
-    } else if (res.status === 404) {
+    } else if (res.status === 404 || res.status === 401) {
         return new ServerResponse(false, ErrorTypes.NOUSER, null);
     } else {
         return new ServerResponse(false, ErrorTypes.SERVER, null);
@@ -61,6 +67,8 @@ export const loginToken = async () => {
         return new ServerResponse(true, null, user);
     } else if (res.status === 404) {
         return new ServerResponse(false, ErrorTypes.NOUSER, null);
+    }else if (res.status === 401) {
+        return new ServerResponse(false, ErrorTypes.WRONGTOKEN, null);
     } else {
         return new ServerResponse(false, ErrorTypes.SERVER, null);
     }

@@ -7,6 +7,7 @@ import Popup from "@/app/components/popup";
 import { Player } from '@lordicon/react';
 import {useRouter} from "next/navigation";
 import {register} from "@/app/utils/queryUtils";
+import User from "@/app/model/user";
 const ICON = require('/public/icons/loader-white.json');
 
 
@@ -24,6 +25,11 @@ export default function Page() {
     const playerRef = useRef(null);
 
     useEffect(() => {
+
+        User.recoverData().then((res) => {
+            if (res) router.push("/dashboard");
+        });
+
         if (playerRef.current) {
             playerRef.current.playFromBeginning();
         }
