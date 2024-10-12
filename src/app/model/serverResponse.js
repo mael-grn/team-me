@@ -4,6 +4,7 @@ export const ErrorTypes = {
     SERVER: 'Une erreur est survenue du coté de notre serveur. Nous travaillons actuellement pour résoudre le problème le plus vite possible.',
     ALREADYUSER: 'Cet utilisateur existe déjà, merci de vous connecter ou d\'utiliser un email différent.',
     WRONGTOKEN: 'Le token est incorrect, merci de vous reconnecter.',
+    UNAUTHORIZED: 'Vous n\'êtes pas autorisé à effectuer cette action.',
 }
 
 export default class ServerResponse {

@@ -8,6 +8,7 @@ import {useEffect, useState} from "react";
 import { useRouter } from 'next/navigation'
 import {loginToken} from "@/app/utils/queryUtils";
 import User from "@/app/model/user";
+import {recoverUserData} from "@/app/controller/userController";
 
 export default function Home() {
     const router = useRouter()
@@ -16,7 +17,7 @@ export default function Home() {
     const [animateForward, setAnimateForward] = useState(false);
     useEffect(() => {
 
-        User.recoverData().then((res) => {
+        recoverUserData().then((res) => {
             if (res) {
                 router.push("/dashboard");
             }

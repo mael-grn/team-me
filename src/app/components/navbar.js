@@ -12,6 +12,7 @@ import validateIcon from "../../../public/icons/check.json";
 import loadingIcon from "../../../public/icons/loader-white.json";
 import {logout} from "@/app/utils/queryUtils";
 import {useRouter} from "next/navigation";
+import {recoverUserData, saveUserData, updateUser} from "@/app/controller/userController";
 
 export default function Navbar() {
     const modifyIcon = require('/public/icons/setting.json');
@@ -32,7 +33,7 @@ export default function Navbar() {
     const emailRef = useRef(null);
 
     useEffect(() => {
-        User.recoverData().then(user => {
+        recoverUserData().then(user => {
             setUser(user);
             setName(user.name);
             setSurname(user.surname);
@@ -47,7 +48,8 @@ export default function Navbar() {
         } else {
             if (name) {
                 user.name = name;
-                await user.saveData();
+                await saveUserData(user);
+                await updateUser(user);
                 setModifyName(false);
             }
         }
@@ -59,7 +61,8 @@ export default function Navbar() {
         } else {
             if (surname) {
                 user.surname = surname;
-                await user.saveData();
+                await saveUserData(user);
+                await updateUser(user);
                 setModifySurname(false);
             }
         }
@@ -71,7 +74,8 @@ export default function Navbar() {
         } else {
             if (email) {
                 user.email = email;
-                await user.saveData();
+                await saveUserData(user);
+                await updateUser(user);
                 setModifyEmail(false);
             }
         }

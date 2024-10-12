@@ -8,6 +8,7 @@ import { Player } from '@lordicon/react';
 import {useRouter} from "next/navigation";
 import {register} from "@/app/utils/queryUtils";
 import User from "@/app/model/user";
+import {recoverUserData} from "@/app/controller/userController";
 const ICON = require('/public/icons/loader-white.json');
 
 
@@ -26,7 +27,7 @@ export default function Page() {
 
     useEffect(() => {
 
-        User.recoverData().then((res) => {
+        recoverUserData().then((res) => {
             if (res) router.push("/dashboard");
         });
 

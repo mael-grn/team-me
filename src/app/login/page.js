@@ -9,6 +9,7 @@ import { sql } from '@vercel/postgres';
 import {login, logout} from "@/app/utils/queryUtils";
 import User from "@/app/model/user";
 import {useRouter} from "next/navigation";
+import {recoverUserData} from "@/app/controller/userController";
 
 
 const ICON = require('/public/icons/loader-white.json');
@@ -25,7 +26,7 @@ export default function Page() {
 
     useEffect(() => {
 
-        User.recoverData().then((res) => {
+        recoverUserData().then((res) => {
             if (res) router.push("/dashboard");
         });
 

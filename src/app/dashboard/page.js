@@ -6,13 +6,14 @@ import VisualSide from "@/app/dashboard/visualSide";
 import styles from "./page.module.css";
 import User from "@/app/model/user";
 import {useRouter} from "next/navigation";
+import {recoverUserData} from "@/app/controller/userController";
 
 export default function Page() {
     const router = useRouter();
     const [showData, setShowData] = useState(false);
 
     useEffect(() => {
-        User.recoverData().then((res) => {
+        recoverUserData().then((res) => {
             if (!res) router.push("/");
         });
     }, []);

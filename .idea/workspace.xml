@@ -4,21 +4,18 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7d6cb5a9-8bd4-4902-a802-cbf98e19e7e6" name="Changes" comment="correction de bug et protection du routing">
-      <change afterPath="$PROJECT_DIR$/public/icons/account.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/icons/check.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/icons/setting.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/icons/user.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/model/test/page.js" afterDir="false" />
+    <list default="true" id="7d6cb5a9-8bd4-4902-a802-cbf98e19e7e6" name="Changes" comment="possibilité de mettre a jour les données de l'utilisateur">
+      <change afterPath="$PROJECT_DIR$/src/app/api/user/update/route.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/controller/userController.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/components/navbar.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/components/navbar.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/components/navbar.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/components/navbar.module.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/dashboard/page.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/dashboard/page.module.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/globals.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/globals.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/dashboard/page.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/dashboard/page.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/login/page.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/login/page.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/login/page.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/login/page.module.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/page.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/page.module.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/register/page.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/register/page.module.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/model/serverResponse.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/model/serverResponse.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/model/user.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/model/user.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/page.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/page.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/register/page.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/register/page.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/utils/queryUtils.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/utils/queryUtils.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -161,7 +158,7 @@
       <workItem from="1728527624023" duration="267000" />
       <workItem from="1728576611113" duration="2517000" />
       <workItem from="1728661615362" duration="6407000" />
-      <workItem from="1728678290548" duration="13966000" />
+      <workItem from="1728678290548" duration="17333000" />
     </task>
     <task id="LOCAL-00001" summary="ajout gitignore">
       <option name="closed" value="true" />
@@ -379,7 +376,15 @@
       <option name="project" value="LOCAL" />
       <updated>1728679627640</updated>
     </task>
-    <option name="localTasksCounter" value="28" />
+    <task id="LOCAL-00028" summary="modif interface et ajout page utilisateur sur dashboard">
+      <option name="closed" value="true" />
+      <created>1728701420113</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1728701420113</updated>
+    </task>
+    <option name="localTasksCounter" value="29" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -410,6 +415,8 @@
     <MESSAGE value="maj methode de connexion" />
     <MESSAGE value="ajout du jwt" />
     <MESSAGE value="correction de bug et protection du routing" />
-    <option name="LAST_COMMIT_MESSAGE" value="correction de bug et protection du routing" />
+    <MESSAGE value="modif interface et ajout page utilisateur sur dashboard" />
+    <MESSAGE value="possibilité de mettre a jour les données de l'utilisateur" />
+    <option name="LAST_COMMIT_MESSAGE" value="possibilité de mettre a jour les données de l'utilisateur" />
   </component>
 </project>
