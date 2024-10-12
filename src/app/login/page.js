@@ -18,7 +18,6 @@ export default function Page() {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [title, setTitle] = useState('');
-
     const [message, setMessage] = useState('');
     const [isLoading, setIsLoading] = useState(false);
 

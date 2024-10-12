@@ -84,7 +84,8 @@
     border: none;
     border-radius: 10px;
     cursor: pointer;
-    color: white;
+    font-family: inherit;
+    font-weight: bold;
     transition: all .3s ease;
     box-shadow: 0 0 0  black;
     height: 50px;

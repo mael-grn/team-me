@@ -82,7 +82,7 @@
 .buttonsDiv a {
     padding: 0 20px;
     font-size: 25px;
-    background-color: var(--primary-color);
+
     border: none;
     display: flex;
     justify-content: center;
@@ -95,16 +95,17 @@
     text-align: center;
     user-select: none;
     font-weight: 500;
-    color: white;
     height: 50px;
 }
 
 .startBtn {
     flex: 2;
+    background-color: var(--primary-color);
 }
 
 .loginBtn {
     flex: 1;
+    background-color: var(--yellow);
 }
 
 .buttonsDiv a:hover {
@@ -157,17 +158,17 @@
     }
 
     .heroLeft {
-        width: calc(100% - 40px);
-        padding: 20px;
+        width: calc(100% - 60px);
+        padding: 30px;
         text-align: center;
     }
 
     .heroLeft h1 {
-        font-size: 40px;
+        font-size: 35px;
     }
 
     .heroLeft p {
-        font-size: 20px;
+        font-size: 18px;
     }
 
     .buttonsDiv a {

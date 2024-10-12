@@ -90,3 +90,10 @@
     background-color: white;
     border-radius: 25px;
 }
+
+@media only screen and (max-width: 800px) {
+    .pill {
+        width: 200px;
+        left: 25px;
+    }
+}

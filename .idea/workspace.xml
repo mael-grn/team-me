@@ -4,15 +4,21 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7d6cb5a9-8bd4-4902-a802-cbf98e19e7e6" name="Changes" comment="ajout du jwt">
+    <list default="true" id="7d6cb5a9-8bd4-4902-a802-cbf98e19e7e6" name="Changes" comment="correction de bug et protection du routing">
+      <change afterPath="$PROJECT_DIR$/public/icons/account.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/icons/check.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/icons/setting.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/icons/user.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/model/test/page.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/components/popup.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/components/popup.module.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/dashboard/page.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/dashboard/page.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/components/navbar.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/components/navbar.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/components/navbar.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/components/navbar.module.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/dashboard/page.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/dashboard/page.module.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/globals.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/globals.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/login/page.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/login/page.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/model/serverResponse.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/model/serverResponse.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/page.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/page.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/register/page.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/register/page.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/utils/queryUtils.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/utils/queryUtils.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/login/page.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/login/page.module.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/page.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/page.module.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/register/page.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/register/page.module.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -62,36 +68,37 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/maelg/Dev/TeamMe/team-me/public/assets&quot;,
-    &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;ts.external.directory.path&quot;: &quot;C:\\Users\\maelg\\AppData\\Local\\Programs\\WebStorm\\plugins\\javascript-plugin\\jsLanguageServicesImpl\\external&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "main",
+    "ignore.virus.scanning.warn.message": "true",
+    "last_opened_file_path": "C:/Users/maelg/Dev/TeamMe/team-me/public/icons",
+    "list.type.of.created.stylesheet": "CSS",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "ts.external.directory.path": "C:\\Users\\maelg\\AppData\\Local\\Programs\\WebStorm\\plugins\\javascript-plugin\\jsLanguageServicesImpl\\external",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\maelg\Dev\TeamMe\team-me\public\icons" />
+      <recent name="C:\Users\maelg\Dev\TeamMe\team-me\public" />
       <recent name="C:\Users\maelg\Dev\TeamMe\team-me\public\assets" />
       <recent name="C:\Users\maelg\Dev\TeamMe\team-me" />
-      <recent name="C:\Users\maelg\Dev\TeamMe\team-me\public\icons" />
       <recent name="C:\Users\maelg\Dev\TeamMe\Client-App\team-me\src\app" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\maelg\Dev\TeamMe\team-me\public\icons" />
       <recent name="C:\Users\maelg\Dev\TeamMe\team-me\src\app\model" />
       <recent name="C:\Users\maelg\Dev\TeamMe\team-me\public\assets" />
       <recent name="C:\Users\maelg\Dev\TeamMe\team-me\src\app\dashboard" />
       <recent name="C:\Users\maelg\Dev\TeamMe\team-me\src\app\components" />
-      <recent name="C:\Users\maelg\Dev\TeamMe\team-me\src\app\api\login" />
     </key>
   </component>
   <component name="SharedIndexes">
@@ -154,7 +161,7 @@
       <workItem from="1728527624023" duration="267000" />
       <workItem from="1728576611113" duration="2517000" />
       <workItem from="1728661615362" duration="6407000" />
-      <workItem from="1728678290548" duration="1143000" />
+      <workItem from="1728678290548" duration="13966000" />
     </task>
     <task id="LOCAL-00001" summary="ajout gitignore">
       <option name="closed" value="true" />
@@ -364,7 +371,15 @@
       <option name="project" value="LOCAL" />
       <updated>1728670176360</updated>
     </task>
-    <option name="localTasksCounter" value="27" />
+    <task id="LOCAL-00027" summary="correction de bug et protection du routing">
+      <option name="closed" value="true" />
+      <created>1728679627640</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1728679627640</updated>
+    </task>
+    <option name="localTasksCounter" value="28" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -394,6 +409,7 @@
     <MESSAGE value="resolution bug" />
     <MESSAGE value="maj methode de connexion" />
     <MESSAGE value="ajout du jwt" />
-    <option name="LAST_COMMIT_MESSAGE" value="ajout du jwt" />
+    <MESSAGE value="correction de bug et protection du routing" />
+    <option name="LAST_COMMIT_MESSAGE" value="correction de bug et protection du routing" />
   </component>
 </project>
