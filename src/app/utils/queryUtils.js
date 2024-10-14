@@ -6,8 +6,6 @@ import {saveUserData} from "@/app/controller/userController";
 /**
  * Recover user data from the database.
  * The user will be saved in the cookies.
- * @param email
- * @param password
  * @returns {Promise<ServerResponse>} With data containing the user object
  */
 
@@ -23,7 +21,7 @@ export const login = async (email, password) => {
         headers: {
             'Content-Type': 'application/json',
         },
-        body: JSON.stringify({ email, password }),
+        body: JSON.stringify({email, password}),
     });
 
     if (res.status === 200) {
@@ -45,7 +43,7 @@ export const loginToken = async () => {
 
     let token;
     try {
-         token = await getSecuredItem('token');
+        token = await getSecuredItem('token');
     } catch (e) {
         return new ServerResponse(false, ErrorTypes.NOUSER, null);
     }
@@ -55,7 +53,7 @@ export const loginToken = async () => {
         headers: {
             'Content-Type': 'application/json',
         },
-        body: JSON.stringify({ token }),
+        body: JSON.stringify({token}),
     });
 
     if (res.status === 200) {
@@ -66,7 +64,7 @@ export const loginToken = async () => {
         return new ServerResponse(true, null, user);
     } else if (res.status === 404) {
         return new ServerResponse(false, ErrorTypes.NOUSER, null);
-    }else if (res.status === 401) {
+    } else if (res.status === 401) {
         return new ServerResponse(false, ErrorTypes.WRONGTOKEN, null);
     } else {
         return new ServerResponse(false, ErrorTypes.SERVER, null);

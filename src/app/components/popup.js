@@ -1,5 +1,5 @@
 import styles from "./popup.module.css";
-import {useEffect, useState} from "react";
+import {useState} from "react";
 
 
 export default function Popup({title, text, close}) {

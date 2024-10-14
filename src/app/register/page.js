@@ -53,7 +53,10 @@ export default function Page() {
 
     return (
         <main className={styles.main}>
-            {message && message !== "" && <Popup title={title} text={message} close={() => {setMessage(null); setTitle(null)}} />}
+            {message && message !== "" && <Popup title={title} text={message} close={() => {
+                setMessage(null);
+                setTitle(null)
+            }}/>}
             <div className={styles.leftDiv}>
                 <h1>Prêt ? Partez !</h1>
                 <p>Créez votre compte, et commencez immédatement à utiliser le plein potentiel de Team Me.</p>
@@ -113,7 +116,7 @@ export default function Page() {
                             required
                         />
                     </div>
-                    <button type="submit" className={ "button " + (isLoading ? styles.loading : undefined)}>
+                    <button type="submit" className={"button " + (isLoading ? styles.loading : undefined)}>
                         <LordIcon iconName={"loader-white"} animationType={"loop"}/>
                         <p>Créer mon compte</p>
                     </button>

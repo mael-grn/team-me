@@ -1,4 +1,3 @@
-import {getItem, removeItem, setItem} from "@/app/utils/cookiesUtils";
 
 export default class User {
     constructor(id, name, surname, date_creat, email) {

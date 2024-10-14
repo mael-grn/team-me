@@ -1,6 +1,6 @@
 "use client";
 
-import {useEffect, useRef, useState} from "react";
+import {useEffect, useState} from "react";
 import styles from "@/app/components/navbar.module.css";
 import Link from "next/link";
 
@@ -90,6 +90,7 @@ export default function Navbar() {
                         <div className={styles.resume}>
                             <p>{user.name}</p>
                             <Image
+                                alt={"profile image"}
                                 src="/icons/user.png"
                                 width={1000}
                                 height={1000}
@@ -104,7 +105,8 @@ export default function Navbar() {
                                                onChange={(e) => setName(e.target.value)}
                                                className={modifyName ? styles.modif : undefined}/>
                                         <a onClick={modifyNameClick}>
-                                            <LordIcon iconName={modifyName ? "check" : "setting"} animationType={"hover"}/>
+                                            <LordIcon iconName={modifyName ? "check" : "setting"}
+                                                      animationType={"hover"}/>
                                         </a>
                                     </div>
                                     <div>
@@ -113,7 +115,8 @@ export default function Navbar() {
                                                onChange={(e) => setSurname(e.target.value)}
                                                className={modifySurname ? styles.modif : undefined}/>
                                         <a onClick={modifySurnameClick}>
-                                            <LordIcon iconName={modifySurname ? "check" : "setting"} animationType={"hover"}/>
+                                            <LordIcon iconName={modifySurname ? "check" : "setting"}
+                                                      animationType={"hover"}/>
 
                                         </a>
                                     </div>
@@ -122,8 +125,9 @@ export default function Navbar() {
                                         <input readonly={modifyEmail ? undefined : "true"} value={email}
                                                onChange={(e) => setEmail(e.target.value)}
                                                className={modifyEmail ? styles.modif : undefined}/>
-                                        <a onClick={modifyEmailClick} >
-                                            <LordIcon iconName={modifyEmail ? "check" : "setting"} animationType={"hover"}/>
+                                        <a onClick={modifyEmailClick}>
+                                            <LordIcon iconName={modifyEmail ? "check" : "setting"}
+                                                      animationType={"hover"}/>
 
                                         </a>
                                     </div>

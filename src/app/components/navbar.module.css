@@ -12,7 +12,7 @@
         transform: scale(0);
     }
     70% {
-    transform: scale(1.2);
+        transform: scale(1.2);
     }
     100% {
         transform: scale(1);
@@ -45,7 +45,7 @@
     overflow: hidden;
     border-radius: 50px;
     transition: all .3s ease;
-    cursor:pointer;
+    cursor: pointer;
 }
 
 .connection {
@@ -101,17 +101,14 @@
 }
 
 
-
-
-
 .showUserData {
     border-radius: 30px;
     height: calc(100% - 90px);
     cursor: auto;
     flex-direction: column;
     padding: 30px;
-    justify-content: start;
-    align-items: start;
+    justify-content: flex-start;
+    align-items: flex-start;
     gap: 50px;
     background-color: var(--background-color);
 }
@@ -119,7 +116,7 @@
 .showUserData .resume {
     flex-direction: row-reverse;
     height: fit-content;
-    justify-content: start;
+    justify-content: flex-start;
 }
 
 .showUserData .resume img {
@@ -129,8 +126,8 @@
 .showUserData .userData {
     display: flex;
     flex-direction: column;
-    justify-content: start;
-    align-items: start;
+    justify-content: flex-start;
+    align-items: flex-start;
     gap: 20px;
     flex: 2;
 }
@@ -139,7 +136,7 @@
     width: 100%;
     display: flex;
     flex-direction: row;
-    justify-content: start;
+    justify-content: flex-start;
     align-items: center;
     gap: 10px;
 }
@@ -192,26 +189,6 @@
 
 .closeBtn {
     margin-top: auto;
-    background-color: var(--primary-color);
-    box-shadow: 0 0 0 var(--secondary-color);
-}
-
-.logoutBtn {
-
-    background-color: var(--red);
-    box-shadow: 0 0 0 var(--red);
-}
-
-.logoutBtn:hover {
-    transform: scale(1.05);
-    background-color: var(--red);
-    box-shadow: 0 0 20px var(--red);
-}
-
-.closeBtn:hover {
-    transform: scale(1.05);
-    background-color: var(--secondary-color);
-    box-shadow: 0 0 20px var(--secondary-color);
 }
 
 .showUserData .userData div input.modif {
@@ -223,6 +200,7 @@
     .nav:not(.showUserData) {
         width: 60px;
     }
+
     .nav:not(.showUserData) .resume p {
         display: none;
 
@@ -231,7 +209,7 @@
     .nav:not(.showUserData) .resume img {
         margin-right: 0;
     }
-    
+
     .showUserData .resume img {
         width: 70px;
         height: 70px;
@@ -272,7 +250,6 @@
     .showUserData .userData > div a {
         margin: 0;
         width: 100%;
-        background-color: var(--yellow);
     }
 
     .closeBtn, .logoutBtn {

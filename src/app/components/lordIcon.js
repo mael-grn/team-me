@@ -3,7 +3,7 @@
 import {useEffect, useRef, useState} from "react";
 import {Player} from "@lordicon/react";
 
-export default function LordIcon({iconName, animationType='none'}) {
+export default function LordIcon({iconName, animationType = 'none'}) {
 
     const playerRef = useRef(null);
     const ICON = require(`/public/icons/${iconName}.json`);
@@ -18,11 +18,15 @@ export default function LordIcon({iconName, animationType='none'}) {
     }, [])
 
     return (
-        <span onMouseEnter={() => {if (animationType === "hover") playerRef.current.playFromBeginning()}}>
+        <span onMouseEnter={() => {
+            if (animationType === "hover") playerRef.current.playFromBeginning()
+        }}>
             <Player
                 ref={playerRef}
-                icon={ ICON }
-                onComplete={() => {if (isLoop) playerRef.current?.playFromBeginning()}}
+                icon={ICON}
+                onComplete={() => {
+                    if (isLoop) playerRef.current?.playFromBeginning()
+                }}
             />
         </span>
     );

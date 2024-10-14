@@ -1,12 +1,10 @@
 "use client";
 
-import {useEffect, useState, useRef} from 'react';
+import {useEffect, useState} from 'react';
 import Image from "next/image";
 import styles from "./page.module.css";
 import Popup from "@/app/components/popup";
-import { sql } from '@vercel/postgres';
-import {login, logout} from "@/app/utils/queryUtils";
-import User from "@/app/model/user";
+import {login} from "@/app/utils/queryUtils";
 import {useRouter} from "next/navigation";
 import {recoverUserData} from "@/app/controller/userController";
 import LordIcon from "@/app/components/lordIcon";
@@ -44,7 +42,10 @@ export default function Page() {
 
     return (
         <main className={styles.main}>
-            {message && message !== "" && <Popup title={title} text={message} close={() => {setMessage(null); setTitle(null)}} />}
+            {message && message !== "" && <Popup title={title} text={message} close={() => {
+                setMessage(null);
+                setTitle(null)
+            }}/>}
             <div className={styles.leftDiv}>
                 <h1>Connexion</h1>
                 <form onSubmit={handleSubmit}>

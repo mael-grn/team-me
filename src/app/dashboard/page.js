@@ -4,7 +4,6 @@ import {useEffect, useState} from "react";
 import DataSide from "@/app/dashboard/dataSide";
 import VisualSide from "@/app/dashboard/visualSide";
 import styles from "./page.module.css";
-import User from "@/app/model/user";
 import {useRouter} from "next/navigation";
 import {recoverUserData} from "@/app/controller/userController";
 
