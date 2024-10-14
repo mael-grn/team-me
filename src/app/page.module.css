@@ -21,6 +21,25 @@
     }
 }
 
+@keyframes appname-intro-mobile {
+    0% {
+        transform: translate(0, calc(50vh - 50px)) scale(0);
+        left: calc(50% - 65px);
+    }
+    50% {
+        transform: translate(0, calc(50vh - 50px)) scale(1);
+        left: calc(50% - 65px);
+    }
+    50% {
+        transform: translate(0, calc(50vh - 50px));
+        left: calc(50% - 65px);
+    }
+    100% {
+        transform: translate(0, 0);
+        left: 25px;
+    }
+}
+
 @keyframes bg-intro {
     0% {
         opacity: 0;
@@ -137,11 +156,15 @@
 @media only screen and (max-width: 800px) {
 
     .appname {
-        font-size: 30px;
-        left: 15px;
+        animation: appname-intro-mobile 1s ease;
+        padding: 0;
         text-align: start;
-        width: fit-content;
+        font-size: 30px;
+        left: 25px;
+        top: 30px;
+        width: 130px;
         border: none;
+
     }
 
     .scrolled .appname {

@@ -9,22 +9,6 @@
     --color-hover: #e9d8a6;
 }
 
-@keyframes forward {
-    from {
-        transform: translateX(0);
-        opacity: 1;
-    }
-    to {
-        transform: translateX(-100%);
-        opacity: 0;
-    }
-}
-
-.forward {
-    animation: forward 1s ease;
-    transform: translateX(-200%);
-}
-
 * {
     transition: all .3s ease;
 }
@@ -36,7 +20,7 @@
     width: fit-content;
     justify-content: center;
     align-items: center;
-    border-radius: 25px;
+    border-radius: 50px;
     cursor: pointer;
     text-decoration: none;
     text-align: center;

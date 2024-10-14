@@ -10,11 +10,13 @@ import {logout} from "@/app/utils/queryUtils";
 import {useRouter} from "next/navigation";
 import {recoverUserData, saveUserData, updateUser} from "@/app/controller/userController";
 import LordIcon from "@/app/components/lordIcon";
+import Popup from "@/app/components/popup";
 
 export default function Navbar() {
     const router = useRouter();
 
     const [user, setUser] = useState(null);
+    const [bgClosing, setBgClosing] = useState(false);
     const [showUserData, setShowUserData] = useState(false);
     const [modifyName, setModifyName] = useState(false);
     const [modifySurname, setModifySurname] = useState(false);
@@ -23,16 +25,35 @@ export default function Navbar() {
     const [surname, setSurname] = useState('');
     const [email, setEmail] = useState('');
 
+    const [title, setTitle] = useState('');
+    const [message, setMessage] = useState('');
 
     useEffect(() => {
-        recoverUserData().then(user => {
-            if (!user) return;
-            setUser(user);
-            setName(user.name);
-            setSurname(user.surname);
-            setEmail(user.email);
-        });
+        const handleUserUpdate = () => {
+            recoverUserData().then(user => {
+                if (!user) {
+                    setUser(null);
+                    setName('');
+                    setSurname('');
+                    setEmail('');
+                } else {
+                    setUser(user);
+                    setName(user.name);
+                    setSurname(user.surname);
+                    setEmail(user.email);
+                }
+            });
+        };
 
+        handleUserUpdate();
+
+        // Écoute l'événement personnalisé
+        window.addEventListener('userUpdate', handleUserUpdate);
+
+        // Nettoyer l'écouteur lors du démontage du composant
+        return () => {
+            window.removeEventListener('userUpdate', handleUserUpdate);
+        };
     }, []);
 
     const modifyNameClick = async () => {
@@ -40,9 +61,15 @@ export default function Navbar() {
             setModifyName(true);
         } else {
             if (name) {
-                user.name = name;
-                await saveUserData(user);
-                await updateUser(user);
+                updateUser(user).then( async (res) => {
+                    if (!res?.success) {
+                        setTitle("Erreur");
+                        setMessage("Une erreur est survenue lors de la modification de votre prénom.");
+                    } else {
+                        user.name = name;
+                        await saveUserData(user);
+                    }
+                });
                 setModifyName(false);
             }
         }
@@ -53,9 +80,15 @@ export default function Navbar() {
             setModifySurname(true);
         } else {
             if (surname) {
-                user.surname = surname;
-                await saveUserData(user);
-                await updateUser(user);
+                updateUser(user).then( async (res) => {
+                    if (!res?.success) {
+                        setTitle("Erreur");
+                        setMessage("Une erreur est survenue lors de la modification de votre nom.");
+                    } else {
+                        user.surname = surname;
+                        await saveUserData(user);
+                    }
+                });
                 setModifySurname(false);
             }
         }
@@ -66,9 +99,15 @@ export default function Navbar() {
             setModifyEmail(true);
         } else {
             if (email) {
-                user.email = email;
-                await saveUserData(user);
-                await updateUser(user);
+                updateUser(user).then( async (res) => {
+                    if (!res?.success) {
+                        setTitle("Erreur");
+                        setMessage("Une erreur est survenue lors de la modification de votre email.");
+                    } else {
+                        user.email = email;
+                        await saveUserData(user);
+                    }
+                });
                 setModifyEmail(false);
             }
         }
@@ -76,17 +115,37 @@ export default function Navbar() {
 
     const logoutBtn = async () => {
         await logout();
+        closeShowUserData()
+        window.dispatchEvent(new Event('userUpdate'));
         router.push('/');
+    }
+
+    const closeShowUserData = () => {
+        setBgClosing(true);
+        setShowUserData(false);
+        setTimeout(() => {
+            setBgClosing(false);
+        }, 400);
+
     }
 
     return (
         <nav>
+            <span
+                className={`${styles.navBackground} 
+                    ${bgClosing ? styles.navBackgroundClosing : ""} 
+                    ${showUserData ? styles.navBackgroundVisible : ""}`}/>
+            {message && message !== "" && <Popup title={title} text={message} close={() => {
+                setMessage(null);
+                setTitle(null)
+            }}/>}
             {
                 user ?
                     <div className={`${styles.nav} ${showUserData ? styles.showUserData : ''}`}
                          onClick={() => {
                              if (!showUserData) setShowUserData(true)
                          }}>
+
                         <div className={styles.resume}>
                             <p>{user.name}</p>
                             <Image
@@ -100,7 +159,7 @@ export default function Navbar() {
                             showUserData ?
                                 <div className={styles.userData}>
                                     <div>
-                                        <p>Prénom :</p>
+                                        <p>Prénom</p>
                                         <input readonly={modifyName ? undefined : "true"} value={name}
                                                onChange={(e) => setName(e.target.value)}
                                                className={modifyName ? styles.modif : undefined}/>
@@ -110,7 +169,7 @@ export default function Navbar() {
                                         </a>
                                     </div>
                                     <div>
-                                        <p>nom :</p>
+                                        <p>Nom</p>
                                         <input readonly={modifySurname ? undefined : "true"} value={surname}
                                                onChange={(e) => setSurname(e.target.value)}
                                                className={modifySurname ? styles.modif : undefined}/>
@@ -121,7 +180,7 @@ export default function Navbar() {
                                         </a>
                                     </div>
                                     <div>
-                                        <p>email :</p>
+                                        <p>Email</p>
                                         <input readonly={modifyEmail ? undefined : "true"} value={email}
                                                onChange={(e) => setEmail(e.target.value)}
                                                className={modifyEmail ? styles.modif : undefined}/>
@@ -131,9 +190,9 @@ export default function Navbar() {
 
                                         </a>
                                     </div>
-                                    <a className={styles.closeBtn}
-                                       onClick={() => setShowUserData(false)}>Fermer</a>
-                                    <a className={styles.logoutBtn}
+                                    <a className={styles.closeBtn + " button"}
+                                       onClick={closeShowUserData}>Fermer</a>
+                                    <a className={styles.logoutBtn + " button"}
                                        onClick={logoutBtn}>Déconnexion</a>
 
                                 </div>

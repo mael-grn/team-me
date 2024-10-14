@@ -31,6 +31,7 @@ export default function Page() {
         login(email, password).then((res) => {
             setIsLoading(false);
             if (res.success) {
+                window.dispatchEvent(new Event('userUpdate'));
                 router.push("/dashboard");
             } else {
                 setTitle('Erreur');

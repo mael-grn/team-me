@@ -23,8 +23,8 @@ export default function Page() {
             <div className={styles.container}>
                 <div className={styles.pill}>
                     <span className={showData ? styles.left : styles.right}/>
-                    <a onClick={() => setShowData(true)}>Données</a>
-                    <a onClick={() => setShowData(false)}>Visuel 3D</a>
+                    <a onClick={() => setShowData(true)} className={showData ? styles.selected : ""}>Données</a>
+                    <a onClick={() => setShowData(false)} className={!showData ? styles.selected : ""}>Visuel 3D</a>
                 </div>
                 <div className={styles.content}>
                     {showData ? <DataSide/> : <VisualSide/>}

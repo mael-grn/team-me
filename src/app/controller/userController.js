@@ -47,7 +47,7 @@ export const deleteUserData = async () => {
  * @returns {Promise<void>}
  */
 export const updateUser = async (user) => {
-    let res = await updateEntity('user', user);
+    return await updateEntity('user', user);
 }
 
 /**
@@ -56,5 +56,5 @@ export const updateUser = async (user) => {
  * @returns {Promise<void>}
  */
 export const deleteUser = async (user) => {
-    let res = await deleteEntity ('user', user);
+    return await deleteEntity ('user', user);
 }

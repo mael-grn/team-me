@@ -5,12 +5,12 @@ import styles from "./page.module.css";
 import {useEffect, useState} from "react";
 import {useRouter} from 'next/navigation'
 import {recoverUserData} from "@/app/controller/userController";
+import Link from "next/link";
 
 export default function Home() {
     const router = useRouter()
 
     const [scrolled, setScrolled] = useState(false);
-    const [animateForward, setAnimateForward] = useState(false);
     useEffect(() => {
 
         recoverUserData().then((res) => {
@@ -34,14 +34,9 @@ export default function Home() {
         };
     }, []);
 
-    const handleLink = (link) => {
-        setAnimateForward(true);
-        setTimeout(() => {
-            router.push(link);
-        }, 300);
-    }
+
     return (
-        <div className={animateForward && "forward"}>
+        <div>
             <main className={scrolled && styles.scrolled}>
                 <p className={styles.appname}>Team Me</p>
                 <div className={styles.heroDiv}>
@@ -63,7 +58,7 @@ export default function Home() {
 
                     </div>
                     <div className={styles.buttonsDiv}>
-                        <a onClick={() => handleLink("/register")} className={"button"}>Commencer</a>
+                        <Link href={"/register"} className={"button"}>Commencer</Link>
                         <p>Pour entrer dans une nouvelle dimension, il ne suffit que d’un seul clique.</p>
                     </div>
 

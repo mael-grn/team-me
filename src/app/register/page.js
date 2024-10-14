@@ -42,6 +42,7 @@ export default function Page() {
         register(name, surname, email, password).then((res) => {
             setIsLoading(false);
             if (res.success) {
+                window.dispatchEvent(new Event('userUpdate'));
                 router.push("/dashboard");
             } else {
                 setTitle('Erreur');

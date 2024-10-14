@@ -4,22 +4,20 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7d6cb5a9-8bd4-4902-a802-cbf98e19e7e6" name="Changes" comment="correction bug">
+    <list default="true" id="7d6cb5a9-8bd4-4902-a802-cbf98e19e7e6" name="Changes" comment="amélioration qualité de code">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/components/lordIcon.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/components/lordIcon.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/components/navbar.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/components/navbar.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/components/navbar.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/components/navbar.module.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/components/popup.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/components/popup.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/components/popup.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/components/popup.module.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/controller/userController.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/controller/userController.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/dashboard/global.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/dashboard/layout.js" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/dashboard/page.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/dashboard/page.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/layout.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/layout.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/dashboard/page.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/dashboard/page.module.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/globals.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/globals.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/login/page.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/login/page.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/model/test/page.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/model/user.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/model/user.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/page.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/page.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/page.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/page.module.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/register/page.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/register/page.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/register/page.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/register/page.module.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/utils/queryUtils.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/utils/queryUtils.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -165,7 +163,7 @@
       <workItem from="1728661615362" duration="6407000" />
       <workItem from="1728678290548" duration="17368000" />
       <workItem from="1728845581275" duration="1577000" />
-      <workItem from="1728853861748" duration="10376000" />
+      <workItem from="1728853861748" duration="16609000" />
     </task>
     <task id="LOCAL-00001" summary="ajout gitignore">
       <option name="closed" value="true" />
@@ -423,7 +421,15 @@
       <option name="project" value="LOCAL" />
       <updated>1728913868804</updated>
     </task>
-    <option name="localTasksCounter" value="33" />
+    <task id="LOCAL-00033" summary="amélioration qualité de code">
+      <option name="closed" value="true" />
+      <created>1728914672225</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1728914672225</updated>
+    </task>
+    <option name="localTasksCounter" value="34" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -431,7 +437,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="test reparation push" />
     <MESSAGE value="ajout de la base de la page d'accueil et de connexion" />
     <MESSAGE value="Changement racine du projet et page de connexion / creation de compte" />
     <MESSAGE value="correction de bug de build" />
@@ -456,6 +461,7 @@
     <MESSAGE value="possibilité de mettre a jour les données de l'utilisateur" />
     <MESSAGE value="grosse maj de style" />
     <MESSAGE value="correction bug" />
-    <option name="LAST_COMMIT_MESSAGE" value="correction bug" />
+    <MESSAGE value="amélioration qualité de code" />
+    <option name="LAST_COMMIT_MESSAGE" value="amélioration qualité de code" />
   </component>
 </project>
