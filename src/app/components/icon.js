@@ -1,5 +1,6 @@
+"use client";
+
 import {useEffect, useRef, useState} from "react";
-import ICON from "../../../public/icons/loader-white.json";
 import {Player} from "@lordicon/react";
 
 export default function Icon({iconName, animationType='none'}) {
