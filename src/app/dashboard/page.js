@@ -11,12 +11,6 @@ export default function Page() {
     const router = useRouter();
     const [showData, setShowData] = useState(false);
 
-    useEffect(() => {
-        recoverUserData().then((res) => {
-            if (!res) router.push("/");
-        });
-    }, []);
-
     return (
 
         <main>

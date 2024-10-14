@@ -4,7 +4,7 @@ import Image from "next/image";
 import styles from "./page.module.css";
 import {useEffect, useState} from "react";
 import {useRouter} from 'next/navigation'
-import {recoverUserData} from "@/app/controller/userController";
+import {authenticateUser, recoverUserData} from "@/app/controller/userController";
 import Link from "next/link";
 
 export default function Home() {
@@ -13,8 +13,8 @@ export default function Home() {
     const [scrolled, setScrolled] = useState(false);
     useEffect(() => {
 
-        recoverUserData().then((res) => {
-            if (res) {
+        authenticateUser().then((res) => {
+            if (res.success) {
                 router.push("/dashboard");
             }
         });

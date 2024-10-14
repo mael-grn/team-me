@@ -1,6 +1,6 @@
 import {getItem, removeItem, setItem} from "@/app/utils/cookiesUtils";
 import User from "@/app/model/user";
-import {deleteEntity, updateEntity} from "@/app/utils/queryUtils";
+import {deleteEntity, loginToken, updateEntity} from "@/app/utils/queryUtils";
 
 /**
  * Format the name of the user to capitalize the first letter of the name and surname
@@ -22,6 +22,8 @@ export const saveUserData = async (user) => {
 /**
  * Recover the user data from the secured cookie on the server
  * return null if the cookie is not found
+ * ATTENTION : even if the user is found and returned, it is not guaranteed that the user is authenticated.
+ * To authenticate the user, you must use the authenticateUser function
  * @returns {Promise<User>}
  */
 export const recoverUserData = async () => {
@@ -32,6 +34,11 @@ export const recoverUserData = async () => {
         return null;
     }
     return new User(user.id, user.name, user.surname, user.date_creat, user.email);
+}
+
+export const authenticateUser = async () => {
+    let res = await loginToken();
+    return res.success;
 }
 
 /**

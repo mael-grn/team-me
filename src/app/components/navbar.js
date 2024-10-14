@@ -61,12 +61,12 @@ export default function Navbar() {
             setModifyName(true);
         } else {
             if (name) {
+                user.name = name;
                 updateUser(user).then( async (res) => {
                     if (!res?.success) {
                         setTitle("Erreur");
                         setMessage("Une erreur est survenue lors de la modification de votre prénom.");
                     } else {
-                        user.name = name;
                         await saveUserData(user);
                     }
                 });
@@ -80,12 +80,12 @@ export default function Navbar() {
             setModifySurname(true);
         } else {
             if (surname) {
+                user.surname = surname;
                 updateUser(user).then( async (res) => {
                     if (!res?.success) {
                         setTitle("Erreur");
                         setMessage("Une erreur est survenue lors de la modification de votre nom.");
                     } else {
-                        user.surname = surname;
                         await saveUserData(user);
                     }
                 });
@@ -99,12 +99,12 @@ export default function Navbar() {
             setModifyEmail(true);
         } else {
             if (email) {
+                user.email = email;
                 updateUser(user).then( async (res) => {
                     if (!res?.success) {
                         setTitle("Erreur");
                         setMessage("Une erreur est survenue lors de la modification de votre email.");
                     } else {
-                        user.email = email;
                         await saveUserData(user);
                     }
                 });
