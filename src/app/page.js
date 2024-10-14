@@ -46,25 +46,32 @@ export default function Home() {
         }, 300);
     }
   return (
-    <div className={animateForward && styles.forward}>
+    <div className={animateForward && "forward"}>
         <main className={scrolled && styles.scrolled}>
             <p className={styles.appname}>Team Me</p>
             <div className={styles.heroDiv}>
-                <div className={styles.heroLeft}>
-                    <h1>Découvrez une toute nouvelle manière de gérer vos équipes</h1>
-                    <p>Etes-vous prêt pour embarquer dans une toute nouvelle manière de manager vos équipes sportives
-                        ?</p>
-                    <div className={styles.buttonsDiv}>
-                        <a onClick={() => handleLink("/register")} className={styles.startBtn}>Commencer</a>
-                        <a onClick={() => handleLink("/login")} className={styles.loginBtn}>Connexion</a>
+                <div className={styles.mainHeroDiv}>
+                    <div className={styles.heroImageDiv}>
+                        <Image
+                            src="/assets/running.svg"
+                            alt="Hero"
+                            width={1000}
+                            height={1000}
+                        />
                     </div>
+                    <div className={styles.heroTextDiv}>
+                        <h1>Une nouvelle dimension.</h1>
+                        <p>Etes-vous prêt pour embarquer dans une toute nouvelle manière de manager vos équipes
+                            sportives
+                            ?</p>
+                    </div>
+
                 </div>
-                <Image
-                    src="/assets/running.svg"
-                    alt="Hero"
-                    width={1000}
-                    height={1000}
-                />
+                <div className={styles.buttonsDiv}>
+                    <a onClick={() => handleLink("/register")} className={"button"}>Commencer</a>
+                    <p>Pour entrer dans une nouvelle dimension, il ne suffit que d’un seul clique.</p>
+                </div>
+
             </div>
 
         </main>

@@ -46,7 +46,14 @@
     border-radius: 50px;
     transition: all .3s ease;
     cursor:pointer;
-    box-shadow: 0 0 0 var(--secondary-color);
+}
+
+.connection {
+    position: fixed;
+    top: 15px;
+    right: 15px;
+    background-color: var(--text-color) !important;
+    color: white !important;
 }
 
 .resume {
@@ -77,9 +84,8 @@
 }
 
 .nav:hover:not(.showUserData) {
-    background-color: var(--secondary-color);
+    background-color: var(--color-hover);
     transform: scale(1.1);
-    box-shadow: 0 0 20px var(--secondary-color);
 }
 
 .nav:hover:not(.showUserData) .resume img {

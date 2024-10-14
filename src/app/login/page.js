@@ -4,15 +4,12 @@ import {useEffect, useState, useRef} from 'react';
 import Image from "next/image";
 import styles from "./page.module.css";
 import Popup from "@/app/components/popup";
-import { Player } from '@lordicon/react';
 import { sql } from '@vercel/postgres';
 import {login, logout} from "@/app/utils/queryUtils";
 import User from "@/app/model/user";
 import {useRouter} from "next/navigation";
 import {recoverUserData} from "@/app/controller/userController";
-
-
-const ICON = require('/public/icons/loader-white.json');
+import Icon from "@/app/components/icon";
 
 export default function Page() {
     const router = useRouter();
@@ -22,17 +19,11 @@ export default function Page() {
     const [message, setMessage] = useState('');
     const [isLoading, setIsLoading] = useState(false);
 
-    const playerRef = useRef(null);
-
     useEffect(() => {
 
         recoverUserData().then((res) => {
             if (res) router.push("/dashboard");
         });
-
-        if (playerRef.current) {
-            playerRef.current.playFromBeginning();
-        }
     }, [])
 
     const handleSubmit = async (e) => {
@@ -42,7 +33,7 @@ export default function Page() {
         login(email, password).then((res) => {
             setIsLoading(false);
             if (res.success) {
-                window.location.href = '/dashboard';
+                router.push("/dashboard");
             } else {
                 setTitle('Erreur');
                 setMessage(res.errorType);
@@ -79,12 +70,8 @@ export default function Page() {
                             required
                         />
                     </div>
-                    <button type="submit" className={isLoading && styles.loading}>
-                        <Player
-                            ref={playerRef}
-                            icon={ ICON }
-                            onComplete={() => playerRef.current?.playFromBeginning()}
-                        />
+                    <button type="submit" className={"button " + (isLoading ? styles.loading : undefined)}>
+                        <Icon iconName={"loader-white"} animationType={"loop"}/>
                         <p>Connexion</p>
                     </button>
                 </form>

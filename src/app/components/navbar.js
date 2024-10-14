@@ -3,20 +3,15 @@
 import {useEffect, useRef, useState} from "react";
 import styles from "@/app/components/navbar.module.css";
 import Link from "next/link";
-import User from "@/app/model/user";
-import {Player} from "@lordicon/react";
-import ICON from "../../../public/icons/loader-white.json";
+
 import Image from "next/image";
-import modifyIcon from "../../../public/icons/account.json";
-import validateIcon from "../../../public/icons/check.json";
-import loadingIcon from "../../../public/icons/loader-white.json";
+
 import {logout} from "@/app/utils/queryUtils";
 import {useRouter} from "next/navigation";
 import {recoverUserData, saveUserData, updateUser} from "@/app/controller/userController";
+import Icon from "@/app/components/icon";
 
 export default function Navbar() {
-    const modifyIcon = require('/public/icons/setting.json');
-    const validateIcon = require('/public/icons/check.json');
     const router = useRouter();
 
     const [user, setUser] = useState(null);
@@ -28,12 +23,10 @@ export default function Navbar() {
     const [surname, setSurname] = useState('');
     const [email, setEmail] = useState('');
 
-    const nameRef = useRef(null);
-    const surNameRef = useRef(null);
-    const emailRef = useRef(null);
 
     useEffect(() => {
         recoverUserData().then(user => {
+            if (!user) return;
             setUser(user);
             setName(user.name);
             setSurname(user.surname);
@@ -110,11 +103,8 @@ export default function Navbar() {
                                         <input readonly={modifyName ? undefined : "true"} value={name}
                                                onChange={(e) => setName(e.target.value)}
                                                className={modifyName ? styles.modif : undefined}/>
-                                        <a onClick={modifyNameClick} onMouseEnter={() => nameRef.current.playFromBeginning()}>
-                                            <Player
-                                                icon={modifyName ? validateIcon : modifyIcon}
-                                                ref={nameRef}
-                                            />
+                                        <a onClick={modifyNameClick}>
+                                            <Icon iconName={modifyName ? "check" : "setting"} animationType={"hover"}/>
                                         </a>
                                     </div>
                                     <div>
@@ -122,12 +112,9 @@ export default function Navbar() {
                                         <input readonly={modifySurname ? undefined : "true"} value={surname}
                                                onChange={(e) => setSurname(e.target.value)}
                                                className={modifySurname ? styles.modif : undefined}/>
-                                        <a onClick={modifySurnameClick} onMouseEnter={() => surNameRef.current.playFromBeginning()}>
-                                            <Player
-                                                ref={surNameRef}
-                                                icon={modifySurname ? validateIcon : modifyIcon}
+                                        <a onClick={modifySurnameClick}>
+                                            <Icon iconName={modifySurname ? "check" : "setting"} animationType={"hover"}/>
 
-                                            />
                                         </a>
                                     </div>
                                     <div>
@@ -135,11 +122,9 @@ export default function Navbar() {
                                         <input readonly={modifyEmail ? undefined : "true"} value={email}
                                                onChange={(e) => setEmail(e.target.value)}
                                                className={modifyEmail ? styles.modif : undefined}/>
-                                        <a onClick={modifyEmailClick} onMouseEnter={() => emailRef.current.playFromBeginning()}>
-                                            <Player
-                                                ref={emailRef}
-                                                icon={modifyEmail ? validateIcon : modifyIcon}
-                                            />
+                                        <a onClick={modifyEmailClick} >
+                                            <Icon iconName={modifyEmail ? "check" : "setting"} animationType={"hover"}/>
+
                                         </a>
                                     </div>
                                     <a className={styles.closeBtn}
@@ -153,9 +138,7 @@ export default function Navbar() {
 
                     </div>
                     :
-                    <div className={styles.nav}>
-                        <Link href={"/login"}>Connexion</Link>
-                    </div>
+                    <Link href={"/login"} className={"button " + styles.connection}>Connexion</Link>
 
             }
 

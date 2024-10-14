@@ -1,26 +1,25 @@
-@keyframes forward {
-    from {
-        transform: translateX(0);
-        opacity: 1;
-    }
-     to {
-         transform: translateX(-100%);
-         opacity: 0;
-     }
-}
+
 
 @keyframes appname-intro {
     0% {
         transform: translateY(calc(50vh - 100px)) scale(0);
+        border: 0 solid black;
+        font-size: 40px;
     }
     50% {
         transform: translateY(calc(50vh - 100px)) scale(1.2);
+        border: 0 solid black;
+        font-size: 40px;
     }
     50% {
         transform: translateY(calc(50vh - 100px)) scale(1.2);
+        border: 0 solid black;
+        font-size: 40px;
     }
     100% {
         transform: translateY(0) scale(1);
+        border: 2px solid black;
+        font-size: 25px;
     }
 }
 
@@ -41,86 +40,17 @@
     }
 }
 
-.forward {
-    animation: forward 1s ease;
-    transform: translateX(-200%);
-}
-.heroDiv {
-    animation: bg-intro 1.3s ease;
-    display: flex;
-    flex-direction: row-reverse;
-    justify-content: space-around;
-    align-items: center;
-    height: calc(100vh);
-}
-
-.heroDiv img {
-    width: 45%;
-    transition: all .3s ease;
-}
-
-.heroLeft {
-    width: 40%;
-    transition: all .5s ease;
-}
-
-.heroLeft h1 {
-    font-size: 50px;
-}
-
-.heroLeft p {
-    font-size: 25px;
-}
-
-.buttonsDiv {
-    margin-top: 50px;
-    display: flex;
-    gap: 5%;
-    transition: all .3s ease;
-}
-
-.buttonsDiv a {
-    padding: 0 20px;
-    font-size: 25px;
-
-    border: none;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 25px;
-    cursor: pointer;
-    transition: all .3s ease;
-    box-shadow: 0 0 0  black;
-    text-decoration: none;
-    text-align: center;
-    user-select: none;
-    font-weight: 500;
-    height: 50px;
-}
-
-.startBtn {
-    flex: 2;
-    background-color: var(--primary-color);
-}
-
-.loginBtn {
-    flex: 1;
-    background-color: var(--yellow);
-}
-
-.buttonsDiv a:hover {
-    flex: 4;
-    transform: scale(1.1);
-}
-
 .appname {
     animation: appname-intro 1.3s ease;
     position: fixed;
-    top: 20px;
+    top: 15px;
     left: calc(50% - 125px);
     width: 250px;
     text-align: center;
-    font-size: 50px;
+    font-size: 25px;
+    padding: 10px 20px;
+    border: 2px solid black;
+    border-radius: 50px;
     margin: 0;
     font-weight: bold;
     transition: all .5s ease;
@@ -133,16 +63,89 @@
     text-align: start;
 }
 
+.heroDiv {
+    animation: bg-intro 1.3s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-top: 75px;
+    height: calc(100vh - 50px);
+    gap: 50px;
+}
+
+.mainHeroDiv {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    padding: 20px;
+    width: calc(100% - 40px);
+    height: fit-content;
+}
+
+.heroTextDiv {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: start;
+    width: calc(45% - 50px);
+    padding: 20px;
+    gap: 50px;
+}
+
+.heroTextDiv h1 {
+    font-size: 60px;
+    margin: 0;
+    font-weight: bold;
+}
+
+.heroTextDiv p {
+    font-size: 20px;
+    margin: 0;
+}
+
+.heroImageDiv {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: calc(35% - 10px);
+    height: fit-content;
+}
+
+.heroImageDiv img {
+    height: auto;
+    width: 90%;
+}
+
+.buttonsDiv {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    width: calc(80% - 80px);
+    justify-content: center;
+    align-items: center;
+    border-radius: 25px;
+    background-color: var(--background-color);
+    gap: 20px;
+}
+
+.buttonsDiv p {
+    font-size: 20px;
+    margin: 0;
+}
+
+
+
 
 @media only screen and (max-width: 800px) {
 
-    .heroDiv {
-        flex-direction: column-reverse;
-        justify-content: center;
-    }
-
     .appname {
-        font-size: 40px;
+        font-size: 30px;
+        left: 15px;
+        text-align: start;
+        width: fit-content;
+        border: none;
     }
 
     .scrolled .appname {
@@ -151,44 +154,26 @@
         text-align: center;
     }
 
-    .heroDiv img {
-        height: auto;
-        width: 70%;
-        margin-top: 100px;
+    .heroDiv {
+        gap: 20px;
     }
 
-    .heroLeft {
-        width: calc(100% - 60px);
-        padding: 30px;
+    .mainHeroDiv {
+        flex-direction: column-reverse;
+    }
+
+    .heroTextDiv, .heroImageDiv {
+        width: calc(100% - 40px);
         text-align: center;
+        gap: 20px;
     }
 
-    .heroLeft h1 {
-        font-size: 35px;
-    }
-
-    .heroLeft p {
-        font-size: 18px;
-    }
-
-    .buttonsDiv a {
-        flex: 1;
+    .heroTextDiv h1 {
+        font-size: 45px;
     }
 
     .buttonsDiv {
-        flex-direction: column;
-        height: 130px;
-        gap: 15px;
+        width: calc(100% - 80px);
+        text-align: center;
     }
-
-    .buttonsDiv a:hover {
-        flex: 1;
-        box-shadow: 0 0 0 black;
-    }
-
-    .buttonsDiv a:active {
-        transform: scale(0.5);
-    }
-
-
 }

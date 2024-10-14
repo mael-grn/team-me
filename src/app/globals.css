@@ -1,17 +1,66 @@
+
 :root {
-    --primary-color: #BAF2BB;
-    --secondary-color: #BAF2D8;
-    --background-color: #edf6f2;
-    --blue: #BAD7F2;
-    --red: #F2BAC9;
-    --yellow: #F2E2BA;
+    --primary-color: #bb3e03;
+    --secondary-color: #ee9b00;
+    --background-color: #FFF1EA;
+    --valid: #005f73;
+    --invalid: #ae2012;
     --text-color: black;
-    --color-hover: #dddddd;
+    --color-hover: #e9d8a6;
+}
+
+@keyframes forward {
+    from {
+        transform: translateX(0);
+        opacity: 1;
+    }
+    to {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+}
+
+.forward {
+    animation: forward 1s ease;
+    transform: translateX(-200%);
+}
+
+* {
+    transition: all .3s ease;
+}
+
+.button {
+    padding: 10px 20px;
+    font-size: 25px;
+    display: flex;
+    width: fit-content;
+    justify-content: center;
+    align-items: center;
+    border-radius: 25px;
+    cursor: pointer;
+    text-decoration: none;
+    text-align: center;
+    user-select: none;
+    font-weight: bold;
+    border: none;
+    background-color: var(--primary-color);
+    color: white;
+}
+
+@media only screen and (min-width: 800px) {
+    .button:hover {
+        background-color: var(--color-hover);
+        transform: scale(1.05);
+    }
+}
+
+.button:active {
+    transform: scale(.8);
 }
 
 body {
     margin: 0;
-    background-color: var(--background-color);
+    background-color: white;
 }
 
 html {
