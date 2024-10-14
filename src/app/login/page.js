@@ -9,7 +9,7 @@ import {login, logout} from "@/app/utils/queryUtils";
 import User from "@/app/model/user";
 import {useRouter} from "next/navigation";
 import {recoverUserData} from "@/app/controller/userController";
-import Icon from "@/app/components/icon";
+import LordIcon from "@/app/components/lordIcon";
 
 export default function Page() {
     const router = useRouter();
@@ -71,7 +71,7 @@ export default function Page() {
                         />
                     </div>
                     <button type="submit" className={"button " + (isLoading ? styles.loading : undefined)}>
-                        <Icon iconName={"loader-white"} animationType={"loop"}/>
+                        <LordIcon iconName={"loader-white"} animationType={"loop"}/>
                         <p>Connexion</p>
                     </button>
                 </form>

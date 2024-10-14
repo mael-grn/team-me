@@ -7,7 +7,7 @@ import Popup from "@/app/components/popup";
 import {useRouter} from "next/navigation";
 import {register} from "@/app/utils/queryUtils";
 import {recoverUserData} from "@/app/controller/userController";
-import Icon from "@/app/components/icon";
+import LordIcon from "@/app/components/lordIcon";
 
 
 export default function Page() {
@@ -114,7 +114,7 @@ export default function Page() {
                         />
                     </div>
                     <button type="submit" className={ "button " + (isLoading ? styles.loading : undefined)}>
-                        <Icon iconName={"loader-white"} animationType={"loop"}/>
+                        <LordIcon iconName={"loader-white"} animationType={"loop"}/>
                         <p>Créer mon compte</p>
                     </button>
                 </form>

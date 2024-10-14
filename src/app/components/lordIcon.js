@@ -3,7 +3,7 @@
 import {useEffect, useRef, useState} from "react";
 import {Player} from "@lordicon/react";
 
-export default function Icon({iconName, animationType='none'}) {
+export default function LordIcon({iconName, animationType='none'}) {
 
     const playerRef = useRef(null);
     const ICON = require(`/public/icons/${iconName}.json`);

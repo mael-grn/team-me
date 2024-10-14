@@ -9,7 +9,7 @@ import Image from "next/image";
 import {logout} from "@/app/utils/queryUtils";
 import {useRouter} from "next/navigation";
 import {recoverUserData, saveUserData, updateUser} from "@/app/controller/userController";
-import Icon from "@/app/components/icon";
+import LordIcon from "@/app/components/lordIcon";
 
 export default function Navbar() {
     const router = useRouter();
@@ -104,7 +104,7 @@ export default function Navbar() {
                                                onChange={(e) => setName(e.target.value)}
                                                className={modifyName ? styles.modif : undefined}/>
                                         <a onClick={modifyNameClick}>
-                                            <Icon iconName={modifyName ? "check" : "setting"} animationType={"hover"}/>
+                                            <LordIcon iconName={modifyName ? "check" : "setting"} animationType={"hover"}/>
                                         </a>
                                     </div>
                                     <div>
@@ -113,7 +113,7 @@ export default function Navbar() {
                                                onChange={(e) => setSurname(e.target.value)}
                                                className={modifySurname ? styles.modif : undefined}/>
                                         <a onClick={modifySurnameClick}>
-                                            <Icon iconName={modifySurname ? "check" : "setting"} animationType={"hover"}/>
+                                            <LordIcon iconName={modifySurname ? "check" : "setting"} animationType={"hover"}/>
 
                                         </a>
                                     </div>
@@ -123,7 +123,7 @@ export default function Navbar() {
                                                onChange={(e) => setEmail(e.target.value)}
                                                className={modifyEmail ? styles.modif : undefined}/>
                                         <a onClick={modifyEmailClick} >
-                                            <Icon iconName={modifyEmail ? "check" : "setting"} animationType={"hover"}/>
+                                            <LordIcon iconName={modifyEmail ? "check" : "setting"} animationType={"hover"}/>
 
                                         </a>
                                     </div>
