@@ -8,39 +8,27 @@ import Image from "next/image";
 
 import {logout} from "@/app/utils/queryUtils";
 import {useRouter} from "next/navigation";
-import {recoverUserData, saveUserData, updateUser} from "@/app/controller/userController";
-import LordIcon from "@/app/components/lordIcon";
-import Popup from "@/app/components/popup";
+import {authenticateUser, recoverUserData} from "@/app/controller/userController";
 
 export default function Navbar() {
     const router = useRouter();
 
     const [user, setUser] = useState(null);
+
     const [bgClosing, setBgClosing] = useState(false);
-    const [showUserData, setShowUserData] = useState(false);
-    const [modifyName, setModifyName] = useState(false);
-    const [modifySurname, setModifySurname] = useState(false);
-    const [modifyEmail, setModifyEmail] = useState(false);
-    const [name, setName] = useState('');
-    const [surname, setSurname] = useState('');
-    const [email, setEmail] = useState('');
+    const [showInfo, setShowInfo] = useState(false);
 
-    const [title, setTitle] = useState('');
-    const [message, setMessage] = useState('');
-
-    useEffect(() => {
-        const handleUserUpdate = () => {
-            recoverUserData().then(user => {
-                if (!user) {
-                    setUser(null);
-                    setName('');
-                    setSurname('');
-                    setEmail('');
-                } else {
-                    setUser(user);
-                    setName(user.name);
-                    setSurname(user.surname);
-                    setEmail(user.email);
+    useEffect( () => {
+        const handleUserUpdate = async () => {
+            authenticateUser().then((res) => {
+                if (res) {
+                    recoverUserData().then(user => {
+                        if (!user) {
+                            setUser(null);
+                        } else {
+                            setUser(user);
+                        }
+                    });
                 }
             });
         };
@@ -56,62 +44,7 @@ export default function Navbar() {
         };
     }, []);
 
-    const modifyNameClick = async () => {
-        if (!modifyName) {
-            setModifyName(true);
-        } else {
-            if (name) {
-                user.name = name;
-                updateUser(user).then( async (res) => {
-                    if (!res?.success) {
-                        setTitle("Erreur");
-                        setMessage("Une erreur est survenue lors de la modification de votre prénom.");
-                    } else {
-                        await saveUserData(user);
-                    }
-                });
-                setModifyName(false);
-            }
-        }
-    }
 
-    const modifySurnameClick = async () => {
-        if (!modifySurname) {
-            setModifySurname(true);
-        } else {
-            if (surname) {
-                user.surname = surname;
-                updateUser(user).then( async (res) => {
-                    if (!res?.success) {
-                        setTitle("Erreur");
-                        setMessage("Une erreur est survenue lors de la modification de votre nom.");
-                    } else {
-                        await saveUserData(user);
-                    }
-                });
-                setModifySurname(false);
-            }
-        }
-    }
-
-    const modifyEmailClick = async () => {
-        if (!modifyEmail) {
-            setModifyEmail(true);
-        } else {
-            if (email) {
-                user.email = email;
-                updateUser(user).then( async (res) => {
-                    if (!res?.success) {
-                        setTitle("Erreur");
-                        setMessage("Une erreur est survenue lors de la modification de votre email.");
-                    } else {
-                        await saveUserData(user);
-                    }
-                });
-                setModifyEmail(false);
-            }
-        }
-    }
 
     const logoutBtn = async () => {
         await logout();
@@ -122,7 +55,7 @@ export default function Navbar() {
 
     const closeShowUserData = () => {
         setBgClosing(true);
-        setShowUserData(false);
+        setShowInfo(false);
         setTimeout(() => {
             setBgClosing(false);
         }, 400);
@@ -134,16 +67,12 @@ export default function Navbar() {
             <span
                 className={`${styles.navBackground} 
                     ${bgClosing ? styles.navBackgroundClosing : ""} 
-                    ${showUserData ? styles.navBackgroundVisible : ""}`}/>
-            {message && message !== "" && <Popup title={title} text={message} close={() => {
-                setMessage(null);
-                setTitle(null)
-            }}/>}
+                    ${showInfo ? styles.navBackgroundVisible : ""}`}/>
             {
                 user ?
-                    <div className={`${styles.nav} ${showUserData ? styles.showUserData : ''}`}
+                    <div className={`${styles.nav} ${showInfo ? styles.showInfo : ''}`}
                          onClick={() => {
-                             if (!showUserData) setShowUserData(true)
+                             if (!showInfo) setShowInfo(true)
                          }}>
 
                         <div className={styles.resume}>
@@ -156,45 +85,17 @@ export default function Navbar() {
                             />
                         </div>
                         {
-                            showUserData ?
-                                <div className={styles.userData}>
-                                    <div>
-                                        <p>Prénom</p>
-                                        <input readonly={modifyName ? undefined : "true"} value={name}
-                                               onChange={(e) => setName(e.target.value)}
-                                               className={modifyName ? styles.modif : undefined}/>
-                                        <a onClick={modifyNameClick}>
-                                            <LordIcon iconName={modifyName ? "check" : "setting"}
-                                                      animationType={"hover"}/>
-                                        </a>
-                                    </div>
-                                    <div>
-                                        <p>Nom</p>
-                                        <input readonly={modifySurname ? undefined : "true"} value={surname}
-                                               onChange={(e) => setSurname(e.target.value)}
-                                               className={modifySurname ? styles.modif : undefined}/>
-                                        <a onClick={modifySurnameClick}>
-                                            <LordIcon iconName={modifySurname ? "check" : "setting"}
-                                                      animationType={"hover"}/>
-
-                                        </a>
-                                    </div>
-                                    <div>
-                                        <p>Email</p>
-                                        <input readonly={modifyEmail ? undefined : "true"} value={email}
-                                               onChange={(e) => setEmail(e.target.value)}
-                                               className={modifyEmail ? styles.modif : undefined}/>
-                                        <a onClick={modifyEmailClick}>
-                                            <LordIcon iconName={modifyEmail ? "check" : "setting"}
-                                                      animationType={"hover"}/>
-
-                                        </a>
-                                    </div>
-                                    <a className={styles.closeBtn + " button"}
-                                       onClick={closeShowUserData}>Fermer</a>
-                                    <a className={styles.logoutBtn + " button"}
+                            showInfo ?
+                                <div className={styles.menuContent}>
+                                    <Link className={styles.logoutBtn + " buttonLight"}
+                                          href={"/dashboard/settings/"} onClick={() => setShowInfo(false)}>Paramètres</Link>
+                                    <Link className={styles.logoutBtn + " buttonLight"}
+                                       href={"/dashboard"} onClick={() => setShowInfo(false)}>DashBoard</Link>
+                                    <a className={styles.logoutBtn + " buttonLight"}
                                        onClick={logoutBtn}>Déconnexion</a>
 
+                                    <a className={styles.closeBtn + " button"}
+                                       onClick={closeShowUserData}>Fermer</a>
                                 </div>
                                 : undefined
                         }

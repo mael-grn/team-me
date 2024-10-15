@@ -15,7 +15,17 @@ export async function POST(req, res) {
 
         const secretKey = process.env.AUTH_SECRET
 
-        const decoded = jwt.verify(token, secretKey);
+        let decoded;
+        try {
+            decoded = jwt.verify(token, secretKey);
+        } catch (e) {
+            if (e instanceof jwt.TokenExpiredError) {
+                return new Response(JSON.stringify({ message: 'token expired' }), {
+                    status: 401,
+                    headers: { 'Content-Type': 'application/json' },
+                });
+            }
+        }
 
         if (!decoded) {
             return new Response(JSON.stringify({ message: 'wrong token' }), {
@@ -48,7 +58,7 @@ export async function POST(req, res) {
         }
 
     } catch (error) {
-        return new Response(JSON.stringify({message: 'server error'}), {
+        return new Response(JSON.stringify({message: 'server error : ' + error}), {
             status: 500,
             headers: {'Content-Type': 'application/json'},
         });

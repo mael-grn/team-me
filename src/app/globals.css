@@ -13,7 +13,7 @@
     transition: all .3s ease;
 }
 
-.button {
+.button, .buttonLight {
     padding: 10px 20px;
     font-size: 25px;
     display: flex;
@@ -27,18 +27,27 @@
     user-select: none;
     font-weight: bold;
     border: none;
+
+}
+
+.button {
     background-color: var(--primary-color);
     color: white;
 }
 
+.buttonLight {
+    background-color: transparent;
+    color: black;
+}
+
 @media only screen and (min-width: 800px) {
-    .button:hover {
+    .button:hover, .buttonLight:hover {
         background-color: var(--color-hover);
         transform: scale(1.05);
     }
 }
 
-.button:active {
+.button:active, .buttonLight:active {
     transform: scale(.8);
 }
 

@@ -37,7 +37,7 @@ export default function Home() {
 
     return (
         <div>
-            <main className={scrolled && styles.scrolled}>
+            <main className={scrolled ? styles.scrolled : ""}>
                 <p className={styles.appname}>Team Me</p>
                 <div className={styles.heroDiv}>
                     <div className={styles.mainHeroDiv}>

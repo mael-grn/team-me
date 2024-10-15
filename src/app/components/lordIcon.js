@@ -18,7 +18,7 @@ export default function LordIcon({iconName, animationType = 'none'}) {
     }, [])
 
     return (
-        <span onMouseEnter={() => {
+        <span style={{cursor: "pointer"}} onMouseEnter={() => {
             if (animationType === "hover") playerRef.current.playFromBeginning()
         }}>
             <Player

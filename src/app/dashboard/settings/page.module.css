@@ -1,0 +1,101 @@
+@keyframes content-intro {
+    from {
+        transform: translateY(100%) scale(0);
+    }
+    to {
+        transform: translateY(0) scale(1);
+    }
+}
+
+@keyframes title-intro {
+    from {
+        transform: translateX(-100%);
+    }
+    to {
+        transform: translateY(0);
+    }
+}
+
+@keyframes zoom-intro {
+    from {
+        transform: scale(0);
+    }
+    to {
+        transform: scale(1);
+    }
+}
+
+.settings {
+    margin-top: 90px;
+    display: flex;
+    height: calc(100vh - 90px);
+    justify-content: space-between;
+}
+
+.settings > h1 {
+    animation: title-intro 1s ease;
+    font-size: 50px;
+    display: flex;
+    align-items: center;
+    height: 60px;
+    position: absolute;
+    top: 30px;
+    left: 30px;
+    margin: 0;
+}
+
+.sideInfo {
+    animation: zoom-intro 1s ease;
+    height: calc(100% - 60px);
+    width: fit-content;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: start;
+    padding: 30px;
+    gap: 20px;
+}
+
+.settingsContent {
+    animation: content-intro 1s ease;
+    flex: 2;
+    margin: 30px;
+    padding: 50px 65px;
+    border-radius: 50px;
+    background-color: var(--background-color);
+    overflow-y: auto;
+}
+.settingsContent h1 {
+    font-size: 40px;
+    margin: 0;
+}
+
+.settingsContent > div {
+    width: 100%;
+}
+.settingsContent > div > div {
+    margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    width: 100%;
+}
+@media only screen and (max-width: 800px) {
+    .settings {
+        flex-direction: column;
+        margin-top: 180px;
+    }
+
+    .settings > h1 {
+        top: 90px;
+    }
+
+    .sideInfo {
+        height: fit-content;
+    }
+
+    .settingsContent {
+        margin: 0;
+        padding: 50px 20px;
+    }
+}

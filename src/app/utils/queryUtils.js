@@ -112,12 +112,50 @@ export const register = async (name, surname, email, password) => {
  */
 export const insertEntity = async (tableName, entity) => {
 
+    let token;
+    try {
+        token = await getSecuredItem('token');
+    } catch (e) {
+        return new ServerResponse(false, ErrorTypes.NOUSER, null);
+    }
+
     const res = await fetch(`/api/${tableName}/insert`, {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
         },
-        body: JSON.stringify(entity),
+        body: JSON.stringify({entity, token}),
+    });
+
+    if (res.status === 200) {
+        return new ServerResponse(true, null, null);
+    } else if (res.status === 401) {
+        return new ServerResponse(false, ErrorTypes.UNAUTHORIZED, null);
+    } else {
+        return new ServerResponse(false, ErrorTypes.SERVER, null);
+    }
+}
+
+/**
+ * Send a request to the server to get all the entities in database the user has access to
+ * @param tableName the name of the table in the database
+ * @returns {Promise<ServerResponse>}
+ */
+export const getAllEntity = async (tableName) => {
+
+    let token;
+    try {
+        token = await getSecuredItem('token');
+    } catch (e) {
+        return new ServerResponse(false, ErrorTypes.NOUSER, null);
+    }
+
+    const res = await fetch(`/api/${tableName}/getAll`, {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(token),
     });
 
     if (res.status === 200) {
@@ -137,7 +175,6 @@ export const insertEntity = async (tableName, entity) => {
  */
 export const updateEntity = async (tableName, entity) => {
 
-    console.log("entity we got : " + entity);
     let token;
     try {
         token = await getSecuredItem('token');
@@ -170,12 +207,19 @@ export const updateEntity = async (tableName, entity) => {
  */
 export const deleteEntity = async (tableName, entity) => {
 
+    let token;
+    try {
+        token = await getSecuredItem('token');
+    } catch (e) {
+        return new ServerResponse(false, ErrorTypes.NOUSER, null);
+    }
+
     const res = await fetch(`/api/${tableName}/delete`, {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
         },
-        body: JSON.stringify(entity),
+        body: JSON.stringify({entity, token}),
     });
 
     if (res.status === 200) {

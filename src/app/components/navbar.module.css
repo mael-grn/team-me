@@ -108,27 +108,29 @@
     transition: all .3s ease;
 }
 
-.nav:hover:not(.showUserData) {
+.nav:hover:not(.showInfo) {
     background-color: var(--color-hover);
     transform: scale(1.1);
 }
 
-.nav:hover:not(.showUserData) .resume img {
+.nav:hover:not(.showInfo) .resume img {
     transform: scale(0);
 }
 
-.nav:hover:not(.showUserData) .resume p {
+.nav:hover:not(.showInfo) .resume p {
     transform: translateX(25px);
 }
 
-.nav:active:not(.showUserData) {
+.nav:active:not(.showInfo) {
     transform: scale(.7);
 }
 
 
-.showUserData {
+.showInfo {
     border-radius: 30px;
-    height: calc(100% - 90px);
+    max-height: calc(100% - 90px);
+    overflow-y: auto;
+    height: fit-content;
     cursor: auto;
     flex-direction: column;
     padding: 30px;
@@ -136,6 +138,13 @@
     align-items: flex-start;
     gap: 50px;
     z-index: 10;
+}
+
+.showInfo .menuContent {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 30px;
 }
 
 .navBackground {
@@ -160,66 +169,21 @@
     animation: outro-bg 0.5s;
 }
 
-.showUserData .resume {
+.showInfo .resume {
     flex-direction: row-reverse;
     height: fit-content;
     justify-content: start;
 }
 
-.showUserData .resume img {
+.showInfo .resume p {
+    font-size: 30px;
+}
+
+.showInfo .resume img {
     background-color: transparent;
 }
 
-.showUserData .userData {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: flex-start;
-    gap: 20px;
-    flex: 2;
-}
 
-.showUserData .userData > div {
-    width: 100%;
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-start;
-    align-items: center;
-    gap: 10px;
-}
-
-.showUserData .userData div p {
-    margin: 0;
-    font-size: 18px;
-    width: 80px;
-    font-weight: bold;
-}
-
-.showUserData .userData div input {
-    margin: 0;
-    font-size: 18px;
-    padding: 10px 20px;
-    border-radius: 50px;
-    border: none;
-    background-color: transparent;
-    outline: none;
-    transition: all .3s ease;
-}
-
-.showUserData .userData div a {
-    align-self: flex-end;
-    margin-left: auto;
-    border-radius: 50px;
-    border: none;
-    user-select: none;
-    cursor: pointer;
-    height: 50px;
-    width: 50px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 0;
-}
 
 .closeBtn, .logoutBtn {
     align-self: flex-end;
@@ -238,65 +202,48 @@
     margin-top: auto;
 }
 
-.showUserData .userData div input.modif {
+.showInfo .userData div input.modif {
     background-color: var(--color-hover);
 }
 
 @media only screen and (max-width: 800px) {
 
-    .nav:not(.showUserData) {
+    .nav:not(.showInfo) {
         width: 60px;
     }
 
-    .nav:not(.showUserData) .resume p {
+    .nav:not(.showInfo) .resume p {
         display: none;
 
     }
 
-    .nav:not(.showUserData) .resume img {
+    .nav:not(.showInfo) .resume img {
         margin-right: 0;
     }
 
-    .showUserData .resume img {
+    .showInfo .resume img {
         width: 70px;
         height: 70px;
     }
 
-    .showUserData .resume p {
+    .showInfo .resume p {
         font-size: 25px;
     }
 
-    .showUserData {
+    .showInfo {
         max-width: 100%;
         width: calc(100% - 110px);
     }
 
-    .showUserData .userData {
+    .showInfo .menuContent {
         width: 100%;
-    }
-
-    .showUserData .userData > div {
-        gap: 10px;
-        align-items: center;
-        justify-content: center;
-    }
-
-    .showUserData .userData > div p {
-        text-align: center;
-        font-size: 20px;
-    }
-
-    .showUserData .userData > div input {
-        width: calc(100% - 40px);
-        font-size: 18px;
-        font-family: inherit;
-    }
-
-    .showUserData .userData > div a {
-        margin: 0;
     }
 
     .closeBtn, .logoutBtn {
         font-size: 20px;
+    }
+
+    .showInfo .menuContent {
+        padding: 0;
     }
 }
