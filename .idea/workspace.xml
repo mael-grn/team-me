@@ -4,14 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7d6cb5a9-8bd4-4902-a802-cbf98e19e7e6" name="Changes" comment="Correction de bugs">
-      <change afterPath="$PROJECT_DIR$/public/icons/arrow-black.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/icons/arrow-white.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/components/backButton.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/components/backButton.module.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/login/page.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/login/page.js" afterDir="false" />
-    </list>
+    <list default="true" id="7d6cb5a9-8bd4-4902-a802-cbf98e19e7e6" name="Changes" comment="ajout du bouton retour" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -157,7 +150,7 @@
       <workItem from="1728845581275" duration="1577000" />
       <workItem from="1728853861748" duration="16713000" />
       <workItem from="1728929964847" duration="8817000" />
-      <workItem from="1729104559403" duration="3367000" />
+      <workItem from="1729104559403" duration="3693000" />
     </task>
     <task id="LOCAL-00001" summary="ajout gitignore">
       <option name="closed" value="true" />
@@ -455,7 +448,15 @@
       <option name="project" value="LOCAL" />
       <updated>1729107382811</updated>
     </task>
-    <option name="localTasksCounter" value="38" />
+    <task id="LOCAL-00038" summary="ajout du bouton retour">
+      <option name="closed" value="true" />
+      <created>1729108155727</created>
+      <option name="number" value="00038" />
+      <option name="presentableId" value="LOCAL-00038" />
+      <option name="project" value="LOCAL" />
+      <updated>1729108155727</updated>
+    </task>
+    <option name="localTasksCounter" value="39" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -463,7 +464,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="amelioration responsive page login" />
     <MESSAGE value="amelioration responsive page popup" />
     <MESSAGE value="amelioration responsive page register" />
     <MESSAGE value="amelioration responsive homepage" />
@@ -488,6 +488,7 @@
     <MESSAGE value="sécurisation du routing avec un middleware" />
     <MESSAGE value="ajout de la page de login" />
     <MESSAGE value="Correction de bugs" />
-    <option name="LAST_COMMIT_MESSAGE" value="Correction de bugs" />
+    <MESSAGE value="ajout du bouton retour" />
+    <option name="LAST_COMMIT_MESSAGE" value="ajout du bouton retour" />
   </component>
 </project>
