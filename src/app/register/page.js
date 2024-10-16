@@ -8,6 +8,7 @@ import {useRouter} from "next/navigation";
 import {register} from "@/app/utils/queryUtils";
 import {recoverUserData} from "@/app/controller/userController";
 import LordIcon from "@/app/components/lordIcon";
+import BackButton from "@/app/components/backButton";
 
 
 export default function Page() {
@@ -54,6 +55,7 @@ export default function Page() {
 
     return (
         <main className={styles.main}>
+            <BackButton/>
             {message && message !== "" && <Popup title={title} text={message} close={() => {
                 setMessage(null);
                 setTitle(null)
