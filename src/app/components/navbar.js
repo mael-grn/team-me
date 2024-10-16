@@ -8,31 +8,39 @@ import Image from "next/image";
 
 import {logout} from "@/app/utils/queryUtils";
 import {useRouter} from "next/navigation";
+import {usePathname} from "next/navigation";
 import {authenticateUser, recoverUserData} from "@/app/controller/userController";
+import LordIcon from "@/app/components/lordIcon";
 
 export default function Navbar() {
     const router = useRouter();
-
+    const pathname = usePathname();
     const [user, setUser] = useState(null);
-
+    const [loading, setLoading] = useState(true);
     const [bgClosing, setBgClosing] = useState(false);
     const [showInfo, setShowInfo] = useState(false);
+    const noNavbarRoutes = ['/login', '/register'];
+
+    const handleUserUpdate = () => {
+        setLoading(true);
+        authenticateUser().then((res) => {
+            if (res) {
+                recoverUserData().then(user => {
+                    if (!user) {
+                        setLoading(true);
+                        setUser(false);
+                    } else {
+                        setLoading(false);
+                        setUser(user);
+                    }
+                });
+            } else {
+                setLoading(false);
+            }
+        });
+    };
 
     useEffect( () => {
-        const handleUserUpdate = async () => {
-            authenticateUser().then((res) => {
-                if (res) {
-                    recoverUserData().then(user => {
-                        if (!user) {
-                            setUser(null);
-                        } else {
-                            setUser(user);
-                        }
-                    });
-                }
-            });
-        };
-
         handleUserUpdate();
 
         // Écoute l'événement personnalisé
@@ -47,10 +55,11 @@ export default function Navbar() {
 
 
     const logoutBtn = async () => {
-        await logout();
-        closeShowUserData()
-        window.dispatchEvent(new Event('userUpdate'));
-        router.push('/');
+        logout().then(() => {
+            closeShowUserData()
+            setUser(null)
+            router.push('/');
+        })
     }
 
     const closeShowUserData = () => {
@@ -63,11 +72,13 @@ export default function Navbar() {
     }
 
     return (
+        !noNavbarRoutes.includes(pathname) ?
         <nav>
             <span
                 className={`${styles.navBackground} 
                     ${bgClosing ? styles.navBackgroundClosing : ""} 
-                    ${showInfo ? styles.navBackgroundVisible : ""}`}/>
+                    ${showInfo ? styles.navBackgroundVisible : ""}`}
+                onClick={closeShowUserData}/>
             {
                 user ?
                     <div className={`${styles.nav} ${showInfo ? styles.showInfo : ''}`}
@@ -102,10 +113,15 @@ export default function Navbar() {
 
                     </div>
                     :
-                    <Link href={"/login"} className={"button " + styles.connection}>Connexion</Link>
-
+                    (
+                        loading ?
+                            <div className={styles.loading}>
+                                <LordIcon iconName={"loader-black"} animationType={"loop"}/>
+                            </div>
+                            : <Link href={"/login"} className={"button " + styles.connection}>Connexion</Link>
+                    )
             }
 
-        </nav>
+        </nav> : ""
     )
 }

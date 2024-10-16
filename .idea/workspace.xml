@@ -4,21 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7d6cb5a9-8bd4-4902-a802-cbf98e19e7e6" name="Changes" comment="sécurisation du routing avec un middleware">
-      <change afterPath="$PROJECT_DIR$/src/app/dashboard/settings/DisplaySettings.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/dashboard/settings/appSettings.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/dashboard/settings/page.module.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/dashboard/settings/userSettings.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/dashboard/settings/userSettings.module.css" afterDir="false" />
+    <list default="true" id="7d6cb5a9-8bd4-4902-a802-cbf98e19e7e6" name="Changes" comment="ajout de la page de login">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/api/loginToken/route.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/api/loginToken/route.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/components/lordIcon.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/components/lordIcon.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/components/navbar.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/components/navbar.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/components/navbar.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/components/navbar.module.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/dashboard/settings/page.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/dashboard/settings/page.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/globals.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/globals.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/page.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/page.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/utils/queryUtils.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/utils/queryUtils.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -164,7 +153,8 @@
       <workItem from="1728678290548" duration="17368000" />
       <workItem from="1728845581275" duration="1577000" />
       <workItem from="1728853861748" duration="16713000" />
-      <workItem from="1728929964847" duration="8547000" />
+      <workItem from="1728929964847" duration="8817000" />
+      <workItem from="1729104559403" duration="2764000" />
     </task>
     <task id="LOCAL-00001" summary="ajout gitignore">
       <option name="closed" value="true" />
@@ -446,7 +436,15 @@
       <option name="project" value="LOCAL" />
       <updated>1728932814048</updated>
     </task>
-    <option name="localTasksCounter" value="36" />
+    <task id="LOCAL-00036" summary="ajout de la page de login">
+      <option name="closed" value="true" />
+      <created>1728952042981</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1728952042981</updated>
+    </task>
+    <option name="localTasksCounter" value="37" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -454,7 +452,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="correction de bug de build" />
     <MESSAGE value="amelioration responsive page accueil" />
     <MESSAGE value="amelioration responsive page login" />
     <MESSAGE value="amelioration responsive page popup" />
@@ -479,6 +476,7 @@
     <MESSAGE value="amélioration qualité de code" />
     <MESSAGE value="correction de bug, amélioration affichage mobile" />
     <MESSAGE value="sécurisation du routing avec un middleware" />
-    <option name="LAST_COMMIT_MESSAGE" value="sécurisation du routing avec un middleware" />
+    <MESSAGE value="ajout de la page de login" />
+    <option name="LAST_COMMIT_MESSAGE" value="ajout de la page de login" />
   </component>
 </project>
