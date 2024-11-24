@@ -27,13 +27,9 @@ export const saveUserData = async (user) => {
  * @returns {Promise<User>}
  */
 export const recoverUserData = async () => {
-    let user;
-    try {
-        user = JSON.parse(await getItem('user'));
-    } catch (e) {
-        return null;
-    }
-    return new User(user.id, user.name, user.surname, user.date_creat, user.email);
+    let user = await getItem('user');
+    if (user) user = JSON.parse(user);
+    return user;
 }
 
 export const authenticateUser = async () => {

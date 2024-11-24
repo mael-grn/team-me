@@ -28,15 +28,10 @@ export async function POST(req, res) {
         const { id, name, surname, email } = entity;
         let newUser;
 
-        console.log("AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA " + `
-            UPDATE USERS
-            SET name = ${name}, surname = ${surname}, email = ${email}
-            WHERE id = ${id};
-            `)
         // Requête SQL pour modifier l'utilisateur
         try {
             let newUser = await sql`
-            UPDATE USERS
+            UPDATE TEAMME_USERS
             SET name = ${name}, surname = ${surname}, email = ${email}
             WHERE id = ${id};
             `;

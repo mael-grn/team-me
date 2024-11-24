@@ -12,7 +12,7 @@ export async function POST(req, res) {
 
         // Vérifier si l'utilisateur existe déjà
         const { rows: existingUser } = await sql`
-            SELECT * FROM USERS WHERE email = ${email};
+            SELECT * FROM TEAMME_USERS WHERE email = ${email};
         `;
 
         if (existingUser.length > 0) {
@@ -27,7 +27,7 @@ export async function POST(req, res) {
 
         // Insertion du nouvel utilisateur dans la base de données
         const { rows: newUser } = await sql`
-            INSERT INTO USERS (name, surname, email, password) 
+            INSERT INTO TEAMME_USERS (name, surname, email, password) 
             VALUES (${name}, ${surname}, ${email}, ${hashedPassword})
             RETURNING *;
         `;

@@ -12,7 +12,7 @@ export async function POST(req, res) {
 
             // Requête SQL pour vérifier les identifiants
             const { rows } = await sql`
-                SELECT * FROM USERS WHERE email = ${email};
+                SELECT * FROM teamme_users WHERE email = ${email};
             `;
 
             // Vérification de l'existence de l'utilisateur
@@ -24,7 +24,8 @@ export async function POST(req, res) {
             } else {
 
                 const user = rows[0];
-
+                console.log(user.password);
+                console.log(password);
                 // Comparaison du mot de passe avec le haché en base de données
                 const passwordMatch = await bcrypt.compare(password, user.password);
                 if (!passwordMatch) {

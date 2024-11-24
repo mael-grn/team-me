@@ -10,7 +10,7 @@ import {cookies} from 'next/headers';
  */
 export async function middleware(req) {
     let validToken;
-    const token = cookies().get("token")?.value;
+    const token = cookies().get("teamme-token")?.value;
 
     if (token) {
         const res = await fetch(`${req.nextUrl.origin}/api/loginToken`, {

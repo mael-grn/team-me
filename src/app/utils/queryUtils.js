@@ -1,6 +1,6 @@
 import ServerResponse, {ErrorTypes} from "@/app/model/serverResponse";
 import User from "@/app/model/user";
-import {getSecuredItem, removeItem, setSecuredItem} from "@/app/utils/cookiesUtils";
+import {getItem, removeItem, setItem} from "@/app/utils/cookiesUtils";
 import {deleteUserData, saveUserData} from "@/app/controller/userController";
 
 /**
@@ -8,7 +8,7 @@ import {deleteUserData, saveUserData} from "@/app/controller/userController";
  * @returns {Promise<void>}
  */
 export const logout = async () => {
-    await removeItem('token');
+    await removeItem('teamme-token');
     await deleteUserData();
 }
 
@@ -32,7 +32,7 @@ export const login = async (email, password) => {
         const data = await res.json();
         let user = new User(data.data.id, data.data.name, data.data.surname, data.data.date_creat, data.data.email);
         await saveUserData(user);
-        await setSecuredItem('token', data.token);
+        await setItem('teamme-token', data.token);
         return new ServerResponse(true, null, user);
 
     } else if (res.status === 404 || res.status === 401) {
@@ -52,7 +52,7 @@ export const loginToken = async () => {
 
     let token;
     try {
-        token = await getSecuredItem('token');
+        token = await getItem('teamme-token');
     } catch (e) {
         return new ServerResponse(false, ErrorTypes.NOUSER, null);
     }
@@ -114,7 +114,7 @@ export const insertEntity = async (tableName, entity) => {
 
     let token;
     try {
-        token = await getSecuredItem('token');
+        token = await getItem('teamme-token');
     } catch (e) {
         return new ServerResponse(false, ErrorTypes.NOUSER, null);
     }
@@ -145,7 +145,7 @@ export const getAllEntity = async (tableName) => {
 
     let token;
     try {
-        token = await getSecuredItem('token');
+        token = await getItem('teamme-token');
     } catch (e) {
         return new ServerResponse(false, ErrorTypes.NOUSER, null);
     }
@@ -177,7 +177,7 @@ export const updateEntity = async (tableName, entity) => {
 
     let token;
     try {
-        token = await getSecuredItem('token');
+        token = await getItem('teamme-token');
     } catch (e) {
         return new ServerResponse(false, ErrorTypes.NOUSER, null);
     }
@@ -209,7 +209,7 @@ export const deleteEntity = async (tableName, entity) => {
 
     let token;
     try {
-        token = await getSecuredItem('token');
+        token = await getItem('teamme-token');
     } catch (e) {
         return new ServerResponse(false, ErrorTypes.NOUSER, null);
     }
