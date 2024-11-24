@@ -4,17 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7d6cb5a9-8bd4-4902-a802-cbf98e19e7e6" name="Changes" comment="ajout du bouton retour">
+    <list default="true" id="7d6cb5a9-8bd4-4902-a802-cbf98e19e7e6" name="Changes" comment="correction bd">
+      <change afterPath="$PROJECT_DIR$/src/app/dashboard/visualSide.module.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/api/login/route.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/api/login/route.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/api/loginToken/route.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/api/loginToken/route.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/api/register/route.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/api/register/route.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/api/user/update/route.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/api/user/update/route.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/controller/userController.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/controller/userController.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/components/navbar.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/components/navbar.module.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/dashboard/page.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/dashboard/page.module.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/dashboard/visualSide.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/dashboard/visualSide.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/globals.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/globals.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/page.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/page.module.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/utils/cookiesUtils.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/utils/cookiesUtils.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/utils/queryUtils.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/utils/queryUtils.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -467,7 +463,15 @@
       <option name="project" value="LOCAL" />
       <updated>1729108155727</updated>
     </task>
-    <option name="localTasksCounter" value="39" />
+    <task id="LOCAL-00039" summary="correction bd">
+      <option name="closed" value="true" />
+      <created>1732477842826</created>
+      <option name="number" value="00039" />
+      <option name="presentableId" value="LOCAL-00039" />
+      <option name="project" value="LOCAL" />
+      <updated>1732477842826</updated>
+    </task>
+    <option name="localTasksCounter" value="40" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -475,7 +479,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="amelioration responsive page popup" />
     <MESSAGE value="amelioration responsive page register" />
     <MESSAGE value="amelioration responsive homepage" />
     <MESSAGE value="petites améliorations ui" />
@@ -500,6 +503,7 @@
     <MESSAGE value="ajout de la page de login" />
     <MESSAGE value="Correction de bugs" />
     <MESSAGE value="ajout du bouton retour" />
-    <option name="LAST_COMMIT_MESSAGE" value="ajout du bouton retour" />
+    <MESSAGE value="correction bd" />
+    <option name="LAST_COMMIT_MESSAGE" value="correction bd" />
   </component>
 </project>

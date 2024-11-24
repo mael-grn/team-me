@@ -83,6 +83,8 @@
     border-radius: 50px;
     transition: all .3s ease;
     cursor: pointer;
+    border: 2px solid var(--text-color);
+
 }
 
 .connection {

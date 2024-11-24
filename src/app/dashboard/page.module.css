@@ -22,7 +22,8 @@
     position: fixed;
     top: 0;
     left: 0;
-    background-color: var(--color-hover);
+    background-color: var(--background-color);
+
 }
 
 .pill {
@@ -39,6 +40,7 @@
     top: 25px;
     left: calc(50% - 150px);
     z-index: 10;
+    border: 2px solid var(--text-color);
 }
 
 .pill a {
@@ -85,14 +87,14 @@
 
 .content {
     animation: content-intro 0.6s ease;
-    overflow: auto;
+    overflow-y: auto;
+    overflow-x: hidden;
     position: absolute;
     width: 100%;
     height: calc(100% - 90px);
     bottom: 0;
     left: 0;
-    background-color: white;
-    border-radius: 50px 50px 0 0;
+    background-color: var(--background-color);
 }
 
 @media only screen and (max-width: 800px) {

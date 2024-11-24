@@ -1,0 +1,11 @@
+@keyframes intro-data {
+    from {
+        transform: translateX(100%);
+    } to {
+          transform: translateX(0);
+      }
+}
+
+.dataSide {
+    animation: intro-data .5s;
+}

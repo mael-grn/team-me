@@ -1,0 +1,19 @@
+@keyframes intro-visual {
+    from {
+        transform: translateX(-100%);
+    } to {
+        transform: translateX(0);
+    }
+}
+
+.visualSide {
+    animation: intro-visual .5s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100%;
+}
+
+.visualSide h1 {
+    text-align: center;
+}
