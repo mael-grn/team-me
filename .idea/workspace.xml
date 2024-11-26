@@ -4,18 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7d6cb5a9-8bd4-4902-a802-cbf98e19e7e6" name="Changes" comment="ajout des crud et interface">
+    <list default="true" id="7d6cb5a9-8bd4-4902-a802-cbf98e19e7e6" name="Changes" comment="ajout des crud">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/api/athlete/delete/route.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/api/athlete/delete/route.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/api/group/update/route.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/api/group/update/route.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/api/groupTraining/get/route.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/api/groupTraining/get/route.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/api/groupTraining/insert/route.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/api/groupTraining/insert/route.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/api/staff/insert/route.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/api/staff/insert/route.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/components/crudTable.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/components/crudTable.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/components/infosSelectPopup.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/components/infosSelectPopup.module.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/components/popup.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/components/popup.module.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/dashboard/dataSide.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/dashboard/dataSide.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/dashboard/dataSide.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/dashboard/dataSide.module.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -65,30 +55,30 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/maelg/Dev/TeamMe/team-me/src/app/api/club/demand/approve&quot;,
-    &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;ts.external.directory.path&quot;: &quot;C:\\Users\\maelg\\AppData\\Local\\Programs\\WebStorm\\plugins\\javascript-plugin\\jsLanguageServicesImpl\\external&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "main",
+    "ignore.virus.scanning.warn.message": "true",
+    "last_opened_file_path": "C:/Users/maelg/Dev/TeamMe/team-me/src/app/api/groupTraining",
+    "list.type.of.created.stylesheet": "CSS",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "ts.external.directory.path": "C:\\Users\\maelg\\AppData\\Local\\Programs\\WebStorm\\plugins\\javascript-plugin\\jsLanguageServicesImpl\\external",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\maelg\Dev\TeamMe\team-me\src\app\api\groupTraining" />
       <recent name="C:\Users\maelg\Dev\TeamMe\team-me\src\app\api\club\demand\approve" />
       <recent name="C:\Users\maelg\Dev\TeamMe\team-me\src\app\api\club\demand" />
       <recent name="C:\Users\maelg\Dev\TeamMe\team-me\src\app\api\club" />
       <recent name="C:\Users\maelg\Dev\TeamMe\team-me\src\app\api\group" />
-      <recent name="C:\Users\maelg\Dev\TeamMe\team-me\src\app\api" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\maelg\Dev\TeamMe\team-me\src\app\api" />
@@ -166,7 +156,7 @@
       <workItem from="1732484792994" duration="26712000" />
       <workItem from="1732634352600" duration="4162000" />
       <workItem from="1732638905558" duration="43000" />
-      <workItem from="1732654022907" duration="1463000" />
+      <workItem from="1732654022907" duration="2843000" />
     </task>
     <task id="LOCAL-00001" summary="ajout gitignore">
       <option name="closed" value="true" />
@@ -512,7 +502,15 @@
       <option name="project" value="LOCAL" />
       <updated>1732638938202</updated>
     </task>
-    <option name="localTasksCounter" value="44" />
+    <task id="LOCAL-00044" summary="ajout des crud">
+      <option name="closed" value="true" />
+      <created>1732655705934</created>
+      <option name="number" value="00044" />
+      <option name="presentableId" value="LOCAL-00044" />
+      <option name="project" value="LOCAL" />
+      <updated>1732655705934</updated>
+    </task>
+    <option name="localTasksCounter" value="45" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -520,7 +518,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="petites améliorations ui" />
     <MESSAGE value="supression du seed" />
     <MESSAGE value="maj utilisation api" />
     <MESSAGE value="maj securite users" />
@@ -545,6 +542,7 @@
     <MESSAGE value="correction bd" />
     <MESSAGE value="maj styles plus coherent" />
     <MESSAGE value="ajout des crud et interface" />
-    <option name="LAST_COMMIT_MESSAGE" value="ajout des crud et interface" />
+    <MESSAGE value="ajout des crud" />
+    <option name="LAST_COMMIT_MESSAGE" value="ajout des crud" />
   </component>
 </project>

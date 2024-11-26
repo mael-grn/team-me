@@ -25,8 +25,8 @@
     padding: 20px;
     gap: 20px;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     width: calc(100% - 40px);
-    flex-wrap: wrap;
 }
