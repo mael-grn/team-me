@@ -68,9 +68,8 @@ export const loginToken = async () => {
     if (res.status === 200) {
         console.log("check success");
         const data = await res.json();
-        let user = new User(data.data.id, data.data.name, data.data.surname, data.data.date_creat, data.data.email);
-        await saveUserData(user);
-        return new ServerResponse(true, null, user);
+        await saveUserData(data.data);
+        return new ServerResponse(true, null, data.data);
     } else if (res.status === 404) {
         return new ServerResponse(false, ErrorTypes.NOUSER, null);
     } else if (res.status === 401) {
@@ -150,16 +149,17 @@ export const getAllEntity = async (tableName) => {
         return new ServerResponse(false, ErrorTypes.NOUSER, null);
     }
 
-    const res = await fetch(`/api/${tableName}/getAll`, {
+    const res = await fetch(`/api/${tableName}/get`, {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
         },
-        body: JSON.stringify(token),
+        body: JSON.stringify({token}),
     });
 
     if (res.status === 200) {
-        return new ServerResponse(true, null, null);
+        const data = await res.json();
+        return new ServerResponse(true, null, data.res);
     } else if (res.status === 401) {
         return new ServerResponse(false, ErrorTypes.UNAUTHORIZED, null);
     } else {
@@ -191,7 +191,8 @@ export const updateEntity = async (tableName, entity) => {
     });
 
     if (res.status === 200) {
-        return new ServerResponse(true, null, null);
+        const data = await res.json();
+        return new ServerResponse(true, null, data.res);
     } else if (res.status === 401) {
         return new ServerResponse(false, ErrorTypes.UNAUTHORIZED, null);
     } else {
@@ -226,6 +227,12 @@ export const deleteEntity = async (tableName, entity) => {
         return new ServerResponse(true, null, null);
     } else if (res.status === 401) {
         return new ServerResponse(false, ErrorTypes.UNAUTHORIZED, null);
+    } else if (res.status === 400) {
+        const data = await res.json();
+        if (data.code === '23503') {
+            return new ServerResponse(false, ErrorTypes.FOREIGNKEY, data.deps);
+        }
+
     } else {
         return new ServerResponse(false, ErrorTypes.SERVER, null);
     }

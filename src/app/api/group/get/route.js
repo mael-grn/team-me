@@ -12,7 +12,8 @@ export async function POST(req, res) {
             });
         }
 
-        const { entity, token } = await req.json();
+        const { token } = await req.json();
+
 
         const secretKey = process.env.AUTH_SECRET
 
@@ -25,14 +26,29 @@ export async function POST(req, res) {
             });
         }
 
-        const { id, name, surname, email, club, club_admin } = entity;
+        let groups = [{id: null, name: null, club:null}]
+
         // Requête SQL pour modifier l'utilisateur
         try {
-            const {rows} = await sql`
-            UPDATE TEAMME_USERS
-            SET name = ${name}, surname = ${surname}, email = ${email}, club = ${club}, club_admin = ${club_admin}
-            WHERE id = ${id};
-            `;
+            let usersGroups = [];
+            let res1 = (await sql`
+                SELECT * FROM teamme_training_group
+                WHERE id_staff = ${decoded.key};
+            `);
+
+            let res2 = (await sql`
+                SELECT * FROM teamme_athlete
+                WHERE id = ${decoded.key};
+            `);
+
+            usersGroups = usersGroups.concat(res1.rows.map((row) => row.id_group));
+            usersGroups = usersGroups.concat(res2.rows.map((row) => row.group_id));
+            for (const groupId of usersGroups) {
+                groups.push((await sql`
+                    SELECT * FROM teamme_group
+                    WHERE id = ${groupId};
+                `).rows[0]);
+            }
 
         } catch (error) {
             return new Response(JSON.stringify({ message: `server error: ${error}` }), {
@@ -41,7 +57,8 @@ export async function POST(req, res) {
             });
         }
 
-        return new Response(JSON.stringify({ message: 'user updated', res: entity}), {
+
+        return new Response(JSON.stringify({ res: groups}), {
             status: 200,
             headers: { 'Content-Type': 'application/json' },
         });

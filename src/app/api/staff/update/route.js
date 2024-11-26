@@ -25,15 +25,16 @@ export async function POST(req, res) {
             });
         }
 
-        const { id, name, surname, email, club, club_admin } = entity;
+        const {id, role } = entity;
+        let newEntity;
+
         // Requête SQL pour modifier l'utilisateur
         try {
-            const {rows} = await sql`
-            UPDATE TEAMME_USERS
-            SET name = ${name}, surname = ${surname}, email = ${email}, club = ${club}, club_admin = ${club_admin}
+            newEntity = await sql`
+            UPDATE TEAMME_staff
+            SET role = ${role}
             WHERE id = ${id};
             `;
-
         } catch (error) {
             return new Response(JSON.stringify({ message: `server error: ${error}` }), {
                 status: 500,
@@ -41,7 +42,8 @@ export async function POST(req, res) {
             });
         }
 
-        return new Response(JSON.stringify({ message: 'user updated', res: entity}), {
+
+        return new Response(JSON.stringify({ res: newEntity}), {
             status: 200,
             headers: { 'Content-Type': 'application/json' },
         });

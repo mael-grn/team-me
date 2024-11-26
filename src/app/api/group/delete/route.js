@@ -25,23 +25,29 @@ export async function POST(req, res) {
             });
         }
 
-        const { id, name, surname, email, club, club_admin } = entity;
+
+
         // Requête SQL pour modifier l'utilisateur
         try {
-            const {rows} = await sql`
-            UPDATE TEAMME_USERS
-            SET name = ${name}, surname = ${surname}, email = ${email}, club = ${club}, club_admin = ${club_admin}
-            WHERE id = ${id};
+            await sql`
+            DELETE FROM TEAMME_GROUP
+            WHERE id = ${entity.id};
             `;
-
         } catch (error) {
+            if (error.code === '23503') {
+                return new Response(JSON.stringify({ code: '23503', message: 'foreign key constraint error', deps: error.table }), {
+                    status: 400,
+                    headers: { 'Content-Type': 'application/json' },
+                });
+            }
             return new Response(JSON.stringify({ message: `server error: ${error}` }), {
                 status: 500,
                 headers: { 'Content-Type': 'application/json' },
             });
         }
 
-        return new Response(JSON.stringify({ message: 'user updated', res: entity}), {
+
+        return new Response(JSON.stringify({ res: true}), {
             status: 200,
             headers: { 'Content-Type': 'application/json' },
         });

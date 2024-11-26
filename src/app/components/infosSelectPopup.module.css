@@ -74,6 +74,7 @@
     gap: 20px;
     justify-content: center;
     align-items: center;
+    overflow-y: auto;
     flex-direction: column;
     width: fit-content;
     height: fit-content;
@@ -90,23 +91,54 @@
     text-align: center;
 }
 
+.popupContent input {
+    border-radius: 10px;
+    padding: 10px 20px;
+    min-width: 200px;
+    width: calc(100% - 44px);
+    height: 30px;
+    outline: none;
+    border: 2px solid var(--text-color);
+    transition: all .3s ease;
+    font-family: inherit;
+    font-size: 20px;
+}
+
 .popupContent p {
     font-size: 20px;
     margin: 0;
     text-align: center;
 }
 
+.popupContent .btnList {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
 .popupContent button {
+    flex: 1;
     padding: 10px 20px;
     margin-top: 30px;
     font-size: 20px;
-    background-color: var(--primary-color);
+
     border: none;
     border-radius: 25px;
-    width: 100%;
     cursor: pointer;
-    color: white;
+
     transition: all .3s ease;
+}
+
+.popupContent button:first-child {
+    background-color: var(--invalid);
+    color: white;
+}
+
+.popupContent button:last-child {
+    background-color: var(--valid);
+    color: white;
 }
 
 .popupContent button:hover {
@@ -127,16 +159,16 @@
         from {
             transform: translateY(100%) scale(0);
         } to {
-            transform: translateY(0) scale(1);
-        }
+              transform: translateY(0) scale(1);
+          }
     }
 
     @keyframes to-bottom {
         from {
             transform: translateY(0) scale(1);
         } to {
-            transform: translateY(100%) scale(0);
-        }
+              transform: translateY(100%) scale(0);
+          }
     }
     .popup {
         align-items: flex-end;

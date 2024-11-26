@@ -27,9 +27,8 @@ export const saveUserData = async (user) => {
  * @returns {Promise<User>}
  */
 export const recoverUserData = async () => {
-    let user = await getItem('user');
-    if (user) user = JSON.parse(user);
-    return user;
+    let res = await loginToken()
+    return res.data;
 }
 
 export const authenticateUser = async () => {
@@ -50,7 +49,8 @@ export const deleteUserData = async () => {
  * @returns {Promise<void>}
  */
 export const updateUser = async (user) => {
-    return await updateEntity('user', user);
+    const newUser = await updateEntity('user', user);
+    await saveUserData(newUser.data);
 }
 
 /**

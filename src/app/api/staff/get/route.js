@@ -12,11 +12,12 @@ export async function POST(req, res) {
             });
         }
 
-        const { entity, token } = await req.json();
+        const { token } = await req.json();
+
 
         const secretKey = process.env.AUTH_SECRET
 
-        const decoded = jwt.verify(token, secretKey);
+        const decoded = await jwt.verify(token, secretKey);
 
         if (!decoded) {
             return new Response(JSON.stringify({ message: 'wrong token' }), {
@@ -25,14 +26,30 @@ export async function POST(req, res) {
             });
         }
 
-        const { id, name, surname, email, club, club_admin } = entity;
+        let staff  = [{id: null, role: null}]
+
         // Requête SQL pour modifier l'utilisateur
         try {
-            const {rows} = await sql`
-            UPDATE TEAMME_USERS
-            SET name = ${name}, surname = ${surname}, email = ${email}, club = ${club}, club_admin = ${club_admin}
-            WHERE id = ${id};
-            `;
+            let club = (await sql`
+                SELECT * FROM teamme_users WHERE id = ${decoded.key};
+            `).rows[0]?.club;
+
+
+
+            let members = (await sql`
+                SELECT * FROM teamme_users WHERE club = ${club};
+            `).rows;
+
+
+            for (const user of members) {
+                let {rows} = (await sql`
+                SELECT * FROM teamme_staff where id = ${user.id};
+            `);
+
+                if (rows.length > 0) {
+                    staff.push(rows[0]);
+                }
+            }
 
         } catch (error) {
             return new Response(JSON.stringify({ message: `server error: ${error}` }), {
@@ -41,7 +58,8 @@ export async function POST(req, res) {
             });
         }
 
-        return new Response(JSON.stringify({ message: 'user updated', res: entity}), {
+
+        return new Response(JSON.stringify({ res: staff}), {
             status: 200,
             headers: { 'Content-Type': 'application/json' },
         });

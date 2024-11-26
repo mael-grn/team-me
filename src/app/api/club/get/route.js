@@ -12,7 +12,8 @@ export async function POST(req, res) {
             });
         }
 
-        const { entity, token } = await req.json();
+        const { token } = await req.json();
+
 
         const secretKey = process.env.AUTH_SECRET
 
@@ -25,14 +26,16 @@ export async function POST(req, res) {
             });
         }
 
-        const { id, name, surname, email, club, club_admin } = entity;
-        // Requête SQL pour modifier l'utilisateur
+        //pour avoir le schema de la table
+        let clubs = [{name: null, city: null}]
+
         try {
-            const {rows} = await sql`
-            UPDATE TEAMME_USERS
-            SET name = ${name}, surname = ${surname}, email = ${email}, club = ${club}, club_admin = ${club_admin}
-            WHERE id = ${id};
-            `;
+            let {rows} = (await sql`
+                SELECT * FROM teamme_clubs;
+            `);
+            if (rows.length > 0) {
+                clubs = rows
+            }
 
         } catch (error) {
             return new Response(JSON.stringify({ message: `server error: ${error}` }), {
@@ -41,7 +44,8 @@ export async function POST(req, res) {
             });
         }
 
-        return new Response(JSON.stringify({ message: 'user updated', res: entity}), {
+
+        return new Response(JSON.stringify({ res: clubs}), {
             status: 200,
             headers: { 'Content-Type': 'application/json' },
         });

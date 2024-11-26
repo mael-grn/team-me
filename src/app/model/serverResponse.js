@@ -5,6 +5,7 @@ export const ErrorTypes = {
     ALREADYUSER: 'Cet utilisateur existe déjà, merci de vous connecter ou d\'utiliser un email différent.',
     WRONGTOKEN: 'Le token est incorrect, merci de vous reconnecter.',
     UNAUTHORIZED: 'Vous n\'êtes pas autorisé à effectuer cette action.',
+    FOREIGNKEY: 'Vous ne pouvez pas supprimer cet élément car il est utilisé dans une autre table : ',
 }
 
 export default class ServerResponse {

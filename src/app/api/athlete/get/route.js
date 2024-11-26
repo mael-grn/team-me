@@ -12,7 +12,8 @@ export async function POST(req, res) {
             });
         }
 
-        const { entity, token } = await req.json();
+        const { token } = await req.json();
+
 
         const secretKey = process.env.AUTH_SECRET
 
@@ -25,14 +26,19 @@ export async function POST(req, res) {
             });
         }
 
-        const { id, name, surname, email, club, club_admin } = entity;
+        let athlete  = [{id: null, profil_strava: null, record_100m:null, group_id: null}]
+
         // Requête SQL pour modifier l'utilisateur
         try {
-            const {rows} = await sql`
-            UPDATE TEAMME_USERS
-            SET name = ${name}, surname = ${surname}, email = ${email}, club = ${club}, club_admin = ${club_admin}
-            WHERE id = ${id};
-            `;
+            let usersGroups = [];
+
+            let {rows} = (await sql`
+                SELECT * FROM teamme_athlete;
+            `);
+
+            if (rows.length > 0) {
+                athlete = rows;
+            }
 
         } catch (error) {
             return new Response(JSON.stringify({ message: `server error: ${error}` }), {
@@ -41,7 +47,8 @@ export async function POST(req, res) {
             });
         }
 
-        return new Response(JSON.stringify({ message: 'user updated', res: entity}), {
+
+        return new Response(JSON.stringify({ res: athlete}), {
             status: 200,
             headers: { 'Content-Type': 'application/json' },
         });

@@ -25,15 +25,13 @@ export async function POST(req, res) {
             });
         }
 
-        const { id, name, surname, email, club, club_admin } = entity;
+        const {profil_strava, record_100m, group_id } = entity;
+
         // Requête SQL pour modifier l'utilisateur
         try {
-            const {rows} = await sql`
-            UPDATE TEAMME_USERS
-            SET name = ${name}, surname = ${surname}, email = ${email}, club = ${club}, club_admin = ${club_admin}
-            WHERE id = ${id};
+            await sql`
+            INSERT INTO TEAMME_athlete(profil_strava, record_100m, group_id) values(${profil_strava}, ${record_100m}, ${group_id})
             `;
-
         } catch (error) {
             return new Response(JSON.stringify({ message: `server error: ${error}` }), {
                 status: 500,
@@ -41,7 +39,8 @@ export async function POST(req, res) {
             });
         }
 
-        return new Response(JSON.stringify({ message: 'user updated', res: entity}), {
+
+        return new Response(JSON.stringify({ res: true}), {
             status: 200,
             headers: { 'Content-Type': 'application/json' },
         });

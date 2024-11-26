@@ -35,7 +35,7 @@ export async function POST(req, res) {
         }
 
         const { rows } = await sql`
-            SELECT * FROM TEAMME_USERS WHERE email = ${decoded.email};
+            SELECT * FROM TEAMME_USERS WHERE id = ${decoded.key};
             `;
 
         if (rows.length === 0) {
