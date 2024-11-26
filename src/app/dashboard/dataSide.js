@@ -118,12 +118,6 @@ export default function DataSide({user}) {
                                 <h3>Aucun utilisateur n'a demandé a rejoindre votre club pour le moment.</h3>
                             </div>
                         }
-
-                        <div className={styles.crudSection}>
-                            <CrudTable entityName={"staff"}/>
-                            <CrudTable entityName={"group"}/>
-                            <CrudTable entityName={"athlete"}/>
-                        </div>
                     </div>
 
                 ) : null

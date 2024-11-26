@@ -4,32 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7d6cb5a9-8bd4-4902-a802-cbf98e19e7e6" name="Changes" comment="ajout des crud et interface">
-      <change afterPath="$PROJECT_DIR$/src/app/api/club/demand/approve/route.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/api/club/demand/get/route.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/api/club/demand/insert/route.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/api/club/getUsers/route.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/components/infoTile.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/components/infoTile.module.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/api/athlete/delete/route.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/api/athlete/delete/route.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/api/athlete/get/route.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/api/athlete/get/route.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/api/athlete/insert/route.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/api/athlete/insert/route.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/api/athlete/update/route.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/api/athlete/update/route.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/api/group/get/route.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/api/group/get/route.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/api/register/route.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/api/register/route.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/api/staff/delete/route.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/api/staff/delete/route.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/api/staff/get/route.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/api/staff/get/route.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/api/staff/insert/route.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/api/staff/insert/route.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/api/staff/update/route.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/api/staff/update/route.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/components/clubSelect.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/components/clubSelect.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/components/clubSelect.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/components/clubSelect.module.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/components/crudTable.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/components/crudTable.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/components/crudTable.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/components/crudTable.module.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/dashboard/dataSide.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/dashboard/dataSide.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/dashboard/dataSide.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/dashboard/dataSide.module.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/utils/queryUtils.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/utils/queryUtils.js" afterDir="false" />
-    </list>
+    <list default="true" id="7d6cb5a9-8bd4-4902-a802-cbf98e19e7e6" name="Changes" comment="ajout des crud et interface" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -177,7 +152,7 @@
       <workItem from="1728929964847" duration="8817000" />
       <workItem from="1729104559403" duration="3693000" />
       <workItem from="1732484792994" duration="26712000" />
-      <workItem from="1732634352600" duration="4027000" />
+      <workItem from="1732634352600" duration="4162000" />
     </task>
     <task id="LOCAL-00001" summary="ajout gitignore">
       <option name="closed" value="true" />
@@ -507,7 +482,15 @@
       <option name="project" value="LOCAL" />
       <updated>1732586522535</updated>
     </task>
-    <option name="localTasksCounter" value="42" />
+    <task id="LOCAL-00042" summary="ajout des crud et interface">
+      <option name="closed" value="true" />
+      <created>1732638662125</created>
+      <option name="number" value="00042" />
+      <option name="presentableId" value="LOCAL-00042" />
+      <option name="project" value="LOCAL" />
+      <updated>1732638662125</updated>
+    </task>
+    <option name="localTasksCounter" value="43" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
