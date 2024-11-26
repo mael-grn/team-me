@@ -25,12 +25,12 @@ export async function POST(req, res) {
             });
         }
 
-        const {profil_strava, record_100m, group_id } = entity;
+        const {user_id, profil_strava, record_100m, group_id } = entity;
 
         // Requête SQL pour modifier l'utilisateur
         try {
             await sql`
-            INSERT INTO TEAMME_athlete(profil_strava, record_100m, group_id) values(${profil_strava}, ${record_100m}, ${group_id})
+            INSERT INTO TEAMME_athlete(user_id, profil_strava, record_100m, group_id) values(${user_id}, ${profil_strava}, ${record_100m}, ${group_id})
             `;
         } catch (error) {
             return new Response(JSON.stringify({ message: `server error: ${error}` }), {

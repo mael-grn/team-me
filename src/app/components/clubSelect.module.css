@@ -28,7 +28,7 @@
 }
 
 .clubSelect .content {
-    animation: content-intro 0.5s ease;
+
     padding: 100px 50px 50px 50px;
     width: calc(100% - 100px);
     height: fit-content;
@@ -40,6 +40,7 @@
 }
 
 .content .clubLst {
+    animation: content-intro 0.5s ease;
     max-width: 500px;
     width: calc(100%);
     overflow-y: auto;

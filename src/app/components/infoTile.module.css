@@ -1,0 +1,38 @@
+.infoTile {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    border-radius: 25px;
+    background-color: white;
+    border: 2px solid black;
+    cursor: pointer;
+    max-width: 500px;
+    gap: 20px;
+}
+
+.infoTile p {
+    text-align: center;
+    margin: 0;
+    font-size: 20px;
+}
+
+.infoTile:hover {
+    background-color: var(--color-hover);
+    transform: scale(1.05);
+}
+
+.infoTile h3 {
+    margin: 0;
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.infoTile .content {
+    display: none;
+}
+
+.infoTile.deploy .content {
+    display: block;
+}

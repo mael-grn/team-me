@@ -26,7 +26,7 @@ export async function POST(req, res) {
             });
         }
 
-        let staff  = [{id: null, role: null}]
+        let staff  = [{user_id: null, role: null}]
 
         // Requête SQL pour modifier l'utilisateur
         try {
@@ -43,7 +43,7 @@ export async function POST(req, res) {
 
             for (const user of members) {
                 let {rows} = (await sql`
-                SELECT * FROM teamme_staff where id = ${user.id};
+                SELECT * FROM teamme_staff where user_id = ${user.id};
             `);
 
                 if (rows.length > 0) {

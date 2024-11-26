@@ -26,18 +26,30 @@ export async function POST(req, res) {
             });
         }
 
-        let athlete  = [{id: null, profil_strava: null, record_100m:null, group_id: null}]
+        let athlete  = [{user_id: null, profil_strava: null, record_100m:null, group_id: null}]
 
         // Requête SQL pour modifier l'utilisateur
         try {
             let usersGroups = [];
 
-            let {rows} = (await sql`
-                SELECT * FROM teamme_athlete;
+            let club = (await sql`
+                SELECT * FROM teamme_users WHERE id = ${decoded.key};
+            `).rows[0]?.club;
+
+
+
+            let members = (await sql`
+                SELECT * FROM teamme_users WHERE club = ${club};
+            `).rows;
+
+            for (const user of members) {
+                let {rows} = (await sql`
+                SELECT * FROM teamme_athlete where user_id = ${user.id};
             `);
 
-            if (rows.length > 0) {
-                athlete = rows;
+                if (rows.length > 0) {
+                    athlete.push(rows[0]);
+                }
             }
 
         } catch (error) {

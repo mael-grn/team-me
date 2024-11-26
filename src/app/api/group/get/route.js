@@ -31,23 +31,18 @@ export async function POST(req, res) {
         // Requête SQL pour modifier l'utilisateur
         try {
             let usersGroups = [];
-            let res1 = (await sql`
-                SELECT * FROM teamme_training_group
-                WHERE id_staff = ${decoded.key};
-            `);
 
-            let res2 = (await sql`
-                SELECT * FROM teamme_athlete
-                WHERE id = ${decoded.key};
-            `);
+            let club = (await sql`
+                SELECT * FROM teamme_users WHERE id = ${decoded.key};
+            `).rows[0]?.club;
 
-            usersGroups = usersGroups.concat(res1.rows.map((row) => row.id_group));
-            usersGroups = usersGroups.concat(res2.rows.map((row) => row.group_id));
-            for (const groupId of usersGroups) {
-                groups.push((await sql`
+            const {rows} = (await sql`
                     SELECT * FROM teamme_group
-                    WHERE id = ${groupId};
-                `).rows[0]);
+                    WHERE club = ${club};
+                `)
+
+            if (rows.length > 0) {
+                groups = rows;
             }
 
         } catch (error) {

@@ -32,16 +32,22 @@ export default function ClubSelect({onDone}) {
         });
     }, []);
 
-    const choseClub = (clubName) => {
+    const demandClub = (clubName) => {
         setClubLoading(true)
         recoverUserData().then((us) => {
-            us.club = clubName;
-            us.club_admin = 1;
-
-            updateUser(us).then(() => {
-                onDone();
-                setClubLoading(false);
-            });
+            insertEntity("club/demand", {name: clubName}).then((res) => {
+                if (res.success) {
+                    setPopupMessage("Votre demande d'adhésion au club à bien été envoyée ! Si vous aviez déjà fait une demande, celle-ci a été annulée.");
+                    setPopupTitle("Demande envoyée !");
+                    setShowPopup(true);
+                    setClubLoading(false);
+                } else {
+                    setPopupMessage("Erreur lors de l'envoi de la demande");
+                    setPopupTitle("Erreur");
+                    setShowPopup(true);
+                    setClubLoading(false);
+                }
+            })
         });
     }
 
@@ -49,7 +55,14 @@ export default function ClubSelect({onDone}) {
         setClubLoading(true);
         insertEntity("club", {name: infos[0], city: infos[1]}).then((data) => {
             if (data.success) {
-                choseClub(infos[0])
+                recoverUserData().then((us) => {
+                    us.club = infos[0];
+                    us.club_admin = 1;
+                    updateUser(us).then(() => {
+                        onDone();
+                        setClubLoading(false);
+                    });
+                });
             } else {
                 setClubLoading(false)
                 setPopupMessage("Erreur lors de la création du club");
@@ -72,7 +85,7 @@ export default function ClubSelect({onDone}) {
                             {
                                 clubs.map((club, index) => {
                                     return (
-                                        <div className={styles.club} onClick={() => choseClub(club.name)}>
+                                        <div className={styles.club} onClick={() => demandClub(club.name)}>
                                             <h2>{club.name}</h2>
                                             <p>{club.city}</p>
                                         </div>

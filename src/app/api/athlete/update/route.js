@@ -25,7 +25,7 @@ export async function POST(req, res) {
             });
         }
 
-        const {id, profil_strava, record_100m, group_id } = entity;
+        const {user_id, profil_strava, record_100m, group_id } = entity;
         let newEntity;
 
         // Requête SQL pour modifier l'utilisateur
@@ -33,7 +33,7 @@ export async function POST(req, res) {
             newEntity = await sql`
             UPDATE TEAMME_athlete
             SET profil_strava = ${profil_strava}, record_100m = ${record_100m}, group_id = ${group_id}
-            WHERE id = ${id};
+            WHERE user_id = ${user_id};
             `;
         } catch (error) {
             return new Response(JSON.stringify({ message: `server error: ${error}` }), {

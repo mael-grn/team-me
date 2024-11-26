@@ -95,6 +95,10 @@ export const register = async (name, surname, email, password) => {
     });
 
     if (res.status === 200) {
+        const data = await res.json();
+        let user = new User(data.user.id, data.user.name, data.user.surname, data.user.email);
+        await saveUserData(user);
+        await setItem('teamme-token', data.token);
         return new ServerResponse(true, null, null);
     } else if (res.status === 400) {
         return new ServerResponse(false, ErrorTypes.ALREADYUSER, null);
@@ -233,6 +237,60 @@ export const deleteEntity = async (tableName, entity) => {
             return new ServerResponse(false, ErrorTypes.FOREIGNKEY, data.deps);
         }
 
+    } else {
+        return new ServerResponse(false, ErrorTypes.SERVER, null);
+    }
+}
+
+
+export const getUserFromClub = async () => {
+
+    let token;
+    try {
+        token = await getItem('teamme-token');
+    } catch (e) {
+        return new ServerResponse(false, ErrorTypes.NOUSER, null);
+    }
+
+    const res = await fetch(`/api/club/getUsers`, {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ token}),
+    });
+
+    if (res.status === 200) {
+        const data = await res.json();
+        return new ServerResponse(true, null, data.res);
+    } else if (res.status === 401) {
+        return new ServerResponse(false, ErrorTypes.UNAUTHORIZED, null);
+    } else {
+        return new ServerResponse(false, ErrorTypes.SERVER, null);
+    }
+}
+
+export const approveDemand = async (id) => {
+
+    let token;
+    try {
+        token = await getItem('teamme-token');
+    } catch (e) {
+        return new ServerResponse(false, ErrorTypes.NOUSER, null);
+    }
+
+    const res = await fetch(`/api/club/demand/approve`, {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({id, token}),
+    });
+
+    if (res.status === 200) {
+        return new ServerResponse(true, null, true);
+    } else if (res.status === 401) {
+        return new ServerResponse(false, ErrorTypes.UNAUTHORIZED, null);
     } else {
         return new ServerResponse(false, ErrorTypes.SERVER, null);
     }

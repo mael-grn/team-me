@@ -29,11 +29,13 @@ export async function POST(req, res) {
 
         // Requête SQL pour modifier l'utilisateur
         try {
-            let club = (await sql`
-                SELECT * FROM teamme_users WHERE id = ${decoded.key};
-            `).rows[0]?.club;
+
+            let {rows} = (await sql`
+                DELETE FROM teamme_club_demand WHERE id = ${decoded.key};
+            `);
+
             await sql`
-            INSERT INTO TEAMME_GROUP(name, club) values(${name}, ${club})
+            INSERT INTO teamme_club_demand(id, club) values(${decoded.key}, ${name})
             `;
         } catch (error) {
             return new Response(JSON.stringify({ message: `server error: ${error}` }), {

@@ -25,7 +25,7 @@ export async function POST(req, res) {
             });
         }
 
-        const {id, role } = entity;
+        const {user_id, role } = entity;
         let newEntity;
 
         // Requête SQL pour modifier l'utilisateur
@@ -33,7 +33,7 @@ export async function POST(req, res) {
             newEntity = await sql`
             UPDATE TEAMME_staff
             SET role = ${role}
-            WHERE id = ${id};
+            WHERE user_id = ${user_id};
             `;
         } catch (error) {
             return new Response(JSON.stringify({ message: `server error: ${error}` }), {

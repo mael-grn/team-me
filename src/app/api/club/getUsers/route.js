@@ -12,7 +12,8 @@ export async function POST(req, res) {
             });
         }
 
-        const { entity, token } = await req.json();
+        const { token } = await req.json();
+
 
         const secretKey = process.env.AUTH_SECRET
 
@@ -25,16 +26,35 @@ export async function POST(req, res) {
             });
         }
 
-        const {name} = entity;
+        //pour avoir le schema de la table
 
-        // Requête SQL pour modifier l'utilisateur
         try {
-            let club = (await sql`
+
+            let user = (await sql`
                 SELECT * FROM teamme_users WHERE id = ${decoded.key};
-            `).rows[0]?.club;
-            await sql`
-            INSERT INTO TEAMME_GROUP(name, club) values(${name}, ${club})
-            `;
+            `).rows[0];
+
+            if (user.club_admin === 0) {
+                return new Response(JSON.stringify({ message: `Vous n'êtes pas administrateur du club.` }), {
+                    status: 401,
+                    headers: { 'Content-Type': 'application/json' },
+                });
+            }
+
+            let {rows} = (await sql`
+                SELECT * FROM teamme_users where club = ${user.club};
+            `);
+
+            return new Response(JSON.stringify({ res: rows.map((userItem) => ({
+                    name: userItem.name,
+                    surname: userItem.surname,
+                    id: userItem.id
+                }))
+            }), {
+                status: 200,
+                headers: { 'Content-Type': 'application/json' },
+            });
+
         } catch (error) {
             return new Response(JSON.stringify({ message: `server error: ${error}` }), {
                 status: 500,
@@ -43,10 +63,7 @@ export async function POST(req, res) {
         }
 
 
-        return new Response(JSON.stringify({ res: true}), {
-            status: 200,
-            headers: { 'Content-Type': 'application/json' },
-        });
+
 
     } catch (error) {
         return new Response(JSON.stringify({ message: `server error: ${error}`}), {

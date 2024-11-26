@@ -36,7 +36,11 @@ export default function CrudTable({entityName}) {
             setLoading(false);
             if (response.success && response.data) {
                 setEntityLst(response.data);
-                setKeys(Object.keys(response.data[0]));
+                setKeys(Object.keys(response.data[0]).filter(key => key !== "club" && key !== "id"));
+                setEntityLst(response.data.map(({ club, ...rest }) => rest));            } else {
+                setPopupMessage(response.errorType);
+                setPopupTitle("Erreur");
+                setShowPopup(true);
             }
 
         });
@@ -48,6 +52,10 @@ export default function CrudTable({entityName}) {
             setLoading(false);
             if (response.success) {
                 load();
+            } else {
+                setPopupMessage(response.errorType);
+                setPopupTitle("Erreur");
+                setShowPopup(true);
             }
         });
     }
@@ -58,6 +66,10 @@ export default function CrudTable({entityName}) {
             setLoading(false);
             if (response.success) {
                 load();
+            } else {
+                setPopupMessage(response.errorType);
+                setPopupTitle("Erreur");
+                setShowPopup(true);
             }
         });
     }

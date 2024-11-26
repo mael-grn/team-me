@@ -25,12 +25,24 @@ export async function POST(req, res) {
             });
         }
 
-        const {id, role } = entity;
+        const {user_id, role } = entity;
 
         // Requête SQL pour modifier l'utilisateur
         try {
+            let club = (await sql`
+                SELECT * FROM teamme_users WHERE id = ${decoded.key};
+            `).rows[0]?.club;
+
+            let {rows} = (await sql`SELECT * FROM teamme_users WHERE id = ${id} AND club = ${club};`);
+
+            if (rows.length === 0) {
+                return new Response(JSON.stringify({ message: `L'utilisateur n'existe pas dans le club.` }), {
+                    status: 400,
+                    headers: { 'Content-Type': 'application/json' },
+                });
+            }
             await sql`
-            INSERT INTO TEAMME_STAFF(id, role) values(${id}, ${role})
+            INSERT INTO TEAMME_STAFF(user_id, role) values(${user_id}, ${role})
             `;
         } catch (error) {
             return new Response(JSON.stringify({ message: `server error: ${error}` }), {

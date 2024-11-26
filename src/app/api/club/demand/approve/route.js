@@ -12,7 +12,7 @@ export async function POST(req, res) {
             });
         }
 
-        const { entity, token } = await req.json();
+        const { id, token } = await req.json();
 
         const secretKey = process.env.AUTH_SECRET
 
@@ -25,15 +25,27 @@ export async function POST(req, res) {
             });
         }
 
-        const {name} = entity;
 
         // Requête SQL pour modifier l'utilisateur
         try {
-            let club = (await sql`
+
+            let user = (await sql`
                 SELECT * FROM teamme_users WHERE id = ${decoded.key};
-            `).rows[0]?.club;
+            `).rows[0];
+
+            if (user.club_admin === 0) {
+                return new Response(JSON.stringify({ message: `Vous n'êtes pas administrateur du club.` }), {
+                    status: 401,
+                    headers: { 'Content-Type': 'application/json' },
+                });
+            }
+
+            let {rows} = (await sql`
+                DELETE FROM teamme_club_demand WHERE id = ${id};
+            `);
+
             await sql`
-            INSERT INTO TEAMME_GROUP(name, club) values(${name}, ${club})
+                UPDATE teamme_users SET club = ${user.club} WHERE id = ${id};
             `;
         } catch (error) {
             return new Response(JSON.stringify({ message: `server error: ${error}` }), {
