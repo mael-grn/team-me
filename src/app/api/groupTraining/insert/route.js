@@ -30,7 +30,7 @@ export async function POST(req, res) {
         // Requête SQL pour modifier l'utilisateur
         try {
             await sql`
-            INSERT INTO teamme_training_group(role) values( ${id_staff}, ${id_group});
+            INSERT INTO teamme_training_group(id_staff, id_group) values( ${id_staff}, ${id_group});
             `;
         } catch (error) {
             return new Response(JSON.stringify({ message: `server error: ${error}` }), {

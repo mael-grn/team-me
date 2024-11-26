@@ -25,14 +25,14 @@ export async function POST(req, res) {
             });
         }
 
-        const {id, name, club } = entity;
+        const {id, name } = entity;
         let newEntity;
 
         // Requête SQL pour modifier l'utilisateur
         try {
             newEntity = await sql`
             UPDATE TEAMME_group
-            SET name = ${name} , club = ${club}
+            SET name = ${name}
             WHERE id = ${id};
             `;
         } catch (error) {

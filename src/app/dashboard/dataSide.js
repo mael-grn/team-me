@@ -94,7 +94,7 @@ export default function DataSide({user}) {
             }
             {
                 user.club_admin === 1 ? (
-                    <div>
+                    <div className={styles.adminSection}>
                         {
                             joinDemand.length > 1 ? (
                                 <div>
@@ -107,7 +107,9 @@ export default function DataSide({user}) {
                                             return (
                                                 <div>
                                                     <p>- {user.name} {user.surname}</p>
-                                                    <button onClick={() => approveJoinDemand(user)} className={"buttonLight"}>Accepter</button>
+                                                    <button onClick={() => approveJoinDemand(user)}
+                                                            className={"buttonLight"}>Accepter
+                                                    </button>
                                                 </div>
                                             )
 
@@ -116,12 +118,20 @@ export default function DataSide({user}) {
                                 </div>
                             ) : <div>
                                 <h3>Aucun utilisateur n'a demandé a rejoindre votre club pour le moment.</h3>
+
                             </div>
                         }
+                        <div className={styles.crudSection}>
+                            <CrudTable entityName={"staff"}/>
+                            <CrudTable entityName={"group"}/>
+                            <CrudTable entityName={"athlete"}/>
+                            <CrudTable entityName={"athleteTraining"}/>
+                            <CrudTable entityName={"groupTraining"}/>
+                        </div>
                     </div>
 
                 ) : null
-        }
+            }
 
         </main>
     )

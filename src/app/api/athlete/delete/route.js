@@ -31,7 +31,7 @@ export async function POST(req, res) {
         try {
             await sql`
             DELETE FROM TEAMME_ATHLETE
-            WHERE user_id = ${entity.id};
+            WHERE user_id = ${entity.user_id};
             `;
         } catch (error) {
             if (error.code === '23503') {

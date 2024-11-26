@@ -30,9 +30,12 @@ export async function POST(req, res) {
 
         // Requête SQL pour modifier l'utilisateur
         try {
+            let club = (await sql`
+                SELECT * FROM teamme_users WHERE id = ${decoded.key};
+            `).rows[0]?.club;
 
             let {rows} = (await sql`
-                SELECT * FROM teamme_training_group;
+                SELECT tg.* FROM teamme_training_group tg, teamme_group g WHERE tg.id_group = g.id AND g.club = ${club};
             `);
 
             if (rows.length > 0) {

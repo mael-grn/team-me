@@ -36,7 +36,7 @@ export default function CrudTable({entityName}) {
             setLoading(false);
             if (response.success && response.data) {
                 setEntityLst(response.data);
-                setKeys(Object.keys(response.data[0]).filter(key => key !== "club" && key !== "id"));
+                setKeys(Object.keys(response.data[0]).filter(key => key !== "club"));
                 setEntityLst(response.data.map(({ club, ...rest }) => rest));            } else {
                 setPopupMessage(response.errorType);
                 setPopupTitle("Erreur");
@@ -77,7 +77,7 @@ export default function CrudTable({entityName}) {
     const popupInfosInsert =(infos) => {
         if (!infos || infos.length === 0) return;
         let newEntity = {}
-        keys.forEach((key, index) => {
+        keys.filter(key => key !== "id").forEach((key, index) => {
             newEntity[key] = infos[index]
         })
         insert(newEntity)
@@ -109,7 +109,7 @@ export default function CrudTable({entityName}) {
                 <h2>{entityName}</h2>
 
                 {showInfosPopup ?
-                    <InfosSelectPopup infosRequired={infosPopupinfos} setInfosFctn={(i) => popupInfosInsert(i)}
+                    <InfosSelectPopup infosRequired={infosPopupinfos.filter(key => key !== "id")} setInfosFctn={(i) => popupInfosInsert(i)}
                                       closeFctn={() => setShowInfosPopup(false)}/> : null}
                 {showPopup ? <Popup title={popupTitle} text={popupMessage} close={closePopup}/> : null}
                 {loading ? <LordIcon iconName={"loader-black"} animationType={"loop"}/> : (

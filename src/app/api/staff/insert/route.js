@@ -33,7 +33,7 @@ export async function POST(req, res) {
                 SELECT * FROM teamme_users WHERE id = ${decoded.key};
             `).rows[0]?.club;
 
-            let {rows} = (await sql`SELECT * FROM teamme_users WHERE id = ${id} AND club = ${club};`);
+            let {rows} = (await sql`SELECT * FROM teamme_users WHERE id = ${user_id} AND club = ${club};`);
 
             if (rows.length === 0) {
                 return new Response(JSON.stringify({ message: `L'utilisateur n'existe pas dans le club.` }), {

@@ -44,7 +44,7 @@
 
 .popup {
     z-index: 1000;
-    position: absolute;
+    position: fixed;
     width: 100%;
     height: 100%;
     display: flex;
@@ -57,7 +57,7 @@
 .background {
     z-index: 1000;
     animation: intro-bg 0.5s;
-    position: absolute;
+    position: fixed;
     width: 100%;
     height: 100%;
     top: 0;
